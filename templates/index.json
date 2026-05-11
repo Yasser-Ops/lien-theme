@@ -230,6 +230,20 @@
         "cta_link": ""
       }
     },
+    "lien_quantity_breaks_CRpgbR": {
+      "type": "lien-quantity-breaks",
+      "name": "Quantity Breaks",
+      "settings": {
+        "product": "bracelet",
+        "label": "Save More",
+        "heading": "Buy More, Save More",
+        "subtitle": "Stock up on sets — for you, your partner, or as gifts.",
+        "discount_2": 10,
+        "discount_3": 15,
+        "code_2": "BUNDLE2",
+        "code_3": "BUNDLE3"
+      }
+    },
     "lien_why": {
       "type": "lien-why-lien",
       "blocks": {
@@ -465,6 +479,7 @@
     "lien_how_it_works",
     "lien_comparison",
     "lien_why",
+    "lien_quantity_breaks_CRpgbR",
     "lien_offers",
     "lien_reviews",
     "lien_faq",
