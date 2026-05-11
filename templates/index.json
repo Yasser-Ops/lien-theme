@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "lien_hero": {
@@ -50,7 +59,12 @@
           }
         }
       },
-      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
       "settings": {}
     },
     "lien_featured_product": {
@@ -81,8 +95,14 @@
           }
         }
       },
-      "block_order": ["feature_1", "feature_2", "feature_3", "feature_4"],
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
       "settings": {
+        "product": "bracelet-black-and-white",
         "label": "The Signature Set",
         "heading": "Magnetic Couple Bracelet Set",
         "description": "Two bracelets, one connection. Our magnetic heart-charm set is designed for couples who want to carry each other — always.",
@@ -115,7 +135,11 @@
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "settings": {
         "label": "The Process",
         "heading": "How It Works",
@@ -186,7 +210,14 @@
           }
         }
       },
-      "block_order": ["cmp_1", "cmp_2", "cmp_3", "cmp_4", "cmp_5", "cmp_6"],
+      "block_order": [
+        "cmp_1",
+        "cmp_2",
+        "cmp_3",
+        "cmp_4",
+        "cmp_5",
+        "cmp_6"
+      ],
       "settings": {
         "label": "The Difference",
         "heading": "Lien vs. The Rest",
@@ -226,7 +257,11 @@
           }
         }
       },
-      "block_order": ["reason_1", "reason_2", "reason_3"],
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ],
       "settings": {
         "label": "The Difference",
         "heading": "Why Lien",
@@ -282,7 +317,11 @@
           }
         }
       },
-      "block_order": ["bundle_1", "bundle_2", "bundle_3"],
+      "block_order": [
+        "bundle_1",
+        "bundle_2",
+        "bundle_3"
+      ],
       "settings": {
         "label": "Save More",
         "heading": "Bundle & Save",
@@ -335,7 +374,11 @@
           }
         }
       },
-      "block_order": ["offer_1", "offer_2", "offer_3"],
+      "block_order": [
+        "offer_1",
+        "offer_2",
+        "offer_3"
+      ],
       "settings": {
         "label": "Exclusive Deals",
         "heading": "Current Offers",
@@ -373,7 +416,11 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
       "settings": {
         "label": "Real Couples",
         "heading": "What Couples Say",
@@ -426,7 +473,14 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
       "settings": {
         "label": "Got Questions?",
         "heading": "Frequently Asked Questions",
