@@ -284,7 +284,7 @@
             "original_price": "",
             "savings_label": "",
             "button_label": "Get the Set",
-            "button_link": "shopify://products/magnetic-couple-bracelet-bundle-set"
+            "button_link": "/products/magnetic-couple-bracelet-bundle-set?variant=49180762996978"
           }
         },
         "bundle_2": {
@@ -516,6 +516,38 @@
         "button_link": "",
         "color_scheme": "dark"
       }
+    },
+    "1778509500e12a6323": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3ba76f6_XgrfjM": {
+          "type": "ai_gen_block_3ba76f6",
+          "settings": {
+            "variant_id": "49180762996978",
+            "quantity": 1,
+            "button_text": "Get 1 Set",
+            "button_font_size": 16,
+            "desktop_width_percent": 100,
+            "button_color": "#1C1C1C",
+            "button_text_color": "#FAFAF8",
+            "button_hover_color": "#B8956A",
+            "button_hover_text_color": "#FFFFFF",
+            "button_radius": 0,
+            "button_border_thickness": 1,
+            "success_message": "Added to cart successfully!",
+            "error_message": "Unable to add to cart. Please try again.",
+            "success_bg_color": "#B8956A",
+            "success_text_color": "#FFFFFF",
+            "error_bg_color": "#D82C0D",
+            "error_text_color": "#FFFFFF"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3ba76f6_XgrfjM"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -530,6 +562,7 @@
     "lien_reviews",
     "lien_faq",
     "lien_newsletter",
-    "lien_cta"
+    "lien_cta",
+    "1778509500e12a6323"
   ]
 }
