@@ -394,21 +394,30 @@
   };
 
   var colorMap = {
-    'black': '#1a1c22',
-    'pink':  '#e8a4b8',
-    'white': '#f0eeec',
-    'blue':  '#7b9ec4',
-    'beige': '#d4c4a8',
-    'gray':  '#9ca3af',
-    'grey':  '#9ca3af',
-    'red':   '#e57373',
-    'green': '#81b29a',
-    'purple':'#b39ddb',
-    'yellow':'#f9e07f'
+    'black':  '#1a1c22',
+    'pink':   '#e8a4b8',
+    'white':  '#f0eeec',
+    'blue':   '#7b9ec4',
+    'beige':  '#d4c4a8',
+    'gray':   '#9ca3af',
+    'grey':   '#9ca3af',
+    'red':    '#e57373',
+    'green':  '#81b29a',
+    'purple': '#b39ddb',
+    'yellow': '#f9e07f'
   };
 
-  function colorHex(name) {
-    return colorMap[(name || '').toLowerCase()] || '#aaa';
+  function applySwatchStyle(btn, colorName) {
+    var name = (colorName || '').toLowerCase().trim();
+    if (name.indexOf('/') !== -1) {
+      var parts = name.split('/');
+      var hex1 = colorMap[parts[0].trim()] || '#aaa';
+      var hex2 = colorMap[parts[1].trim()] || '#aaa';
+      btn.style.background = 'linear-gradient(135deg, ' + hex1 + ' 50%, ' + hex2 + ' 50%)';
+    } else {
+      btn.style.backgroundColor = colorMap[name] || '#aaa';
+      if (name === 'white') btn.classList.add('lien-qb__swatch--white');
+    }
   }
 
   function money(cents) {
@@ -469,17 +478,11 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'lien-qb__swatch';
-      var hex = colorHex(v.color || v.title);
-      btn.style.backgroundColor = hex;
+      applySwatchStyle(btn, v.color || v.title);
       btn.title = v.title;
       btn.setAttribute('aria-label', v.title);
       btn.dataset.variantId = v.id;
       btn.dataset.slot = slot;
-
-      // White swatch border helper
-      if ((v.color || v.title).toLowerCase() === 'white') {
-        btn.classList.add('lien-qb__swatch--white');
-      }
 
       if (!v.available) {
         btn.disabled = true;
