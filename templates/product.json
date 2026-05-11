@@ -62,7 +62,8 @@
           "settings": {
             "heading": "What's in the Set",
             "icon": "gift_card",
-            "content": "<p>Each Lien set includes <strong>2 bracelets</strong> — one for you, one for your partner:</p><ul><li>2 × braided rope cord bracelets (your chosen color)</li><li>2 × matching silver charm (heart or lock &amp; key)</li><li>Adjustable sliding knot — fits all wrist sizes</li><li>1 × premium gift box, ready to give</li></ul><p>Available colors: Black, Blue, Gray, Pink.<br>Available styles: Heart Charm, Lock &amp; Key.</p>"
+            "content": "<p>Each Lien set includes <strong>2 bracelets</strong> — one for you, one for your partner:</p><ul><li>2 × braided rope cord bracelets (your chosen color)</li><li>2 × matching silver charm (heart or lock &amp; key)</li><li>Adjustable sliding knot — fits all wrist sizes</li><li>1 × premium gift box, ready to give</li></ul><p>Available colors: Black, Blue, Gray, Pink.<br>Available styles: Heart Charm, Lock &amp; Key.</p>",
+            "page": ""
           }
         },
         "tab_fit_care": {
@@ -70,7 +71,8 @@
           "settings": {
             "heading": "Fit & Care",
             "icon": "ruler",
-            "content": "<p><strong>Adjustable fit:</strong> Both bracelets use a sliding knot design — simply pull the loose ends to tighten or loosen. Fits wrist sizes from 14cm to 22cm.</p><p><strong>Daily wear:</strong> The braided cord is designed to be worn all day. It's water-resistant for everyday activities (handwashing, light rain).</p><p><strong>Care tips:</strong> Remove before swimming, bathing, or heavy exercise to preserve the cord quality over time. Avoid prolonged contact with perfumes or chemicals.</p>"
+            "content": "<p><strong>Adjustable fit:</strong> Both bracelets use a sliding knot design — simply pull the loose ends to tighten or loosen. Fits wrist sizes from 14cm to 22cm.</p><p><strong>Daily wear:</strong> The braided cord is designed to be worn all day. It's water-resistant for everyday activities (handwashing, light rain).</p><p><strong>Care tips:</strong> Remove before swimming, bathing, or heavy exercise to preserve the cord quality over time. Avoid prolonged contact with perfumes or chemicals.</p>",
+            "page": ""
           }
         },
         "tab_shipping": {
@@ -78,7 +80,8 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "delivery_fast",
-            "content": "<p><strong>Free standard shipping</strong> on all orders, worldwide.</p><p>Orders are processed within 1–2 business days. Estimated delivery:</p><ul><li>US & Canada: 5–10 business days</li><li>Europe: 7–14 business days</li><li>Rest of world: 10–20 business days</li></ul><p><strong>30-day money-back guarantee.</strong> Not happy? Contact us within 30 days for a full refund — no questions asked.</p>"
+            "content": "<p><strong>Free standard shipping</strong> on all orders, worldwide.</p><p>Orders are processed within 1–2 business days. Estimated delivery:</p><ul><li>US & Canada: 5–10 business days</li><li>Europe: 7–14 business days</li><li>Rest of world: 10–20 business days</li></ul><p><strong>30-day money-back guarantee.</strong> Not happy? Contact us within 30 days for a full refund — no questions asked.</p>",
+            "page": ""
           }
         }
       },
@@ -147,12 +150,18 @@
           }
         }
       },
-      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
       "settings": {}
     },
     "lien_quantity_breaks": {
       "type": "lien-quantity-breaks",
       "settings": {
+        "product": "bracelet",
         "label": "Save More",
         "heading": "Buy More, Save More",
         "subtitle": "Stock up on sets — for you, your partner, or as gifts.",
@@ -193,7 +202,11 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
       "settings": {
         "label": "Real Couples",
         "heading": "What Couples Say",
@@ -232,7 +245,12 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
       "settings": {
         "label": "Questions?",
         "heading": "Frequently Asked",
@@ -240,7 +258,8 @@
         "two_column": false,
         "bg_cream": true,
         "cta_text": "",
-        "cta_label": ""
+        "cta_label": "",
+        "cta_link": ""
       }
     },
     "lien_sticky_atc": {
