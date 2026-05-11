@@ -147,87 +147,18 @@
         "subtitle": "Three simple steps to share something that lasts."
       }
     },
-    "lien_comparison": {
-      "type": "lien-comparison",
-      "blocks": {
-        "cmp_1": {
-          "type": "row",
-          "settings": {
-            "feature": "Comes as a Matched Pair",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": false,
-            "others_value": ""
-          }
-        },
-        "cmp_2": {
-          "type": "row",
-          "settings": {
-            "feature": "Premium Gift Box Included",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": false,
-            "others_value": ""
-          }
-        },
-        "cmp_3": {
-          "type": "row",
-          "settings": {
-            "feature": "Magnetic Heart Charm",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": false,
-            "others_value": ""
-          }
-        },
-        "cmp_4": {
-          "type": "row",
-          "settings": {
-            "feature": "Adjustable Fit for All Sizes",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": true,
-            "others_value": ""
-          }
-        },
-        "cmp_5": {
-          "type": "row",
-          "settings": {
-            "feature": "30-Day Money-Back Guarantee",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": false,
-            "others_value": ""
-          }
-        },
-        "cmp_6": {
-          "type": "row",
-          "settings": {
-            "feature": "Water-Resistant & Daily Wear",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": true,
-            "others_value": ""
-          }
-        }
-      },
-      "block_order": [
-        "cmp_1",
-        "cmp_2",
-        "cmp_3",
-        "cmp_4",
-        "cmp_5",
-        "cmp_6"
-      ],
+    "lien_quantity_breaks_nT7KhT": {
+      "type": "lien-quantity-breaks",
+      "name": "Quantity Breaks",
       "settings": {
-        "label": "The Difference",
-        "heading": "Lien vs. The Rest",
-        "subtitle": "Not all couple bracelets are created equal. Here's why Lien stands apart.",
-        "col_lien": "Lien",
-        "col_others": "Typical Brands",
-        "cta_subtext": "Ready to wear your bond?",
-        "cta_label": "Shop the Set",
-        "cta_link": ""
+        "product": "bracelet",
+        "label": "Save More",
+        "heading": "Buy More, Save More",
+        "subtitle": "Stock up on sets - for you, your partner, or as gifts.",
+        "discount_2": 10,
+        "discount_3": 15,
+        "code_2": "BUNDLE2",
+        "code_3": "BUNDLE3"
       }
     },
     "lien_why": {
@@ -324,6 +255,89 @@
         "label": "Exclusive Deals",
         "heading": "Current Offers",
         "subtitle": "Limited-time offers to help you start your Lien story at exceptional value."
+      }
+    },
+    "lien_comparison": {
+      "type": "lien-comparison",
+      "blocks": {
+        "cmp_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Comes as a Matched Pair",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Premium Gift Box Included",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Magnetic Heart Charm",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Adjustable Fit for All Sizes",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": true,
+            "others_value": ""
+          }
+        },
+        "cmp_5": {
+          "type": "row",
+          "settings": {
+            "feature": "30-Day Money-Back Guarantee",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Water-Resistant & Daily Wear",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": true,
+            "others_value": ""
+          }
+        }
+      },
+      "block_order": [
+        "cmp_1",
+        "cmp_2",
+        "cmp_3",
+        "cmp_4",
+        "cmp_5",
+        "cmp_6"
+      ],
+      "settings": {
+        "label": "The Difference",
+        "heading": "Lien vs. The Rest",
+        "subtitle": "Not all couple bracelets are created equal. Here's why Lien stands apart.",
+        "col_lien": "Lien",
+        "col_others": "Typical Brands",
+        "cta_subtext": "Ready to wear your bond?",
+        "cta_label": "Shop the Set",
+        "cta_link": ""
       }
     },
     "lien_reviews": {
@@ -463,9 +477,10 @@
     "lien_trust_bar",
     "lien_featured_product",
     "lien_how_it_works",
-    "lien_comparison",
+    "lien_quantity_breaks_nT7KhT",
     "lien_why",
     "lien_offers",
+    "lien_comparison",
     "lien_reviews",
     "lien_faq",
     "lien_newsletter",
