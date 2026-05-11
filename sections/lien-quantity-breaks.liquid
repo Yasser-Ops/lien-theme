@@ -1,9 +1,4 @@
 {%- style -%}
-  /* ======================================================================
-     Lien Quantity Breaks
-     Buy More, Save More — tier selector + single variant color picker
-     ====================================================================== */
-
   .lien-qb {
     background-color: var(--lien-offwhite);
     border-top: 1px solid var(--lien-border);
@@ -22,7 +17,6 @@
     }
   }
 
-  /* Header */
   .lien-qb__header {
     text-align: center;
     margin-bottom: var(--lien-space-2xl);
@@ -56,12 +50,11 @@
     margin: 0;
   }
 
-  /* Tier selector */
+  /* Tier cards */
   .lien-qb__tiers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--lien-space-md);
-    margin-top: 18px;
     margin-bottom: var(--lien-space-2xl);
   }
 
@@ -80,9 +73,7 @@
     align-items: center;
   }
 
-  .lien-qb__tier:hover {
-    border-color: var(--lien-accent-light);
-  }
+  .lien-qb__tier:hover { border-color: var(--lien-accent-light); }
 
   .lien-qb__tier--active {
     border-color: var(--lien-accent);
@@ -90,8 +81,7 @@
   }
 
   .lien-qb__tier--popular {
-    border-color: var(--lien-accent);
-    padding-top: calc(var(--lien-space-xl) + 8px);
+    padding-top: calc(var(--lien-space-xl) + 10px);
   }
 
   .lien-qb__tier-badge {
@@ -145,64 +135,64 @@
     padding: 3px 10px;
   }
 
-  /* Color picker */
-  .lien-qb__color-row {
+  /* Per-set color rows */
+  .lien-qb__slots {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lien-space-lg);
     margin-bottom: var(--lien-space-2xl);
   }
 
-  .lien-qb__color-heading {
+  .lien-qb__slot {
+    display: none;
+  }
+
+  .lien-qb__slot--visible {
+    display: block;
+  }
+
+  .lien-qb__slot-label {
     font-family: var(--lien-font-heading);
     font-weight: var(--lien-weight-semibold);
     font-size: var(--lien-text-sm);
     color: var(--lien-text);
-    margin: 0 0 var(--lien-space-sm) 0;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    margin: 0 0 var(--lien-space-sm) 0;
   }
 
-  .lien-qb__color-heading span {
-    font-weight: var(--lien-weight-normal);
-    color: var(--lien-text-secondary);
-    text-transform: none;
-    letter-spacing: 0;
-  }
-
-  .lien-qb__swatches {
+  .lien-qb__color-btns {
     display: flex;
-    gap: var(--lien-space-sm);
     flex-wrap: wrap;
+    gap: var(--lien-space-sm);
   }
 
-  .lien-qb__swatch {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 2px solid transparent;
+  .lien-qb__color-btn {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-sm);
+    color: var(--lien-text);
+    background-color: var(--lien-white);
+    border: 1px solid var(--lien-border);
+    padding: 6px 16px;
+    border-radius: 999px;
     cursor: pointer;
-    transition: all var(--lien-transition-base);
-    outline: none;
-    position: relative;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
-    background-color: #ccc;
+    transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
   }
 
-  .lien-qb__swatch:hover {
-    transform: scale(1.12);
-    box-shadow: 0 0 0 2px var(--lien-accent-light);
+  .lien-qb__color-btn:hover { border-color: var(--lien-accent); }
+
+  .lien-qb__color-btn--active {
+    border-color: var(--lien-dark);
+    background-color: var(--lien-dark);
+    color: var(--lien-white);
   }
 
-  .lien-qb__swatch--active {
-    box-shadow: 0 0 0 2px var(--lien-white), 0 0 0 4px var(--lien-accent);
-    transform: scale(1.08);
-  }
-
-  .lien-qb__swatch:disabled {
-    opacity: 0.3;
+  .lien-qb__color-btn:disabled {
+    opacity: 0.35;
     cursor: not-allowed;
-    transform: none;
   }
 
-  /* Summary row */
+  /* Summary */
   .lien-qb__summary {
     display: flex;
     align-items: center;
@@ -248,12 +238,10 @@
     color: var(--lien-white);
     border: none;
     cursor: pointer;
-    transition: all var(--lien-transition-base);
+    transition: background-color var(--lien-transition-base);
   }
 
-  .lien-qb__btn:hover:not(:disabled) {
-    background-color: var(--lien-dark-hover);
-  }
+  .lien-qb__btn:hover:not(:disabled) { background-color: var(--lien-dark-hover); }
 
   .lien-qb__btn:disabled {
     opacity: 0.45;
@@ -276,14 +264,14 @@
 
 {%- if qb_product != blank -%}
 
-{%- assign base_price = qb_product.selected_or_first_available_variant.price -%}
-{%- assign d2 = section.settings.discount_2 -%}
-{%- assign d3 = section.settings.discount_3 -%}
-{%- assign price_2_full = base_price | times: 2 -%}
-{%- assign price_2_disc = price_2_full | times: d2 | divided_by: 100 -%}
+{%- assign base_price   = qb_product.selected_or_first_available_variant.price -%}
+{%- assign d2           = section.settings.discount_2 -%}
+{%- assign d3           = section.settings.discount_3 -%}
+{%- assign price_2_full  = base_price | times: 2 -%}
+{%- assign price_2_disc  = price_2_full | times: d2 | divided_by: 100 -%}
 {%- assign price_2_final = price_2_full | minus: price_2_disc -%}
-{%- assign price_3_full = base_price | times: 3 -%}
-{%- assign price_3_disc = price_3_full | times: d3 | divided_by: 100 -%}
+{%- assign price_3_full  = base_price | times: 3 -%}
+{%- assign price_3_disc  = price_3_full | times: d3 | divided_by: 100 -%}
 {%- assign price_3_final = price_3_full | minus: price_3_disc -%}
 
 <section class="lien-qb" id="lien-qb-{{ section.id }}" data-lien-qb>
@@ -298,7 +286,6 @@
     </div>
 
     <div class="lien-qb__tiers" role="radiogroup" aria-label="Select bundle size">
-
       <div class="lien-qb__tier lien-qb__tier--active"
         data-tier data-qty="1" data-discount="0" data-code=""
         role="radio" aria-checked="true" tabindex="0">
@@ -324,29 +311,29 @@
         <span class="lien-qb__tier-original">{{ price_3_full | money }}</span>
         <span class="lien-qb__tier-save">Save {{ d3 }}%</span>
       </div>
-
     </div>
 
-    <div class="lien-qb__color-row">
-      <p class="lien-qb__color-heading">
-        Color: <span id="lien-qb-color-name-{{ section.id }}">—</span>
-      </p>
-      <div class="lien-qb__swatches">
-        {%- for variant in qb_product.variants -%}
-          <button
-            type="button"
-            class="lien-qb__swatch"
-            data-variant-id="{{ variant.id }}"
-            data-variant-price="{{ variant.price }}"
-            aria-label="{{ variant.option1 | escape }}"
-            title="{{ variant.option1 | escape }}"
-            {%- if variant.featured_image != blank -%}
-              style="background-image:url('{{ variant.featured_image | image_url: width: 80 }}');background-size:cover;background-position:center;"
-            {%- endif -%}
-            {%- unless variant.available -%}disabled{%- endunless -%}
-          ></button>
-        {%- endfor -%}
-      </div>
+    <div class="lien-qb__slots">
+      {%- for slot_index in (1..3) -%}
+        <div
+          class="lien-qb__slot{% if slot_index == 1 %} lien-qb__slot--visible{% endif %}"
+          data-slot="{{ slot_index }}"
+        >
+          <p class="lien-qb__slot-label">Set {{ slot_index }}</p>
+          <div class="lien-qb__color-btns">
+            {%- for variant in qb_product.variants -%}
+              <button
+                type="button"
+                class="lien-qb__color-btn"
+                data-slot-btn="{{ slot_index }}"
+                data-variant-id="{{ variant.id }}"
+                data-variant-price="{{ variant.price }}"
+                {%- unless variant.available -%}disabled{%- endunless -%}
+              >{{ variant.option1 }}</button>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
     </div>
 
     <div class="lien-qb__summary">
@@ -368,15 +355,19 @@
 (function () {
   var section    = document.getElementById('lien-qb-{{ section.id }}');
   var btn        = document.getElementById('lien-qb-btn-{{ section.id }}');
-  var nameEl     = document.getElementById('lien-qb-color-name-{{ section.id }}');
   var totalEl    = section.querySelector('[data-total]');
   var totalWas   = section.querySelector('[data-total-was]');
   var totalSaved = section.querySelector('[data-total-saved]');
-  if (!section) return;
+  if (!section || !btn) return;
 
-  var state = { qty: 1, discount: 0, code: '', variantId: null, variantPrice: 0 };
+  var state = {
+    qty:      1,
+    discount: 0,
+    code:     '',
+    slots:    [null]
+  };
 
-  /* ── Tier selection ─────────────────────────────────────── */
+  /* Tier selection */
   section.querySelectorAll('[data-tier]').forEach(function (tier) {
     tier.addEventListener('click', function () { selectTier(tier); });
     tier.addEventListener('keydown', function (e) {
@@ -391,40 +382,71 @@
     });
     tierEl.classList.add('lien-qb__tier--active');
     tierEl.setAttribute('aria-checked', 'true');
+
     state.qty      = parseInt(tierEl.dataset.qty, 10);
     state.discount = parseInt(tierEl.dataset.discount || '0', 10);
     state.code     = tierEl.dataset.code || '';
+    state.slots    = new Array(state.qty).fill(null);
+
+    /* Clear all color selections across every slot */
+    section.querySelectorAll('.lien-qb__color-btn--active').forEach(function (b) {
+      b.classList.remove('lien-qb__color-btn--active');
+    });
+
+    /* Show/hide slot rows */
+    section.querySelectorAll('[data-slot]').forEach(function (slotEl) {
+      var slotNum = parseInt(slotEl.dataset.slot, 10);
+      if (slotNum <= state.qty) {
+        slotEl.classList.add('lien-qb__slot--visible');
+      } else {
+        slotEl.classList.remove('lien-qb__slot--visible');
+      }
+    });
+
     updateSummary();
     updateBtn();
   }
 
-  /* ── Color selection ────────────────────────────────────── */
-  section.querySelectorAll('.lien-qb__swatch').forEach(function (sw) {
-    sw.addEventListener('click', function () {
-      section.querySelectorAll('.lien-qb__swatch').forEach(function (s) {
-        s.classList.remove('lien-qb__swatch--active');
+  /* Color selection per slot */
+  section.querySelectorAll('[data-slot-btn]').forEach(function (cb) {
+    cb.addEventListener('click', function () {
+      var slot = parseInt(cb.dataset.slotBtn, 10) - 1;
+
+      /* Deselect other buttons in this slot */
+      section.querySelectorAll('[data-slot-btn="' + cb.dataset.slotBtn + '"]').forEach(function (b) {
+        b.classList.remove('lien-qb__color-btn--active');
       });
-      sw.classList.add('lien-qb__swatch--active');
-      state.variantId    = parseInt(sw.dataset.variantId, 10);
-      state.variantPrice = parseInt(sw.dataset.variantPrice, 10);
-      if (nameEl) nameEl.textContent = sw.title;
+      cb.classList.add('lien-qb__color-btn--active');
+
+      state.slots[slot] = {
+        id:    parseInt(cb.dataset.variantId, 10),
+        price: parseInt(cb.dataset.variantPrice, 10)
+      };
+
       updateSummary();
       updateBtn();
     });
   });
 
-  /* ── Summary ────────────────────────────────────────────── */
   function money(cents) {
     return '$' + (cents / 100).toFixed(2);
   }
 
   function updateSummary() {
-    if (!state.variantId) return;
-    var full  = state.variantPrice * state.qty;
+    var picked = state.slots.filter(function (s) { return s !== null; });
+    if (!picked.length) return;
+
+    var full = 0;
+    state.slots.forEach(function (s) {
+      if (s) full += s.price;
+    });
+
     var disc  = Math.round(full * state.discount / 100);
     var final = full - disc;
+
     totalEl.textContent = money(final);
-    if (state.discount > 0) {
+
+    if (state.discount > 0 && picked.length === state.qty) {
       totalWas.textContent   = money(full);
       totalSaved.textContent = 'You save ' + money(disc);
       totalWas.style.display   = '';
@@ -435,27 +457,29 @@
     }
   }
 
-  /* ── Button state ───────────────────────────────────────── */
   function updateBtn() {
-    if (!state.variantId) {
+    var missing = state.slots.filter(function (s) { return s === null; }).length;
+    if (missing > 0) {
       btn.disabled    = true;
-      btn.textContent = 'Select a color to continue';
-      return;
+      btn.textContent = missing === state.qty
+        ? 'Select a color to continue'
+        : 'Select ' + missing + ' more color' + (missing > 1 ? 's' : '');
+    } else {
+      btn.disabled    = false;
+      btn.textContent = 'Add ' + state.qty + (state.qty === 1 ? ' Set' : ' Sets') + ' to Cart';
     }
-    btn.disabled    = false;
-    btn.textContent = 'Add ' + state.qty + (state.qty === 1 ? ' Set' : ' Sets') + ' to Cart';
   }
 
-  /* ── Add to cart ────────────────────────────────────────── */
+  /* Add to cart */
   btn.addEventListener('click', function () {
-    if (!state.variantId) return;
-    btn.disabled    = true;
-    btn.textContent = 'Adding…';
+    if (state.slots.some(function (s) { return s === null; })) return;
 
-    var items = [];
-    for (var i = 0; i < state.qty; i++) {
-      items.push({ id: state.variantId, quantity: 1 });
-    }
+    btn.disabled    = true;
+    btn.textContent = 'Adding...';
+
+    var items = state.slots.map(function (s) {
+      return { id: s.id, quantity: 1 };
+    });
 
     fetch('/cart/add.js', {
       method:  'POST',
@@ -479,7 +503,7 @@
     });
   });
 
-  /* ── Init ───────────────────────────────────────────────── */
+  /* Init with first tier */
   var firstTier = section.querySelector('[data-tier]');
   if (firstTier) selectTier(firstTier);
 })();
@@ -497,7 +521,7 @@
       "type": "product",
       "id": "product",
       "label": "Product",
-      "info": "Leave blank on the product page — uses the current product automatically."
+      "info": "Leave blank on the product page - uses the current product automatically."
     },
     {
       "type": "text",
@@ -515,7 +539,7 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Stock up on sets — for you, your partner, or as gifts."
+      "default": "Stock up on sets - for you, your partner, or as gifts."
     },
     {
       "type": "range",
@@ -538,14 +562,14 @@
     {
       "type": "text",
       "id": "code_2",
-      "label": "Discount code — 2 sets",
+      "label": "Discount code - 2 sets",
       "default": "BUNDLE2",
       "info": "Must match a real code in your Shopify discounts"
     },
     {
       "type": "text",
       "id": "code_3",
-      "label": "Discount code — 3 sets",
+      "label": "Discount code - 3 sets",
       "default": "BUNDLE3",
       "info": "Must match a real code in your Shopify discounts"
     }
