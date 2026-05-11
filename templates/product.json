@@ -150,6 +150,18 @@
       "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
       "settings": {}
     },
+    "lien_quantity_breaks": {
+      "type": "lien-quantity-breaks",
+      "settings": {
+        "label": "Save More",
+        "heading": "Buy More, Save More",
+        "subtitle": "Stock up on sets — for you, your partner, or as gifts.",
+        "discount_2": 10,
+        "discount_3": 15,
+        "code_2": "BUNDLE2",
+        "code_3": "BUNDLE3"
+      }
+    },
     "lien_product_reviews": {
       "type": "lien-reviews",
       "blocks": {
@@ -241,6 +253,7 @@
   "order": [
     "main",
     "lien_product_trust",
+    "lien_quantity_breaks",
     "lien_product_reviews",
     "lien_product_faq",
     "lien_sticky_atc"

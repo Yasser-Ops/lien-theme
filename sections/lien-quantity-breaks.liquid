@@ -1,0 +1,652 @@
+{%- style -%}
+  /* ======================================================================
+     Lien Quantity Breaks
+     Buy More, Save More — tier selector + per-slot color pickers
+     ====================================================================== */
+
+  .lien-qb {
+    background-color: var(--lien-offwhite);
+    border-top: 1px solid var(--lien-border);
+  }
+
+  .lien-qb__inner {
+    max-width: var(--lien-container-max);
+    margin: 0 auto;
+    padding: var(--lien-section-padding-mobile) var(--lien-container-padding-mobile);
+  }
+
+  @media screen and (min-width: 768px) {
+    .lien-qb__inner {
+      padding: var(--lien-section-padding-desktop) var(--lien-container-padding);
+      max-width: 860px;
+    }
+  }
+
+  /* Header */
+  .lien-qb__header {
+    text-align: center;
+    margin-bottom: var(--lien-space-2xl);
+  }
+
+  .lien-qb__label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--lien-accent);
+    display: block;
+    margin-bottom: var(--lien-space-sm);
+  }
+
+  .lien-qb__title {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-2xl);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--lien-text);
+    margin: 0 0 var(--lien-space-sm) 0;
+  }
+
+  .lien-qb__subtitle {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-base);
+    color: var(--lien-text-secondary);
+    margin: 0;
+  }
+
+  /* Tier selector */
+  .lien-qb__tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--lien-space-md);
+    margin-bottom: var(--lien-space-2xl);
+  }
+
+  .lien-qb__tier {
+    position: relative;
+    background-color: var(--lien-white);
+    border: 2px solid var(--lien-border);
+    padding: var(--lien-space-lg) var(--lien-space-md);
+    cursor: pointer;
+    transition: all var(--lien-transition-base);
+    text-align: center;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lien-space-xs);
+    align-items: center;
+  }
+
+  .lien-qb__tier:hover {
+    border-color: var(--lien-accent-light);
+  }
+
+  .lien-qb__tier--active {
+    border-color: var(--lien-accent);
+    background-color: var(--lien-cream);
+  }
+
+  .lien-qb__tier--popular {
+    border-color: var(--lien-accent);
+  }
+
+  .lien-qb__tier-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    white-space: nowrap;
+  }
+
+  .lien-qb__tier-qty {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-lg);
+    color: var(--lien-text);
+  }
+
+  .lien-qb__tier-price {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xl);
+    color: var(--lien-dark);
+  }
+
+  .lien-qb__tier-original {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-sm);
+    color: var(--lien-text-muted);
+    text-decoration: line-through;
+  }
+
+  .lien-qb__tier-save {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
+    color: var(--lien-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background-color: rgba(123, 143, 166, 0.12);
+    padding: 3px 8px;
+    border-radius: var(--lien-radius-sm);
+  }
+
+  /* Color pickers */
+  .lien-qb__colors {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lien-space-lg);
+    margin-bottom: var(--lien-space-2xl);
+    min-height: 0;
+    transition: opacity var(--lien-transition-base);
+  }
+
+  .lien-qb__color-group {
+    display: flex;
+    align-items: center;
+    gap: var(--lien-space-lg);
+    flex-wrap: wrap;
+  }
+
+  .lien-qb__color-label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-sm);
+    color: var(--lien-text);
+    min-width: 48px;
+    flex-shrink: 0;
+  }
+
+  .lien-qb__color-name {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-sm);
+    color: var(--lien-text-secondary);
+    min-width: 48px;
+  }
+
+  .lien-qb__swatches {
+    display: flex;
+    gap: var(--lien-space-sm);
+    flex-wrap: wrap;
+  }
+
+  .lien-qb__swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--lien-transition-base);
+    outline: none;
+    position: relative;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+  }
+
+  .lien-qb__swatch:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 2px var(--lien-accent-light);
+  }
+
+  .lien-qb__swatch--active {
+    box-shadow: 0 0 0 2px var(--lien-white), 0 0 0 4px var(--lien-accent);
+    transform: scale(1.08);
+  }
+
+  .lien-qb__swatch:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .lien-qb__swatch--white {
+    box-shadow: 0 0 0 1px var(--lien-border);
+  }
+
+  .lien-qb__swatch--white.lien-qb__swatch--active {
+    box-shadow: 0 0 0 2px var(--lien-white), 0 0 0 4px var(--lien-accent);
+  }
+
+  /* Summary row */
+  .lien-qb__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--lien-space-md);
+    margin-bottom: var(--lien-space-lg);
+    flex-wrap: wrap;
+  }
+
+  .lien-qb__total {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-2xl);
+    color: var(--lien-dark);
+  }
+
+  .lien-qb__total-was {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-base);
+    color: var(--lien-text-muted);
+    text-decoration: line-through;
+  }
+
+  .lien-qb__total-saved {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-sm);
+    color: var(--lien-accent);
+    background-color: rgba(123, 143, 166, 0.12);
+    padding: 4px 12px;
+    border-radius: var(--lien-radius-sm);
+  }
+
+  /* CTA */
+  .lien-qb__btn {
+    width: 100%;
+    padding: 18px;
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: var(--lien-dark);
+    color: var(--lien-white);
+    border: none;
+    cursor: pointer;
+    transition: all var(--lien-transition-base);
+  }
+
+  .lien-qb__btn:hover:not(:disabled) {
+    background-color: var(--lien-dark-hover);
+  }
+
+  .lien-qb__btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .lien-qb__hint {
+    text-align: center;
+    margin-top: var(--lien-space-sm);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-xs);
+    color: var(--lien-text-muted);
+  }
+{%- endstyle -%}
+
+{%- assign qb_product = section.settings.product -%}
+{%- if qb_product == blank and product != blank -%}
+  {%- assign qb_product = product -%}
+{%- endif -%}
+
+{%- if qb_product != blank -%}
+
+<script type="application/json" id="lien-qb-data-{{ section.id }}">
+  {
+    "variants": [
+      {%- for variant in qb_product.variants -%}
+      {
+        "id": {{ variant.id }},
+        "title": {{ variant.title | json }},
+        "price": {{ variant.price }},
+        "available": {{ variant.available }},
+        "color": {{ variant.option1 | json }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ],
+    "discount2": {{ section.settings.discount_2 }},
+    "discount3": {{ section.settings.discount_3 }},
+    "code2": {{ section.settings.code_2 | json }},
+    "code3": {{ section.settings.code_3 | json }}
+  }
+</script>
+
+<section class="lien-qb" id="lien-qb-{{ section.id }}" data-lien-qb>
+
+  <div class="lien-qb__inner">
+
+    <div class="lien-qb__header">
+      <span class="lien-qb__label">{{ section.settings.label }}</span>
+      <h2 class="lien-qb__title">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="lien-qb__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- assign base_price = qb_product.selected_or_first_available_variant.price -%}
+    {%- assign d2 = section.settings.discount_2 -%}
+    {%- assign d3 = section.settings.discount_3 -%}
+    {%- assign price_2_full = base_price | times: 2 -%}
+    {%- assign price_3_full = base_price | times: 3 -%}
+    {%- assign price_2_disc = price_2_full | times: d2 | divided_by: 100 -%}
+    {%- assign price_2_final = price_2_full | minus: price_2_disc -%}
+    {%- assign price_3_disc = price_3_full | times: d3 | divided_by: 100 -%}
+    {%- assign price_3_final = price_3_full | minus: price_3_disc -%}
+
+    <div class="lien-qb__tiers" role="radiogroup" aria-label="Select bundle size">
+
+      <div class="lien-qb__tier lien-qb__tier--active" data-tier data-qty="1" data-discount="0" data-code="" role="radio" aria-checked="true" tabindex="0">
+        <span class="lien-qb__tier-qty">1 Set</span>
+        <span class="lien-qb__tier-price">{{ base_price | money }}</span>
+      </div>
+
+      <div class="lien-qb__tier lien-qb__tier--popular" data-tier data-qty="2" data-discount="{{ d2 }}" data-code="{{ section.settings.code_2 }}" role="radio" aria-checked="false" tabindex="0">
+        <span class="lien-qb__tier-badge">Most Popular</span>
+        <span class="lien-qb__tier-qty">2 Sets</span>
+        <span class="lien-qb__tier-price">{{ price_2_final | money }}</span>
+        <span class="lien-qb__tier-original">{{ price_2_full | money }}</span>
+        <span class="lien-qb__tier-save">Save {{ d2 }}%</span>
+      </div>
+
+      <div class="lien-qb__tier" data-tier data-qty="3" data-discount="{{ d3 }}" data-code="{{ section.settings.code_3 }}" role="radio" aria-checked="false" tabindex="0">
+        <span class="lien-qb__tier-qty">3 Sets</span>
+        <span class="lien-qb__tier-price">{{ price_3_final | money }}</span>
+        <span class="lien-qb__tier-original">{{ price_3_full | money }}</span>
+        <span class="lien-qb__tier-save">Save {{ d3 }}%</span>
+      </div>
+
+    </div>
+
+    <div class="lien-qb__colors" id="lien-qb-colors-{{ section.id }}"></div>
+
+    <div class="lien-qb__summary" id="lien-qb-summary-{{ section.id }}">
+      <span class="lien-qb__total" data-total></span>
+      <span class="lien-qb__total-was" data-total-was></span>
+      <span class="lien-qb__total-saved" data-total-saved></span>
+    </div>
+
+    <button type="button" class="lien-qb__btn" id="lien-qb-btn-{{ section.id }}" data-atc disabled>
+      Select a color to continue
+    </button>
+
+    <p class="lien-qb__hint">Discount applied automatically at checkout</p>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var section   = document.getElementById('lien-qb-{{ section.id }}');
+  var colorWrap = document.getElementById('lien-qb-colors-{{ section.id }}');
+  var btn       = document.getElementById('lien-qb-btn-{{ section.id }}');
+  var totalEl   = section.querySelector('[data-total]');
+  var totalWas  = section.querySelector('[data-total-was]');
+  var totalSaved= section.querySelector('[data-total-saved]');
+  if (!section) return;
+
+  var cfg      = JSON.parse(document.getElementById('lien-qb-data-{{ section.id }}').textContent);
+  var variants = cfg.variants;
+
+  var state = {
+    qty:      1,
+    discount: 0,
+    code:     '',
+    colors:   [null]   // array length = qty, each entry is a variant id or null
+  };
+
+  var colorMap = {
+    'black': '#1a1c22',
+    'pink':  '#e8a4b8',
+    'white': '#f0eeec',
+    'blue':  '#7b9ec4',
+    'beige': '#d4c4a8',
+    'gray':  '#9ca3af',
+    'grey':  '#9ca3af',
+    'red':   '#e57373',
+    'green': '#81b29a',
+    'purple':'#b39ddb',
+    'yellow':'#f9e07f'
+  };
+
+  function colorHex(name) {
+    return colorMap[(name || '').toLowerCase()] || '#aaa';
+  }
+
+  function money(cents) {
+    return '$' + (cents / 100).toFixed(2);
+  }
+
+  /* ── Tier selection ─────────────────────────────────────── */
+  section.querySelectorAll('[data-tier]').forEach(function (tier) {
+    tier.addEventListener('click', function () { selectTier(tier); });
+    tier.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectTier(tier); }
+    });
+  });
+
+  function selectTier(tierEl) {
+    section.querySelectorAll('[data-tier]').forEach(function (t) {
+      t.classList.remove('lien-qb__tier--active');
+      t.setAttribute('aria-checked', 'false');
+    });
+    tierEl.classList.add('lien-qb__tier--active');
+    tierEl.setAttribute('aria-checked', 'true');
+
+    state.qty      = parseInt(tierEl.dataset.qty, 10);
+    state.discount = parseInt(tierEl.dataset.discount || '0', 10);
+    state.code     = tierEl.dataset.code || '';
+    state.colors   = new Array(state.qty).fill(null);
+
+    renderColorPickers();
+    updateSummary();
+    updateBtn();
+  }
+
+  /* ── Color pickers ──────────────────────────────────────── */
+  function renderColorPickers() {
+    colorWrap.innerHTML = '';
+    for (var i = 0; i < state.qty; i++) {
+      colorWrap.appendChild(buildGroup(i));
+    }
+  }
+
+  function buildGroup(slot) {
+    var group = document.createElement('div');
+    group.className = 'lien-qb__color-group';
+
+    var label = document.createElement('span');
+    label.className = 'lien-qb__color-label';
+    label.textContent = state.qty === 1 ? 'Color' : 'Set ' + (slot + 1);
+
+    var nameEl = document.createElement('span');
+    nameEl.className = 'lien-qb__color-name';
+    nameEl.id = 'lien-qb-name-{{ section.id }}-' + slot;
+    nameEl.textContent = '—';
+
+    var swatchRow = document.createElement('div');
+    swatchRow.className = 'lien-qb__swatches';
+
+    variants.forEach(function (v) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'lien-qb__swatch';
+      var hex = colorHex(v.color || v.title);
+      btn.style.backgroundColor = hex;
+      btn.title = v.title;
+      btn.setAttribute('aria-label', v.title);
+      btn.dataset.variantId = v.id;
+      btn.dataset.slot = slot;
+
+      // White swatch border helper
+      if ((v.color || v.title).toLowerCase() === 'white') {
+        btn.classList.add('lien-qb__swatch--white');
+      }
+
+      if (!v.available) {
+        btn.disabled = true;
+        btn.title = v.title + ' (sold out)';
+      }
+
+      btn.addEventListener('click', function () {
+        selectColor(slot, v.id, v.title, swatchRow, nameEl);
+      });
+
+      swatchRow.appendChild(btn);
+    });
+
+    group.appendChild(label);
+    group.appendChild(swatchRow);
+    group.appendChild(nameEl);
+    return group;
+  }
+
+  function selectColor(slot, variantId, variantTitle, swatchRow, nameEl) {
+    state.colors[slot] = variantId;
+    swatchRow.querySelectorAll('.lien-qb__swatch').forEach(function (s) {
+      s.classList.toggle('lien-qb__swatch--active', parseInt(s.dataset.variantId, 10) === variantId);
+    });
+    nameEl.textContent = variantTitle;
+    updateSummary();
+    updateBtn();
+  }
+
+  /* ── Summary ────────────────────────────────────────────── */
+  function updateSummary() {
+    var basePrice = variants.length ? variants[0].price : 0;
+    var full      = basePrice * state.qty;
+    var disc      = Math.round(full * state.discount / 100);
+    var final     = full - disc;
+
+    totalEl.textContent   = money(final);
+    if (state.discount > 0) {
+      totalWas.textContent    = money(full);
+      totalSaved.textContent  = 'You save ' + money(disc);
+      totalWas.style.display  = '';
+      totalSaved.style.display= '';
+    } else {
+      totalWas.style.display   = 'none';
+      totalSaved.style.display = 'none';
+    }
+  }
+
+  /* ── Button state ───────────────────────────────────────── */
+  function updateBtn() {
+    var allPicked = state.colors.every(function (c) { return c !== null; });
+    btn.disabled = !allPicked;
+    if (allPicked) {
+      btn.textContent = 'Add ' + state.qty + (state.qty === 1 ? ' Set' : ' Sets') + ' to Cart';
+    } else {
+      var missing = state.colors.filter(function (c) { return c === null; }).length;
+      btn.textContent = missing === state.qty
+        ? 'Select a color to continue'
+        : 'Select ' + missing + ' more color' + (missing > 1 ? 's' : '');
+    }
+  }
+
+  /* ── Add to cart ────────────────────────────────────────── */
+  btn.addEventListener('click', function () {
+    if (state.colors.some(function (c) { return c === null; })) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Adding…';
+
+    var items = state.colors.map(function (id) { return { id: id, quantity: 1 }; });
+
+    fetch('/cart/add.js', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body:    JSON.stringify({ items: items })
+    })
+    .then(function (res) {
+      if (!res.ok) return res.json().then(function (d) { throw new Error(d.description || 'Cart error'); });
+      return res.json();
+    })
+    .then(function () {
+      var dest = state.code
+        ? '/checkout?discount=' + encodeURIComponent(state.code)
+        : '/checkout';
+      window.location.href = dest;
+    })
+    .catch(function (err) {
+      console.error('[Lien QB]', err);
+      btn.disabled = false;
+      updateBtn();
+    });
+  });
+
+  /* ── Init ───────────────────────────────────────────────── */
+  var firstTier = section.querySelector('[data-tier]');
+  if (firstTier) selectTier(firstTier);
+})();
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Quantity Breaks",
+  "tag": "section",
+  "class": "lien-qb-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Leave blank on the product page — uses the current product automatically."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Save More"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Buy More, Save More"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Stock up on sets — for you, your partner, or as gifts."
+    },
+    {
+      "type": "range",
+      "id": "discount_2",
+      "label": "Discount for 2 sets (%)",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "discount_3",
+      "label": "Discount for 3 sets (%)",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "text",
+      "id": "code_2",
+      "label": "Discount code — 2 sets",
+      "default": "BUNDLE2",
+      "info": "Must match a real code in your Shopify discounts"
+    },
+    {
+      "type": "text",
+      "id": "code_3",
+      "label": "Discount code — 3 sets",
+      "default": "BUNDLE3",
+      "info": "Must match a real code in your Shopify discounts"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    { "name": "Quantity Breaks" }
+  ]
+}
+{% endschema %}
