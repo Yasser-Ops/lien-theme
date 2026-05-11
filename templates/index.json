@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "aurelle_hero": {
@@ -9,7 +18,7 @@
         "button_label_1": "Shop Now",
         "button_link_1": "",
         "button_label_2": "Learn More",
-        "button_link_2": "",
+        "button_link_2": "shopify://policies/privacy-policy",
         "show_social_proof": true,
         "social_proof_text": "Trusted by 10,000+ customers"
       }
@@ -50,7 +59,12 @@
           }
         }
       },
-      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
       "settings": {}
     },
     "aurelle_featured_product": {
@@ -58,23 +72,37 @@
       "blocks": {
         "feature_1": {
           "type": "feature_bullet",
-          "settings": { "text": "Clinically proven results in 4 weeks" }
+          "settings": {
+            "text": "Clinically proven results in 4 weeks"
+          }
         },
         "feature_2": {
           "type": "feature_bullet",
-          "settings": { "text": "100% natural, clean ingredients" }
+          "settings": {
+            "text": "100% natural, clean ingredients"
+          }
         },
         "feature_3": {
           "type": "feature_bullet",
-          "settings": { "text": "Suitable for all skin types" }
+          "settings": {
+            "text": "Suitable for all skin types"
+          }
         },
         "feature_4": {
           "type": "feature_bullet",
-          "settings": { "text": "Cruelty-free & vegan formula" }
+          "settings": {
+            "text": "Cruelty-free & vegan formula"
+          }
         }
       },
-      "block_order": ["feature_1", "feature_2", "feature_3", "feature_4"],
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
       "settings": {
+        "product": "aurelle-glow-ritual-the-complete-set",
         "label": "Our Bestseller",
         "heading": "Featured Product",
         "description": "A carefully crafted formula designed to nourish and transform your skin.",
@@ -107,7 +135,11 @@
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "settings": {
         "label": "Simple Routine",
         "heading": "How It Works",
@@ -117,14 +149,75 @@
     "aurelle_comparison": {
       "type": "aurelle-comparison",
       "blocks": {
-        "cmp_1": { "type": "row", "settings": { "feature": "Clean, Transparent Ingredients", "aurelle_check": true, "others_partial": true } },
-        "cmp_2": { "type": "row", "settings": { "feature": "Dermatologist Tested & Approved", "aurelle_check": true, "others_partial": false } },
-        "cmp_3": { "type": "row", "settings": { "feature": "Cruelty-Free & Vegan Formula", "aurelle_check": true, "others_partial": false } },
-        "cmp_4": { "type": "row", "settings": { "feature": "No Harsh Chemicals or Parabens", "aurelle_check": true, "others_partial": false } },
-        "cmp_5": { "type": "row", "settings": { "feature": "30-Day Money-Back Guarantee", "aurelle_check": true, "others_partial": false } },
-        "cmp_6": { "type": "row", "settings": { "feature": "Sustainably Sourced & Packaged", "aurelle_check": true, "others_partial": true } }
+        "cmp_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Clean, Transparent Ingredients",
+            "aurelle_check": true,
+            "aurelle_value": "",
+            "others_partial": true,
+            "others_value": ""
+          }
+        },
+        "cmp_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Dermatologist Tested & Approved",
+            "aurelle_check": true,
+            "aurelle_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Cruelty-Free & Vegan Formula",
+            "aurelle_check": true,
+            "aurelle_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_4": {
+          "type": "row",
+          "settings": {
+            "feature": "No Harsh Chemicals or Parabens",
+            "aurelle_check": true,
+            "aurelle_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_5": {
+          "type": "row",
+          "settings": {
+            "feature": "30-Day Money-Back Guarantee",
+            "aurelle_check": true,
+            "aurelle_value": "",
+            "others_partial": false,
+            "others_value": ""
+          }
+        },
+        "cmp_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Sustainably Sourced & Packaged",
+            "aurelle_check": true,
+            "aurelle_value": "",
+            "others_partial": true,
+            "others_value": ""
+          }
+        }
       },
-      "block_order": ["cmp_1", "cmp_2", "cmp_3", "cmp_4", "cmp_5", "cmp_6"],
+      "block_order": [
+        "cmp_1",
+        "cmp_2",
+        "cmp_3",
+        "cmp_4",
+        "cmp_5",
+        "cmp_6"
+      ],
       "settings": {
         "label": "The Difference",
         "heading": "Aurelle vs. The Rest",
@@ -133,7 +226,7 @@
         "col_others": "Typical Brands",
         "cta_subtext": "Ready to experience the Aurelle difference?",
         "cta_label": "Shop Now",
-        "cta_link": ""
+        "cta_link": "shopify://products/aurelle-glow-ritual-the-complete-set"
       }
     },
     "aurelle_why": {
@@ -164,7 +257,11 @@
           }
         }
       },
-      "block_order": ["reason_1", "reason_2", "reason_3"],
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ],
       "settings": {
         "label": "The Difference",
         "heading": "Why Aurelle",
@@ -177,19 +274,23 @@
         "bundle_1": {
           "type": "bundle",
           "settings": {
+            "badge": "",
+            "featured": false,
             "name": "1 Bottle",
             "description": "Start your Aurelle ritual. Perfect for first-timers who want to experience the difference.",
             "items": "1 × Aurelle Serum (30ml)",
             "price": "$30",
+            "original_price": "",
             "savings_label": "",
             "button_label": "Add to Cart",
-            "featured": false
+            "button_link": ""
           }
         },
         "bundle_2": {
           "type": "bundle",
           "settings": {
             "badge": "Most Popular",
+            "featured": true,
             "name": "2 Bottles",
             "description": "The smart choice. Two months of radiant skin — and you save on every bottle.",
             "items": "2 × Aurelle Serum (30ml)",
@@ -197,12 +298,14 @@
             "original_price": "$60",
             "savings_label": "Save $5",
             "button_label": "Add to Cart",
-            "featured": true
+            "button_link": ""
           }
         },
         "bundle_3": {
           "type": "bundle",
           "settings": {
+            "badge": "",
+            "featured": false,
             "name": "3 Bottles",
             "description": "Commit to your glow. Stock up and enjoy the biggest saving per bottle.",
             "items": "3 × Aurelle Serum (30ml)",
@@ -210,11 +313,15 @@
             "original_price": "$90",
             "savings_label": "Save $10",
             "button_label": "Add to Cart",
-            "featured": false
+            "button_link": ""
           }
         }
       },
-      "block_order": ["bundle_1", "bundle_2", "bundle_3"],
+      "block_order": [
+        "bundle_1",
+        "bundle_2",
+        "bundle_3"
+      ],
       "settings": {
         "label": "Save More",
         "heading": "Bundle & Save",
@@ -229,12 +336,13 @@
           "settings": {
             "offer_label": "New Customer",
             "badge": "15% Off",
+            "featured": false,
             "title": "Welcome Gift",
             "description": "Get 15% off your very first order. Enter the code at checkout and experience Aurelle at a special price.",
             "code": "AURELLE15",
             "expiry": "Valid for new customers only",
             "button_label": "Shop Now",
-            "featured": false
+            "button_link": ""
           }
         },
         "offer_2": {
@@ -247,7 +355,8 @@
             "description": "Save 25% when you purchase any bundle. The easiest way to build a complete skincare ritual.",
             "code": "BUNDLE25",
             "expiry": "Offer ends Sunday at midnight",
-            "button_label": "Shop Bundles"
+            "button_label": "Shop Bundles",
+            "button_link": ""
           }
         },
         "offer_3": {
@@ -255,15 +364,21 @@
           "settings": {
             "offer_label": "Free Gift",
             "badge": "Gift with Purchase",
+            "featured": false,
             "title": "Free Facial Mist",
             "description": "Receive a complimentary Facial Mist (75ml) with any order over $100. No code needed.",
+            "code": "AURELLE15",
             "expiry": "While stocks last",
             "button_label": "Shop Now",
-            "featured": false
+            "button_link": ""
           }
         }
       },
-      "block_order": ["offer_1", "offer_2", "offer_3"],
+      "block_order": [
+        "offer_1",
+        "offer_2",
+        "offer_3"
+      ],
       "settings": {
         "label": "Exclusive Deals",
         "heading": "Current Offers",
@@ -301,22 +416,15 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
       "settings": {
         "label": "Real Results",
         "heading": "What Our Customers Say",
         "subtitle": "Join thousands who have transformed their skincare routine."
-      }
-    },
-    "aurelle_cta": {
-      "type": "aurelle-cta-banner",
-      "settings": {
-        "label": "Limited Time",
-        "heading": "Your Skin Deserves the Best",
-        "subtitle": "Experience the difference of clean, effective skincare. Start your journey today.",
-        "button_label": "Shop Now",
-        "button_link": "",
-        "color_scheme": "light"
       }
     },
     "aurelle_faq": {
@@ -365,7 +473,14 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
       "settings": {
         "label": "Got Questions?",
         "heading": "Frequently Asked Questions",
@@ -388,6 +503,17 @@
         "success_message": "Thank you — welcome to the Aurelle family.",
         "privacy_text": "We respect your privacy. Unsubscribe at any time.",
         "show_perks": true
+      }
+    },
+    "aurelle_cta": {
+      "type": "aurelle-cta-banner",
+      "settings": {
+        "label": "Limited Time",
+        "heading": "Your Skin Deserves the Best",
+        "subtitle": "Experience the difference of clean, effective skincare. Start your journey today.",
+        "button_label": "Shop Now",
+        "button_link": "",
+        "color_scheme": "light"
       }
     }
   },
