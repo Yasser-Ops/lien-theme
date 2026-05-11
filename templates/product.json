@@ -30,7 +30,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "swatch",
             "swatch_shape": "circle"
           }
         },
@@ -158,6 +158,66 @@
       ],
       "settings": {}
     },
+    "lien_product_bundles": {
+      "type": "lien-bundles",
+      "blocks": {
+        "bundle_1": {
+          "type": "bundle",
+          "settings": {
+            "badge": "",
+            "featured": false,
+            "name": "1 Set",
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets + gift box",
+            "price": "$24.99",
+            "original_price": "",
+            "savings_label": "",
+            "button_label": "Get 1 Set",
+            "button_link": "/products/magnetic-couple-bracelet-bundle-set?variant=49180762996978"
+          }
+        },
+        "bundle_2": {
+          "type": "bundle",
+          "settings": {
+            "badge": "Most Popular",
+            "featured": true,
+            "name": "2 Sets",
+            "description": "Two pairs — keep one and gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets + 2 gift boxes",
+            "price": "$44.99",
+            "original_price": "$49.98",
+            "savings_label": "Save $5",
+            "button_label": "Get 2 Sets",
+            "button_link": ""
+          }
+        },
+        "bundle_3": {
+          "type": "bundle",
+          "settings": {
+            "badge": "Best Value",
+            "featured": false,
+            "name": "3 Sets",
+            "description": "Share the love — for couples, siblings, and best friends. Biggest saving per set.",
+            "items": "6 bracelets + 3 gift boxes",
+            "price": "$59.99",
+            "original_price": "$74.97",
+            "savings_label": "Save $15",
+            "button_label": "Get 3 Sets",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "bundle_1",
+        "bundle_2",
+        "bundle_3"
+      ],
+      "settings": {
+        "label": "Save More",
+        "heading": "Bundle & Save",
+        "subtitle": "Order multiple sets and save — perfect for gifting to every couple you know."
+      }
+    },
     "lien_product_reviews": {
       "type": "lien-reviews",
       "blocks": {
@@ -259,6 +319,7 @@
   "order": [
     "main",
     "lien_product_trust",
+    "lien_product_bundles",
     "lien_product_reviews",
     "lien_product_faq",
     "lien_sticky_atc"
