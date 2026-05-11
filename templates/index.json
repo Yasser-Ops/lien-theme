@@ -147,20 +147,6 @@
         "subtitle": "Three simple steps to share something that lasts."
       }
     },
-    "lien_quantity_breaks_nT7KhT": {
-      "type": "lien-quantity-breaks",
-      "name": "Quantity Breaks",
-      "settings": {
-        "product": "bracelet",
-        "label": "Save More",
-        "heading": "Buy More, Save More",
-        "subtitle": "Stock up on sets - for you, your partner, or as gifts.",
-        "discount_2": 10,
-        "discount_3": 15,
-        "code_2": "BUNDLE2",
-        "code_3": "BUNDLE3"
-      }
-    },
     "lien_why": {
       "type": "lien-why-lien",
       "blocks": {
@@ -198,6 +184,20 @@
         "label": "The Difference",
         "heading": "Why Lien",
         "subtitle": "We believe in connections that last, details that matter, and gifts that actually mean something."
+      }
+    },
+    "lien_quantity_breaks_nT7KhT": {
+      "type": "lien-quantity-breaks",
+      "name": "Quantity Breaks",
+      "settings": {
+        "product": "bracelet",
+        "label": "Save More",
+        "heading": "Buy More, Save More",
+        "subtitle": "Stock up on sets - for you, your partner, or as gifts.",
+        "discount_2": 10,
+        "discount_3": 15,
+        "code_2": "BUNDLE2",
+        "code_3": "BUNDLE3"
       }
     },
     "lien_offers": {
@@ -477,8 +477,8 @@
     "lien_trust_bar",
     "lien_featured_product",
     "lien_how_it_works",
-    "lien_quantity_breaks_nT7KhT",
     "lien_why",
+    "lien_quantity_breaks_nT7KhT",
     "lien_offers",
     "lien_comparison",
     "lien_reviews",
