@@ -284,7 +284,7 @@
             "original_price": "",
             "savings_label": "",
             "button_label": "Get the Set",
-            "button_link": ""
+            "button_link": "shopify://products/magnetic-couple-bracelet-bundle-set"
           }
         },
         "bundle_2": {
@@ -299,7 +299,7 @@
             "original_price": "$49.98",
             "savings_label": "Save $5",
             "button_label": "Get 2 Sets",
-            "button_link": ""
+            "button_link": "shopify://products/magnetic-couple-bracelet-bundle-set"
           }
         },
         "bundle_3": {
@@ -314,7 +314,7 @@
             "original_price": "$74.97",
             "savings_label": "Save $15",
             "button_label": "Get 3 Sets",
-            "button_link": ""
+            "button_link": "shopify://products/magnetic-couple-bracelet-bundle-set"
           }
         }
       },
