@@ -269,6 +269,71 @@
         "subtitle": "We believe in connections that last, details that matter, and gifts that actually mean something."
       }
     },
+    "lien_bundles_qbK7bU": {
+      "type": "lien-bundles",
+      "blocks": {
+        "bundle_mLDDAt": {
+          "type": "bundle",
+          "settings": {
+            "badge": "",
+            "featured": false,
+            "name": "1 Set",
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets, Premium gift box",
+            "bundle_qty": 1,
+            "price": "$20",
+            "original_price": "",
+            "savings_label": "",
+            "button_label": "Get 1 Set",
+            "custom_link": ""
+          }
+        },
+        "bundle_xhzmF4": {
+          "type": "bundle",
+          "settings": {
+            "badge": "Most Popular",
+            "featured": true,
+            "name": "2 Sets",
+            "description": "Keep one, gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets, 2 premium gift boxes",
+            "bundle_qty": 2,
+            "price": "$35",
+            "original_price": "$40",
+            "savings_label": "Save $5",
+            "button_label": "Get 2 Sets",
+            "custom_link": ""
+          }
+        },
+        "bundle_XWa8R8": {
+          "type": "bundle",
+          "settings": {
+            "badge": "Best Value",
+            "featured": false,
+            "name": "3 Sets",
+            "description": "Share the love. Biggest saving per set.",
+            "items": "6 bracelets, 3 premium gift boxes",
+            "bundle_qty": 3,
+            "price": "$48",
+            "original_price": "$60",
+            "savings_label": "Save $12",
+            "button_label": "Get 3 Sets",
+            "custom_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "bundle_mLDDAt",
+        "bundle_xhzmF4",
+        "bundle_XWa8R8"
+      ],
+      "name": "Lien Bundles",
+      "settings": {
+        "product": "magnetic-couple-bracelet-bundle-set",
+        "label": "Save More",
+        "heading": "Bundle & Save",
+        "subtitle": "The more love you share, the more you save."
+      }
+    },
     "lien_offers": {
       "type": "lien-offers",
       "blocks": {
@@ -465,6 +530,7 @@
     "lien_how_it_works",
     "lien_comparison",
     "lien_why",
+    "lien_bundles_qbK7bU",
     "lien_offers",
     "lien_reviews",
     "lien_faq",
