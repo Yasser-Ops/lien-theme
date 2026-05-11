@@ -127,7 +127,7 @@ product-info {
 
 /* Sale badge */
 .price .badge {
-  background-color: rgba(184, 149, 106, 0.12) !important;
+  background-color: rgba(123, 143, 166, 0.12) !important;
   color: var(--lien-accent) !important;
   font-family: var(--lien-font-heading) !important;
   font-weight: var(--lien-weight-semibold) !important;

@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -30,7 +21,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "swatch",
             "swatch_shape": "circle"
           }
         },
@@ -45,37 +36,32 @@
             "show_gift_card_recipient": false
           }
         },
+        "bundle_nudge": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<a href=\"#lien-product-bundles\" class=\"lien-bundle-nudge\"><span class=\"lien-bundle-nudge__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 12V22H4V12\"/><path d=\"M22 7H2v5h20V7z\"/><path d=\"M12 22V7\"/><path d=\"M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z\"/><path d=\"M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z\"/></svg></span><span class=\"lien-bundle-nudge__text\"><strong>Save up to $15</strong> — Buy 2 or 3 sets and pay less per pair</span><span class=\"lien-bundle-nudge__arrow\">→</span></a><style>.lien-bundle-nudge{display:flex;align-items:center;gap:1.2rem;padding:1.4rem 1.6rem;background-color:var(--lien-cream);border-left:3px solid var(--lien-accent);text-decoration:none;transition:all 0.2s ease;margin-top:0.8rem}.lien-bundle-nudge:hover{background-color:var(--lien-cream-dark)}.lien-bundle-nudge__icon{flex-shrink:0;width:2rem;height:2rem;color:var(--lien-accent)}.lien-bundle-nudge__icon svg{width:100%;height:100%}.lien-bundle-nudge__text{font-family:var(--lien-font-body);font-size:var(--lien-text-sm);color:var(--lien-text-secondary);line-height:1.4;flex-grow:1}.lien-bundle-nudge__text strong{font-family:var(--lien-font-heading);font-weight:var(--lien-weight-semibold);color:var(--lien-text)}.lien-bundle-nudge__arrow{font-family:var(--lien-font-heading);font-weight:var(--lien-weight-semibold);color:var(--lien-accent);font-size:var(--lien-text-md);flex-shrink:0}</style>"
+          }
+        },
         "trust_signals": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"lien-product-trust\"><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>Free shipping over $50</span><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>30-day guarantee</span><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>Secure checkout</span></div>"
+            "custom_liquid": "<div class=\"lien-product-trust\"><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M1 3h15v13H1z\"/><path d=\"M16 8h4l3 3v5h-7V8z\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>Free worldwide shipping</span><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>30-day guarantee</span><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>Secure checkout</span></div>"
           }
         },
-        "tab_how_to_use": {
+        "tab_whats_in_set": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "How to Use",
-            "icon": "none",
-            "content": "<p>Apply a small amount to clean, dry skin morning and evening. Gently massage using upward, circular motions until fully absorbed. For best results, use consistently for a minimum of four weeks.</p><p>Morning: follow with SPF 30+ to protect your skin throughout the day.</p>",
-            "page": ""
+            "heading": "What's in the Set",
+            "icon": "gift_card",
+            "content": "<p>Each Lien set includes <strong>2 bracelets</strong> — one for you, one for your partner:</p><ul><li>2 × braided rope cord bracelets (your chosen color)</li><li>2 × matching silver charm (heart or lock &amp; key)</li><li>Adjustable sliding knot — fits all wrist sizes</li><li>1 × premium gift box, ready to give</li></ul><p>Available colors: Black, Blue, Gray, Pink.<br>Available styles: Heart Charm, Lock &amp; Key.</p>"
           }
         },
-        "tab_ingredients": {
+        "tab_fit_care": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Key Ingredients",
-            "icon": "leaf",
-            "content": "<p><strong>Hyaluronic Acid</strong> — Deeply hydrates and plumps skin by attracting moisture from the environment.</p><p><strong>Niacinamide (Vitamin B3)</strong> — Brightens uneven tone, reduces pores, and strengthens the skin barrier.</p><p><strong>Encapsulated Retinol</strong> — Gently resurfaces and smooths fine lines with minimal irritation.</p><p><strong>Green Tea Extract</strong> — Antioxidant-rich protection against environmental stress.</p><p><strong>Peptide Complex</strong> — Supports collagen production for firmer, more elastic skin.</p>",
-            "page": ""
-          }
-        },
-        "tab_suitable_for": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Suitable For",
-            "icon": "check_mark",
-            "content": "<p>Formulated for all skin types. Especially beneficial for:</p><ul><li>Dry and dehydrated skin</li><li>Dull or uneven skin tone</li><li>Fine lines and early signs of aging</li><li>Sensitive skin seeking gentle active ingredients</li><li>First-time retinol users</li></ul>",
-            "page": ""
+            "heading": "Fit & Care",
+            "icon": "ruler",
+            "content": "<p><strong>Adjustable fit:</strong> Both bracelets use a sliding knot design — simply pull the loose ends to tighten or loosen. Fits wrist sizes from 14cm to 22cm.</p><p><strong>Daily wear:</strong> The braided cord is designed to be worn all day. It's water-resistant for everyday activities (handwashing, light rain).</p><p><strong>Care tips:</strong> Remove before swimming, bathing, or heavy exercise to preserve the cord quality over time. Avoid prolonged contact with perfumes or chemicals.</p>"
           }
         },
         "tab_shipping": {
@@ -83,8 +69,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "delivery_fast",
-            "content": "<p><strong>Free standard shipping</strong> on all orders over $50.</p><p>Orders are processed within 1–2 business days and typically arrive within 5–7 business days.</p><p><strong>30-day money-back guarantee.</strong> If you are not completely satisfied, return your product within 30 days for a full refund — no questions asked.</p>",
-            "page": ""
+            "content": "<p><strong>Free standard shipping</strong> on all orders, worldwide.</p><p>Orders are processed within 1–2 business days. Estimated delivery:</p><ul><li>US & Canada: 5–10 business days</li><li>Europe: 7–14 business days</li><li>Rest of world: 10–20 business days</li></ul><p><strong>30-day money-back guarantee.</strong> Not happy? Contact us within 30 days for a full refund — no questions asked.</p>"
           }
         }
       },
@@ -95,10 +80,10 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "bundle_nudge",
         "trust_signals",
-        "tab_how_to_use",
-        "tab_ingredients",
-        "tab_suitable_for",
+        "tab_whats_in_set",
+        "tab_fit_care",
         "tab_shipping"
       ],
       "settings": {
@@ -125,7 +110,7 @@
           "settings": {
             "icon": "shipping",
             "text": "Free Shipping",
-            "subtext": "On orders over $50"
+            "subtext": "On every order, worldwide"
           }
         },
         "trust_2": {
@@ -133,7 +118,7 @@
           "settings": {
             "icon": "guarantee",
             "text": "30-Day Guarantee",
-            "subtext": "Money-back promise"
+            "subtext": "Love it or your money back"
           }
         },
         "trust_3": {
@@ -141,25 +126,76 @@
           "settings": {
             "icon": "secure",
             "text": "Secure Checkout",
-            "subtext": "SSL encrypted"
+            "subtext": "SSL encrypted payment"
           }
         },
         "trust_4": {
           "type": "trust_item",
           "settings": {
-            "icon": "natural",
-            "text": "Clean Formula",
-            "subtext": "Dermatologist tested"
+            "icon": "star",
+            "text": "Gift-Ready Packaging",
+            "subtext": "Arrives in a premium box"
           }
         }
       },
-      "block_order": [
-        "trust_1",
-        "trust_2",
-        "trust_3",
-        "trust_4"
-      ],
+      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
       "settings": {}
+    },
+    "lien_product_bundles": {
+      "type": "lien-bundles",
+      "blocks": {
+        "bundle_1": {
+          "type": "bundle",
+          "settings": {
+            "badge": "",
+            "featured": false,
+            "name": "1 Set",
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets + gift box",
+            "price": "$24.99",
+            "original_price": "",
+            "savings_label": "",
+            "button_label": "Get 1 Set",
+            "button_link": ""
+          }
+        },
+        "bundle_2": {
+          "type": "bundle",
+          "settings": {
+            "badge": "Most Popular",
+            "featured": true,
+            "name": "2 Sets",
+            "description": "Two pairs — keep one and gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets + 2 gift boxes",
+            "price": "$44.99",
+            "original_price": "$49.98",
+            "savings_label": "Save $5",
+            "button_label": "Get 2 Sets",
+            "button_link": ""
+          }
+        },
+        "bundle_3": {
+          "type": "bundle",
+          "settings": {
+            "badge": "Best Value",
+            "featured": false,
+            "name": "3 Sets",
+            "description": "Share the love — for couples, siblings, and best friends. Biggest saving per set.",
+            "items": "6 bracelets + 3 gift boxes",
+            "price": "$59.99",
+            "original_price": "$74.97",
+            "savings_label": "Save $15",
+            "button_label": "Get 3 Sets",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": ["bundle_1", "bundle_2", "bundle_3"],
+      "settings": {
+        "label": "Save More",
+        "heading": "Bundle & Save",
+        "subtitle": "Order multiple sets and save — perfect for gifting to every couple you know."
+      }
     },
     "lien_product_reviews": {
       "type": "lien-reviews",
@@ -167,40 +203,36 @@
         "review_1": {
           "type": "review",
           "settings": {
-            "name": "Sarah M.",
+            "name": "Camille & Nico",
             "rating": 5,
-            "review_text": "I've been using this for three weeks and the difference is remarkable. My skin feels softer, looks brighter, and the fine lines around my eyes have visibly diminished.",
+            "review_text": "We ordered these for our anniversary and I cried when we opened the box. The quality is so much better than I expected. We wear them every single day now.",
             "verified": true
           }
         },
         "review_2": {
           "type": "review",
           "settings": {
-            "name": "Elena K.",
+            "name": "Jade R.",
             "rating": 5,
-            "review_text": "Finally a product that delivers on its promises. The texture is divine and a little goes a long way. My morning routine has never felt so luxurious.",
+            "review_text": "Long distance relationship and these bracelets make it feel like he's right here. The colors are beautiful and the gift box made it feel so special.",
             "verified": true
           }
         },
         "review_3": {
           "type": "review",
           "settings": {
-            "name": "Priya D.",
+            "name": "Marcus T.",
             "rating": 5,
-            "review_text": "As someone with sensitive skin, I'm always cautious. This formula is gentle yet effective. No irritation, just beautiful, healthy-looking skin.",
+            "review_text": "Bought the pink set as a gift and she absolutely loved it. The packaging alone is worth it. Such a simple but powerful idea.",
             "verified": true
           }
         }
       },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
+      "block_order": ["review_1", "review_2", "review_3"],
       "settings": {
-        "label": "Real Results",
-        "heading": "What Our Customers Say",
-        "subtitle": "Join thousands who have transformed their skincare routine."
+        "label": "Real Couples",
+        "heading": "What Couples Say",
+        "subtitle": "Join 50,000+ couples who wear their bond every day."
       }
     },
     "lien_product_faq": {
@@ -209,38 +241,33 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "When will I see results?",
-            "answer": "<p>Most customers notice a visible improvement in skin texture and radiance within 2–4 weeks of consistent use. For deeper concerns like fine lines, allow 6–8 weeks.</p>"
+            "question": "What colors and styles are available?",
+            "answer": "<p>The bracelets come in 4 colors: <strong>Black, Blue, Gray, and Pink</strong>. Each color is available in two charm styles: <strong>Heart Charm</strong> and <strong>Lock &amp; Key</strong>. Select your preference using the options above.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is it suitable for sensitive skin?",
-            "answer": "<p>Yes. Our formula uses encapsulated retinol and carefully balanced actives chosen to minimise irritation. We recommend a patch test before first use.</p>"
+            "question": "Will it fit my wrist?",
+            "answer": "<p>Yes — both bracelets are fully adjustable with a sliding knot. They fit wrist sizes from 14cm to 22cm. Simply pull the ends to tighten or loosen to your comfort.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "What is your return policy?",
-            "answer": "<p>We offer a <strong>30-day money-back guarantee</strong>. If you're not satisfied, contact us within 30 days for a full refund — no questions asked.</p>"
+            "question": "Can I wear it every day?",
+            "answer": "<p>Absolutely. The braided rope is designed for daily wear and is water-resistant for everyday activities. We recommend removing it before swimming or heavy exercise to keep it in the best condition.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "How long does one bottle last?",
-            "answer": "<p>One 30ml bottle typically lasts 6–8 weeks with twice-daily use (a pea-sized amount each application).</p>"
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a <strong>30-day money-back guarantee</strong>. If you're not completely satisfied, contact us within 30 days for a full refund — no questions asked.</p>"
           }
         }
       },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3",
-        "faq_4"
-      ],
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"],
       "settings": {
         "label": "Questions?",
         "heading": "Frequently Asked",
@@ -248,20 +275,20 @@
         "two_column": false,
         "bg_cream": true,
         "cta_text": "",
-        "cta_label": "",
-        "cta_link": ""
+        "cta_label": ""
       }
     },
     "lien_sticky_atc": {
       "type": "lien-sticky-atc",
       "settings": {
-        "button_text": "Add to Cart"
+        "button_text": "Get the Set"
       }
     }
   },
   "order": [
     "main",
     "lien_product_trust",
+    "lien_product_bundles",
     "lien_product_reviews",
     "lien_product_faq",
     "lien_sticky_atc"
