@@ -12,6 +12,7 @@
     "lien_hero": {
       "type": "lien-hero",
       "settings": {
+        "image": "shopify://shop_images/2.avif",
         "label": "Made for Two",
         "heading": "Wear Your Bond",
         "subtitle": "Magnetic couple bracelets that keep you connected — no matter the distance. One set, two souls.",
