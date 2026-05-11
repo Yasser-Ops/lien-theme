@@ -161,6 +161,45 @@
         "code_3": "BUNDLE3"
       }
     },
+    "lien_why": {
+      "type": "lien-why-lien",
+      "blocks": {
+        "reason_1": {
+          "type": "reason_card",
+          "settings": {
+            "icon": "heart",
+            "title": "Built for Couples",
+            "description": "Designed as a matched pair — two bracelets that belong together, just like you."
+          }
+        },
+        "reason_2": {
+          "type": "reason_card",
+          "settings": {
+            "icon": "sparkle",
+            "title": "Premium Materials",
+            "description": "High-quality cord and stainless steel charm. Durable, water-resistant, made to be worn daily."
+          }
+        },
+        "reason_3": {
+          "type": "reason_card",
+          "settings": {
+            "icon": "shield",
+            "title": "Gift-Ready Always",
+            "description": "Every order ships in a beautiful gift box — no wrapping needed. Perfect from day one."
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ],
+      "settings": {
+        "label": "The Difference",
+        "heading": "Why Lien",
+        "subtitle": "We believe in connections that last, details that matter, and gifts that actually mean something."
+      }
+    },
     "lien_comparison": {
       "type": "lien-comparison",
       "blocks": {
@@ -242,45 +281,6 @@
         "cta_subtext": "Ready to wear your bond?",
         "cta_label": "Shop the Set",
         "cta_link": ""
-      }
-    },
-    "lien_why": {
-      "type": "lien-why-lien",
-      "blocks": {
-        "reason_1": {
-          "type": "reason_card",
-          "settings": {
-            "icon": "heart",
-            "title": "Built for Couples",
-            "description": "Designed as a matched pair — two bracelets that belong together, just like you."
-          }
-        },
-        "reason_2": {
-          "type": "reason_card",
-          "settings": {
-            "icon": "sparkle",
-            "title": "Premium Materials",
-            "description": "High-quality cord and stainless steel charm. Durable, water-resistant, made to be worn daily."
-          }
-        },
-        "reason_3": {
-          "type": "reason_card",
-          "settings": {
-            "icon": "shield",
-            "title": "Gift-Ready Always",
-            "description": "Every order ships in a beautiful gift box — no wrapping needed. Perfect from day one."
-          }
-        }
-      },
-      "block_order": [
-        "reason_1",
-        "reason_2",
-        "reason_3"
-      ],
-      "settings": {
-        "label": "The Difference",
-        "heading": "Why Lien",
-        "subtitle": "We believe in connections that last, details that matter, and gifts that actually mean something."
       }
     },
     "lien_offers": {
@@ -478,8 +478,8 @@
     "lien_featured_product",
     "lien_how_it_works",
     "lien_quantity_breaks_CRpgbR",
-    "lien_comparison",
     "lien_why",
+    "lien_comparison",
     "lien_offers",
     "lien_reviews",
     "lien_faq",
