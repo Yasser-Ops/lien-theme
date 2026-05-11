@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "bundle_page": {
+      "type": "lien-bundle-page",
+      "blocks": {
+        "card_1": {
+          "type": "card_content",
+          "settings": {
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets, Premium gift box"
+          }
+        },
+        "card_2": {
+          "type": "card_content",
+          "settings": {
+            "description": "Keep one, gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets, 2 premium gift boxes"
+          }
+        },
+        "card_3": {
+          "type": "card_content",
+          "settings": {
+            "description": "Share the love. Biggest saving per set.",
+            "items": "6 bracelets, 3 premium gift boxes"
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3"],
+      "settings": {
+        "label": "Save More",
+        "heading": "Bundle & Save",
+        "subtitle": "The more love you share, the more you save.",
+        "featured_index": "2",
+        "button_text": "Add to Cart"
+      }
+    },
+    "bundle_trust": {
+      "type": "lien-trust-bar",
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shipping",
+            "text": "Free Shipping",
+            "subtext": "On every order, worldwide"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-Day Guarantee",
+            "subtext": "Love it or your money back"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "secure",
+            "text": "Secure Checkout",
+            "subtext": "SSL encrypted payment"
+          }
+        },
+        "trust_4": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "star",
+            "text": "Gift-Ready Packaging",
+            "subtext": "Arrives in a premium box"
+          }
+        }
+      },
+      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
+      "settings": {}
+    }
+  },
+  "order": ["bundle_page", "bundle_trust"]
+}

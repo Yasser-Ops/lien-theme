@@ -1,7 +1,8 @@
 {%- style -%}
   /* ======================================================================
      Lien Bundles
-     Product bundle showcase with value pricing
+     Visual bundle showcase — buttons redirect to product page where
+     Pumper Bundles handles the actual purchase flow
      ====================================================================== */
 
   .lien-bundles {
@@ -134,7 +135,6 @@
     transform: scale(1.03);
   }
 
-  /* Image placeholder */
   .lien-bundles__image-placeholder {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -232,7 +232,7 @@
   }
 
   .lien-bundles__savings {
-    background-color: rgba(184, 149, 106, 0.12);
+    background-color: rgba(123, 143, 166, 0.12);
     color: var(--lien-accent);
     font-family: var(--lien-font-heading);
     font-weight: var(--lien-weight-semibold);
@@ -259,8 +259,6 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
     transition: all var(--lien-transition-base);
   }
 
@@ -281,18 +279,9 @@
   .lien-bundles__btn--dark:hover {
     background-color: var(--lien-dark-hover);
   }
-
-  .lien-bundles__btn--outline {
-    background-color: transparent;
-    color: var(--lien-dark);
-    border: 1.5px solid var(--lien-dark);
-  }
-
-  .lien-bundles__btn--outline:hover {
-    background-color: var(--lien-dark);
-    color: var(--lien-white);
-  }
 {%- endstyle -%}
+
+{%- assign bundle_product = section.settings.product -%}
 
 <section class="lien-bundles" id="lien-bundles-{{ section.id }}">
   <div class="lien-bundles__inner">
@@ -311,6 +300,13 @@
       {%- for block in section.blocks -%}
         {%- assign btn_style = 'dark' -%}
         {%- if block.settings.featured -%}{%- assign btn_style = 'gold' -%}{%- endif -%}
+
+        {%- comment -%} Build the product page URL with bundle quantity param for Pumper auto-select {%- endcomment -%}
+        {%- if bundle_product != blank -%}
+          {%- assign card_url = bundle_product.url | append: '?bundle=' | append: block.settings.bundle_qty | append: '#pumper-widget' -%}
+        {%- else -%}
+          {%- assign card_url = block.settings.custom_link | default: '#' -%}
+        {%- endif -%}
 
         <div
           class="lien-bundles__card{% if block.settings.featured %} lien-bundles__card--featured{% endif %}"
@@ -365,10 +361,7 @@
 
             {%- if block.settings.button_label != blank -%}
               <div class="lien-bundles__cta">
-                <a
-                  href="{{ block.settings.button_link }}"
-                  class="lien-bundles__btn lien-bundles__btn--{{ btn_style }}"
-                >
+                <a href="{{ card_url }}" class="lien-bundles__btn lien-bundles__btn--{{ btn_style }}">
                   {{ block.settings.button_label }}
                 </a>
               </div>
@@ -388,6 +381,12 @@
   "class": "lien-bundles-section",
   "settings": [
     {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Links each bundle card to this product's page. Pumper Bundles on the product page handles the actual purchase."
+    },
+    {
       "type": "text",
       "id": "label",
       "label": "Label",
@@ -403,7 +402,7 @@
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Stock up and save. The more you invest in your skin, the more you save."
+      "default": "The more love you share, the more you save."
     }
   ],
   "blocks": [
@@ -419,46 +418,52 @@
         {
           "type": "text",
           "id": "badge",
-          "label": "Badge (e.g. Most Popular)",
-          "info": "Appears as a pill at the top of the card. Leave blank to hide."
+          "label": "Badge",
+          "info": "e.g. Most Popular — leave blank to hide"
         },
         {
           "type": "checkbox",
           "id": "featured",
-          "label": "Featured bundle",
+          "label": "Featured",
           "default": false,
-          "info": "Adds gold border and gold CTA button"
+          "info": "Adds gold border and gold button"
         },
         {
           "type": "text",
           "id": "name",
           "label": "Bundle name",
-          "default": "1 Bottle"
+          "default": "1 Set"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Short description",
-          "default": "Start your Lien ritual. Perfect for first-timers."
+          "label": "Short description"
         },
         {
           "type": "textarea",
           "id": "items",
           "label": "Included items (comma-separated)",
-          "default": "1 × Lien Serum (30ml)",
-          "info": "Separate each item with a comma"
+          "info": "e.g. 2 × Magnetic Couple Bracelet Set, Premium gift box"
+        },
+        {
+          "type": "number",
+          "id": "bundle_qty",
+          "label": "Bundle quantity",
+          "default": 1,
+          "info": "Passed as ?bundle=N in the URL so Pumper can auto-select the right offer"
         },
         {
           "type": "text",
           "id": "price",
-          "label": "Bundle price",
-          "default": "$30"
+          "label": "Display price",
+          "default": "$20",
+          "info": "Match this to what you configured in Pumper"
         },
         {
           "type": "text",
           "id": "original_price",
           "label": "Original price (crossed out)",
-          "info": "Leave blank for single-quantity option"
+          "info": "Leave blank to hide"
         },
         {
           "type": "text",
@@ -470,12 +475,13 @@
           "type": "text",
           "id": "button_label",
           "label": "Button label",
-          "default": "Add to Cart"
+          "default": "Get this Bundle"
         },
         {
           "type": "url",
-          "id": "button_link",
-          "label": "Button link"
+          "id": "custom_link",
+          "label": "Custom link",
+          "info": "Overrides the auto-generated product link. Use only if no product is selected above."
         }
       ]
     }
@@ -487,12 +493,12 @@
         {
           "type": "bundle",
           "settings": {
-            "name": "1 Bottle",
-            "description": "Start your Lien ritual. Perfect for first-timers who want to experience the difference.",
-            "items": "1 × Lien Serum (30ml)",
-            "price": "$30",
-            "savings_label": "",
-            "button_label": "Add to Cart",
+            "name": "1 Set",
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets, Premium gift box",
+            "bundle_qty": 1,
+            "price": "$20",
+            "button_label": "Get 1 Set",
             "featured": false
           }
         },
@@ -500,26 +506,29 @@
           "type": "bundle",
           "settings": {
             "badge": "Most Popular",
-            "name": "2 Bottles",
-            "description": "The smart choice. Two months of radiant skin — and you save on every bottle.",
-            "items": "2 × Lien Serum (30ml)",
-            "price": "$55",
-            "original_price": "$60",
+            "name": "2 Sets",
+            "description": "Keep one, gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets, 2 premium gift boxes",
+            "bundle_qty": 2,
+            "price": "$35",
+            "original_price": "$40",
             "savings_label": "Save $5",
-            "button_label": "Add to Cart",
+            "button_label": "Get 2 Sets",
             "featured": true
           }
         },
         {
           "type": "bundle",
           "settings": {
-            "name": "3 Bottles",
-            "description": "Commit to your glow. Stock up and enjoy the biggest saving per bottle.",
-            "items": "3 × Lien Serum (30ml)",
-            "price": "$80",
-            "original_price": "$90",
-            "savings_label": "Save $10",
-            "button_label": "Add to Cart",
+            "badge": "Best Value",
+            "name": "3 Sets",
+            "description": "Share the love. Biggest saving per set.",
+            "items": "6 bracelets, 3 premium gift boxes",
+            "bundle_qty": 3,
+            "price": "$48",
+            "original_price": "$60",
+            "savings_label": "Save $12",
+            "button_label": "Get 3 Sets",
             "featured": false
           }
         }

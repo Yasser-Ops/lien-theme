@@ -1,0 +1,77 @@
+{%- comment -%}
+  Pumper Bridge — no visible output.
+  Reads ?bundle=N from the URL and auto-scrolls + auto-selects the matching
+  Pumper Bundles offer on the product page.
+{%- endcomment -%}
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var bundleQty = parseInt(params.get('bundle'), 10);
+  if (!bundleQty) return;
+
+  function trySelectBundle() {
+    // Common Pumper Bundles container selectors — covers different Pumper versions
+    var containers = [
+      document.querySelector('.pumper-bundles'),
+      document.querySelector('[data-pumper-bundles]'),
+      document.querySelector('pumper-bundle-widget'),
+      document.querySelector('.bundlers-widget'),
+      document.querySelector('[class*="pumper"]'),
+      document.querySelector('[id*="pumper"]')
+    ].filter(Boolean);
+
+    if (!containers.length) return false;
+
+    var container = containers[0];
+
+    // Scroll to Pumper's widget smoothly
+    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Try to find and click the bundle option matching bundleQty
+    // Pumper renders clickable offer cards — try common patterns
+    var candidates = container.querySelectorAll(
+      '[data-quantity], [data-qty], [data-bundle-quantity], ' +
+      '.pumper-bundle-item, .pumper-offer, .bundle-option, ' +
+      '[class*="bundle-item"], [class*="offer-item"]'
+    );
+
+    candidates.forEach(function (el) {
+      var qty = parseInt(
+        el.dataset.quantity || el.dataset.qty || el.dataset.bundleQuantity || ''
+      , 10);
+
+      // Fallback: check if the element's text contains the quantity number
+      if (!qty) {
+        var text = el.textContent || '';
+        var match = text.match(/\b(\d+)\s*(x|×|set|sets|pack|packs|item|items|piece|pieces)\b/i);
+        if (match) qty = parseInt(match[1], 10);
+      }
+
+      if (qty === bundleQty) el.click();
+    });
+
+    return true;
+  }
+
+  // Pumper may load async — retry until found (max ~3s)
+  var attempts = 0;
+  var interval = setInterval(function () {
+    if (trySelectBundle() || ++attempts >= 15) clearInterval(interval);
+  }, 200);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Pumper Bridge",
+  "tag": "section",
+  "class": "lien-pumper-bridge",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Pumper Bridge"
+    }
+  ]
+}
+{% endschema %}

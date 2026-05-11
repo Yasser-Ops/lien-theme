@@ -269,66 +269,6 @@
         "subtitle": "We believe in connections that last, details that matter, and gifts that actually mean something."
       }
     },
-    "lien_bundles": {
-      "type": "lien-bundles",
-      "blocks": {
-        "bundle_1": {
-          "type": "bundle",
-          "settings": {
-            "badge": "",
-            "featured": false,
-            "name": "1 Set",
-            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
-            "items": "2 bracelets (1 black + 1 white)",
-            "price": "$24.99",
-            "original_price": "",
-            "savings_label": "",
-            "button_label": "Get the Set",
-            "button_link": "/products/magnetic-couple-bracelet-bundle-set?variant=49180762996978"
-          }
-        },
-        "bundle_2": {
-          "type": "bundle",
-          "settings": {
-            "badge": "Most Popular",
-            "featured": true,
-            "name": "2 Sets",
-            "description": "Two pairs — keep one and gift one. Perfect for couples and best friends.",
-            "items": "4 bracelets (2 pairs)",
-            "price": "$44.99",
-            "original_price": "$49.98",
-            "savings_label": "Save $5",
-            "button_label": "Get 2 Sets",
-            "button_link": "shopify://products/magnetic-couple-bracelet-bundle-set"
-          }
-        },
-        "bundle_3": {
-          "type": "bundle",
-          "settings": {
-            "badge": "Best Value",
-            "featured": false,
-            "name": "3 Sets",
-            "description": "Share the love — for couples, siblings, and best friends. Biggest saving per set.",
-            "items": "6 bracelets (3 pairs)",
-            "price": "$59.99",
-            "original_price": "$74.97",
-            "savings_label": "Save $15",
-            "button_label": "Get 3 Sets",
-            "button_link": "shopify://products/magnetic-couple-bracelet-bundle-set"
-          }
-        }
-      },
-      "block_order": [
-        "bundle_1",
-        "bundle_2",
-        "bundle_3"
-      ],
-      "settings": {
-        "label": "Save More",
-        "heading": "Bundle & Save",
-        "subtitle": "Order multiple sets and save — perfect for gifting to every couple you know."
-      }
-    },
     "lien_offers": {
       "type": "lien-offers",
       "blocks": {
@@ -516,38 +456,6 @@
         "button_link": "",
         "color_scheme": "dark"
       }
-    },
-    "1778509500e12a6323": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_3ba76f6_XgrfjM": {
-          "type": "ai_gen_block_3ba76f6",
-          "settings": {
-            "variant_id": "49180762996978",
-            "quantity": 1,
-            "button_text": "Get 1 Set",
-            "button_font_size": 16,
-            "desktop_width_percent": 100,
-            "button_color": "#1C1C1C",
-            "button_text_color": "#FAFAF8",
-            "button_hover_color": "#B8956A",
-            "button_hover_text_color": "#FFFFFF",
-            "button_radius": 0,
-            "button_border_thickness": 1,
-            "success_message": "Added to cart successfully!",
-            "error_message": "Unable to add to cart. Please try again.",
-            "success_bg_color": "#B8956A",
-            "success_text_color": "#FFFFFF",
-            "error_bg_color": "#D82C0D",
-            "error_text_color": "#FFFFFF"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_3ba76f6_XgrfjM"
-      ],
-      "settings": {}
     }
   },
   "order": [
@@ -557,12 +465,10 @@
     "lien_how_it_works",
     "lien_comparison",
     "lien_why",
-    "lien_bundles",
     "lien_offers",
     "lien_reviews",
     "lien_faq",
     "lien_newsletter",
-    "lien_cta",
-    "1778509500e12a6323"
+    "lien_cta"
   ]
 }

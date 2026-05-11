@@ -1,0 +1,612 @@
+{%- style -%}
+  /* ======================================================================
+     Lien Bundle Page
+     Product page section — renders product variants as interactive bundle
+     cards. Same visual design as the lien-bundles homepage section.
+     ====================================================================== */
+
+  .lien-bp {
+    background-color: var(--lien-offwhite);
+  }
+
+  .lien-bp__inner {
+    max-width: var(--lien-container-max);
+    margin: 0 auto;
+    padding: var(--lien-section-padding-mobile) var(--lien-container-padding-mobile);
+  }
+
+  @media screen and (min-width: 768px) {
+    .lien-bp__inner {
+      padding: var(--lien-section-padding-desktop) var(--lien-container-padding);
+    }
+  }
+
+  /* Header */
+  .lien-bp__header {
+    text-align: center;
+    margin-bottom: var(--lien-space-3xl);
+  }
+
+  .lien-bp__label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--lien-accent);
+    display: block;
+    margin-bottom: var(--lien-space-sm);
+  }
+
+  .lien-bp__title {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-3xl);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--lien-text);
+    margin: 0 0 var(--lien-space-md) 0;
+  }
+
+  .lien-bp__subtitle {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text-secondary);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* Grid */
+  .lien-bp__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--lien-space-lg);
+    align-items: start;
+  }
+
+  @media screen and (min-width: 640px) {
+    .lien-bp__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .lien-bp__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Card */
+  .lien-bp__card {
+    background-color: var(--lien-white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all var(--lien-transition-base);
+    cursor: pointer;
+  }
+
+  .lien-bp__card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--lien-shadow-lg);
+  }
+
+  .lien-bp__card--featured {
+    border: 2px solid var(--lien-accent);
+    transform: scale(1.02);
+  }
+
+  .lien-bp__card--featured:hover {
+    transform: scale(1.02) translateY(-4px);
+  }
+
+  /* Selected state */
+  .lien-bp__card--selected {
+    border: 2px solid var(--lien-dark);
+    box-shadow: var(--lien-shadow-lg);
+  }
+
+  .lien-bp__card--featured.lien-bp__card--selected {
+    border-color: var(--lien-accent);
+  }
+
+  /* Badge */
+  .lien-bp__badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 16px;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  /* Image */
+  .lien-bp__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--lien-cream);
+  }
+
+  .lien-bp__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--lien-transition-slow);
+  }
+
+  .lien-bp__card:hover .lien-bp__image img {
+    transform: scale(1.03);
+  }
+
+  .lien-bp__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: var(--lien-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lien-bp__image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--lien-transition-slow);
+  }
+
+  .lien-bp__card:hover .lien-bp__image-placeholder img {
+    transform: scale(1.03);
+  }
+
+  /* Body */
+  .lien-bp__body {
+    padding: var(--lien-space-xl);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lien-space-md);
+  }
+
+  .lien-bp__name {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-xl);
+    color: var(--lien-text);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .lien-bp__description {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-base);
+    color: var(--lien-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Items */
+  .lien-bp__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lien-space-xs);
+    padding-top: var(--lien-space-sm);
+    border-top: 1px solid var(--lien-border-light);
+  }
+
+  .lien-bp__item {
+    display: flex;
+    align-items: center;
+    gap: var(--lien-space-sm);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-base);
+    color: var(--lien-text-secondary);
+  }
+
+  .lien-bp__item-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--lien-accent);
+    flex-shrink: 0;
+  }
+
+  /* Pricing */
+  .lien-bp__pricing {
+    display: flex;
+    align-items: center;
+    gap: var(--lien-space-md);
+    flex-wrap: wrap;
+  }
+
+  .lien-bp__price {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-2xl);
+    color: var(--lien-dark);
+  }
+
+  .lien-bp__price-original {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text-muted);
+    text-decoration: line-through;
+  }
+
+  .lien-bp__savings {
+    background-color: rgba(123, 143, 166, 0.12);
+    color: var(--lien-accent);
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: var(--lien-radius-sm);
+  }
+
+  /* CTA */
+  .lien-bp__cta {
+    margin-top: auto;
+  }
+
+  .lien-bp__btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: all var(--lien-transition-base);
+  }
+
+  .lien-bp__btn--gold {
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+  }
+
+  .lien-bp__btn--gold:hover:not(:disabled) {
+    background-color: var(--lien-accent-hover);
+  }
+
+  .lien-bp__btn--dark {
+    background-color: var(--lien-dark);
+    color: var(--lien-white);
+  }
+
+  .lien-bp__btn--dark:hover:not(:disabled) {
+    background-color: var(--lien-dark-hover);
+  }
+
+  .lien-bp__btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+{%- endstyle -%}
+
+{%- assign featured_index = section.settings.featured_index | minus: 1 -%}
+
+<section class="lien-bp" id="lien-bp-{{ section.id }}">
+  <div class="lien-bp__inner">
+
+    <div class="lien-bp__header">
+      {%- if section.settings.label != blank -%}
+        <span class="lien-bp__label">{{ section.settings.label }}</span>
+      {%- endif -%}
+      <h1 class="lien-bp__title">
+        {{ section.settings.heading | default: product.title }}
+      </h1>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="lien-bp__subtitle">{{ section.settings.subtitle }}</p>
+      {%- elsif product.description != blank -%}
+        <p class="lien-bp__subtitle">{{ product.description | strip_html | truncate: 160 }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="lien-bp__grid">
+      {%- for variant in product.variants -%}
+        {%- assign idx = forloop.index0 -%}
+        {%- assign is_featured = false -%}
+        {%- if idx == featured_index -%}{%- assign is_featured = true -%}{%- endif -%}
+        {%- assign btn_style = 'dark' -%}
+        {%- if is_featured -%}{%- assign btn_style = 'gold' -%}{%- endif -%}
+
+        {%- comment -%} Optional editorial overlay from blocks {%- endcomment -%}
+        {%- assign overlay = section.blocks[idx] -%}
+
+        {%- comment -%} Savings calculation {%- endcomment -%}
+        {%- assign has_discount = false -%}
+        {%- if variant.compare_at_price > variant.price -%}
+          {%- assign has_discount = true -%}
+          {%- assign save_amount = variant.compare_at_price | minus: variant.price -%}
+        {%- endif -%}
+
+        {%- comment -%} Badge: block override → auto "Most Popular" for featured {%- endcomment -%}
+        {%- assign badge_text = '' -%}
+        {%- if overlay != blank and overlay.settings.badge != blank -%}
+          {%- assign badge_text = overlay.settings.badge -%}
+        {%- elsif is_featured -%}
+          {%- assign badge_text = 'Most Popular' -%}
+        {%- endif -%}
+
+        <div
+          class="lien-bp__card{% if is_featured %} lien-bp__card--featured{% endif %}"
+          data-variant-id="{{ variant.id }}"
+          role="button"
+          tabindex="0"
+        >
+          {%- if badge_text != blank -%}
+            <div class="lien-bp__badge">{{ badge_text }}</div>
+          {%- endif -%}
+
+          {%- comment -%} Image: from block overlay, else product featured image {%- endcomment -%}
+          {%- if overlay != blank and overlay.settings.image != blank -%}
+            <div class="lien-bp__image">
+              {{ overlay.settings.image | image_url: width: 800 | image_tag:
+                loading: 'lazy',
+                widths: '400, 600, 800',
+                sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
+              }}
+            </div>
+          {%- elsif product.featured_image != blank -%}
+            <div class="lien-bp__image-placeholder">
+              {{ product.featured_image | image_url: width: 800 | image_tag:
+                loading: 'lazy',
+                widths: '400, 600, 800',
+                sizes: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw'
+              }}
+            </div>
+          {%- endif -%}
+
+          <div class="lien-bp__body">
+
+            <h2 class="lien-bp__name">{{ variant.title }}</h2>
+
+            {%- if overlay != blank and overlay.settings.description != blank -%}
+              <p class="lien-bp__description">{{ overlay.settings.description }}</p>
+            {%- endif -%}
+
+            {%- if overlay != blank and overlay.settings.items != blank -%}
+              <ul class="lien-bp__items">
+                {%- assign items_list = overlay.settings.items | split: ',' -%}
+                {%- for item in items_list -%}
+                  <li class="lien-bp__item">
+                    <span class="lien-bp__item-dot"></span>
+                    {{ item | strip }}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+
+            <div class="lien-bp__pricing">
+              <span class="lien-bp__price">{{ variant.price | money }}</span>
+              {%- if has_discount -%}
+                <span class="lien-bp__price-original">{{ variant.compare_at_price | money }}</span>
+                <span class="lien-bp__savings">Save {{ save_amount | money }}</span>
+              {%- endif -%}
+            </div>
+
+            <div class="lien-bp__cta">
+              {%- if variant.available -%}
+                <button
+                  type="button"
+                  class="lien-bp__btn lien-bp__btn--{{ btn_style }}"
+                  data-add-bundle="{{ variant.id }}"
+                  data-label="{{ section.settings.button_text | escape }}"
+                >
+                  {{ section.settings.button_text }}
+                </button>
+              {%- else -%}
+                <button type="button" class="lien-bp__btn lien-bp__btn--dark" disabled>
+                  Sold Out
+                </button>
+              {%- endif -%}
+            </div>
+
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var section = document.getElementById('lien-bp-{{ section.id }}');
+  if (!section) return;
+
+  section.querySelectorAll('[data-add-bundle]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var variantId = parseInt(btn.dataset.addBundle, 10);
+      if (!variantId) return;
+
+      var originalLabel = btn.dataset.label || btn.textContent.trim();
+      btn.disabled = true;
+      btn.textContent = 'Adding…';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+        body: JSON.stringify({ id: variantId, quantity: 1 })
+      })
+      .then(function (res) {
+        if (!res.ok) return res.json().then(function (d) { throw new Error(d.description || 'Cart error'); });
+        return res.json();
+      })
+      .then(function () {
+        btn.textContent = 'Added ✓';
+        refreshCart();
+        setTimeout(function () {
+          btn.textContent = originalLabel;
+          btn.disabled = false;
+        }, 2000);
+      })
+      .catch(function (err) {
+        console.error('[Lien Bundle Page]', err);
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+      });
+    });
+  });
+
+  // Clicking anywhere on the card triggers its ATC button
+  section.querySelectorAll('.lien-bp__card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var btn = card.querySelector('[data-add-bundle]');
+      if (btn && !btn.disabled) btn.click();
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        var btn = card.querySelector('[data-add-bundle]');
+        if (btn && !btn.disabled) btn.click();
+      }
+    });
+  });
+
+  function refreshCart() {
+    fetch('/cart.js')
+      .then(function (r) { return r.json(); })
+      .then(function (cart) {
+        document.querySelectorAll('.cart-count-bubble').forEach(function (bubble) {
+          var ariaSpan = bubble.querySelector('span[aria-hidden]');
+          var srSpan   = bubble.querySelector('.visually-hidden');
+          if (ariaSpan) ariaSpan.textContent = cart.item_count;
+          if (srSpan)   srSpan.textContent   = cart.item_count + ' items';
+          bubble.classList.remove('hidden');
+        });
+        var cartDrawer = document.querySelector('cart-drawer');
+        if (cartDrawer && typeof cartDrawer.open === 'function') cartDrawer.open();
+      })
+      .catch(function () {});
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Bundle Page",
+  "tag": "section",
+  "class": "lien-bundle-page-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Save More"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Leave blank to use the product title",
+      "default": "Bundle & Save"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Leave blank to use the product description",
+      "default": "The more love you share, the more you save."
+    },
+    {
+      "type": "select",
+      "id": "featured_index",
+      "label": "Featured card",
+      "options": [
+        { "value": "1", "label": "1st variant" },
+        { "value": "2", "label": "2nd variant" },
+        { "value": "3", "label": "3rd variant" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card_content",
+      "name": "Card Content",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Optional content overlay for a card. Position matches variant order — first block = first variant."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card image",
+          "info": "Overrides the product image for this card"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "info": "Leave blank — featured card auto-shows 'Most Popular'"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Included items (comma-separated)",
+          "info": "e.g. 2 × Magnetic Couple Bracelet Set, Premium gift box"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Page",
+      "blocks": [
+        {
+          "type": "card_content",
+          "settings": {
+            "description": "One complete pair for the two of you.",
+            "items": "2 bracelets, Premium gift box"
+          }
+        },
+        {
+          "type": "card_content",
+          "settings": {
+            "description": "Keep one, gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets, 2 premium gift boxes"
+          }
+        },
+        {
+          "type": "card_content",
+          "settings": {
+            "description": "Share the love. Biggest saving per set.",
+            "items": "6 bracelets, 3 premium gift boxes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
