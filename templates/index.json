@@ -1,37 +1,28 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "aurelle_hero": {
-      "type": "aurelle-hero",
+    "lien_hero": {
+      "type": "lien-hero",
       "settings": {
-        "label": "Premium Skincare",
-        "heading": "Reveal Your Natural Radiance",
-        "subtitle": "Carefully crafted formulas that nourish, protect, and transform your skin with nature's finest ingredients.",
-        "button_label_1": "Shop Now",
-        "button_link_1": "shopify://products/aurelle-glow-ritual-the-complete-set",
-        "button_label_2": "Learn More",
-        "button_link_2": "shopify://policies/privacy-policy",
+        "label": "Made for Two",
+        "heading": "Wear Your Bond",
+        "subtitle": "Magnetic couple bracelets that keep you connected — no matter the distance. One set, two souls.",
+        "button_label_1": "Shop the Set",
+        "button_link_1": "",
+        "button_label_2": "Our Story",
+        "button_link_2": "",
         "show_social_proof": true,
-        "social_proof_text": "Trusted by 10,000+ customers"
+        "social_proof_text": "Loved by 50,000+ couples worldwide"
       }
     },
-    "aurelle_trust_bar": {
-      "type": "aurelle-trust-bar",
+    "lien_trust_bar": {
+      "type": "lien-trust-bar",
       "blocks": {
         "trust_1": {
           "type": "trust_item",
           "settings": {
             "icon": "shipping",
             "text": "Free Shipping",
-            "subtext": "On orders over $50"
+            "subtext": "On every order, worldwide"
           }
         },
         "trust_2": {
@@ -39,7 +30,7 @@
           "settings": {
             "icon": "guarantee",
             "text": "30-Day Guarantee",
-            "subtext": "Money-back promise"
+            "subtext": "Love it or your money back"
           }
         },
         "trust_3": {
@@ -47,124 +38,109 @@
           "settings": {
             "icon": "secure",
             "text": "Secure Checkout",
-            "subtext": "SSL encrypted"
+            "subtext": "SSL encrypted payment"
           }
         },
         "trust_4": {
           "type": "trust_item",
           "settings": {
-            "icon": "natural",
-            "text": "Clean Ingredients",
-            "subtext": "Dermatologist tested"
+            "icon": "star",
+            "text": "Gift-Ready Packaging",
+            "subtext": "Arrives in a premium box"
           }
         }
       },
-      "block_order": [
-        "trust_1",
-        "trust_2",
-        "trust_3",
-        "trust_4"
-      ],
+      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
       "settings": {}
     },
-    "aurelle_featured_product": {
-      "type": "aurelle-featured-product",
+    "lien_featured_product": {
+      "type": "lien-featured-product",
       "blocks": {
         "feature_1": {
           "type": "feature_bullet",
           "settings": {
-            "text": "Clinically proven results in 4 weeks"
+            "text": "Magnetic clasp — snaps together like you"
           }
         },
         "feature_2": {
           "type": "feature_bullet",
           "settings": {
-            "text": "100% natural, clean ingredients"
+            "text": "Set of 2 — one for each of you"
           }
         },
         "feature_3": {
           "type": "feature_bullet",
           "settings": {
-            "text": "Suitable for all skin types"
+            "text": "Adjustable fit — one size for all"
           }
         },
         "feature_4": {
           "type": "feature_bullet",
           "settings": {
-            "text": "Cruelty-free & vegan formula"
+            "text": "Ships in a premium gift box"
           }
         }
       },
-      "block_order": [
-        "feature_1",
-        "feature_2",
-        "feature_3",
-        "feature_4"
-      ],
+      "block_order": ["feature_1", "feature_2", "feature_3", "feature_4"],
       "settings": {
-        "product": "aurelle-glow-ritual-the-complete-set",
-        "label": "Our Bestseller",
-        "heading": "Featured Product",
-        "description": "A carefully crafted formula designed to nourish and transform your skin.",
-        "badge_text": "Bestseller",
-        "button_text": "Add to Cart"
+        "label": "The Signature Set",
+        "heading": "Magnetic Couple Bracelet Set",
+        "description": "Two bracelets, one connection. Our magnetic heart-charm set is designed for couples who want to carry each other — always.",
+        "badge_text": "Best Seller",
+        "button_text": "Get the Set"
       }
     },
-    "aurelle_how_it_works": {
-      "type": "aurelle-how-it-works",
+    "lien_how_it_works": {
+      "type": "lien-how-it-works",
       "blocks": {
         "step_1": {
           "type": "step",
           "settings": {
-            "title": "Cleanse",
-            "description": "Start with a gentle cleanse to prepare your skin for maximum absorption."
+            "title": "Order the Set",
+            "description": "Choose your style — black, white, or both. Ships as a complete pair in a premium gift box."
           }
         },
         "step_2": {
           "type": "step",
           "settings": {
-            "title": "Apply",
-            "description": "Apply a small amount to your face and neck using gentle upward motions."
+            "title": "Each Wear One",
+            "description": "One bracelet for you, one for them. The magnetic clasp symbolizes your pull toward each other."
           }
         },
         "step_3": {
           "type": "step",
           "settings": {
-            "title": "Glow",
-            "description": "See visible results within weeks as your skin transforms naturally."
+            "title": "Feel the Bond",
+            "description": "Wear it daily. A quiet reminder that no matter the distance, you're always connected."
           }
         }
       },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
+      "block_order": ["step_1", "step_2", "step_3"],
       "settings": {
-        "label": "Simple Routine",
+        "label": "The Process",
         "heading": "How It Works",
-        "subtitle": "Three simple steps to radiant, healthy skin every day."
+        "subtitle": "Three simple steps to share something that lasts."
       }
     },
-    "aurelle_comparison": {
-      "type": "aurelle-comparison",
+    "lien_comparison": {
+      "type": "lien-comparison",
       "blocks": {
         "cmp_1": {
           "type": "row",
           "settings": {
-            "feature": "Clean, Transparent Ingredients",
-            "aurelle_check": true,
-            "aurelle_value": "",
-            "others_partial": true,
+            "feature": "Comes as a Matched Pair",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": false,
             "others_value": ""
           }
         },
         "cmp_2": {
           "type": "row",
           "settings": {
-            "feature": "Dermatologist Tested & Approved",
-            "aurelle_check": true,
-            "aurelle_value": "",
+            "feature": "Premium Gift Box Included",
+            "lien_check": true,
+            "lien_value": "",
             "others_partial": false,
             "others_value": ""
           }
@@ -172,9 +148,9 @@
         "cmp_3": {
           "type": "row",
           "settings": {
-            "feature": "Cruelty-Free & Vegan Formula",
-            "aurelle_check": true,
-            "aurelle_value": "",
+            "feature": "Magnetic Heart Charm",
+            "lien_check": true,
+            "lien_value": "",
             "others_partial": false,
             "others_value": ""
           }
@@ -182,10 +158,10 @@
         "cmp_4": {
           "type": "row",
           "settings": {
-            "feature": "No Harsh Chemicals or Parabens",
-            "aurelle_check": true,
-            "aurelle_value": "",
-            "others_partial": false,
+            "feature": "Adjustable Fit for All Sizes",
+            "lien_check": true,
+            "lien_value": "",
+            "others_partial": true,
             "others_value": ""
           }
         },
@@ -193,8 +169,8 @@
           "type": "row",
           "settings": {
             "feature": "30-Day Money-Back Guarantee",
-            "aurelle_check": true,
-            "aurelle_value": "",
+            "lien_check": true,
+            "lien_value": "",
             "others_partial": false,
             "others_value": ""
           }
@@ -202,87 +178,76 @@
         "cmp_6": {
           "type": "row",
           "settings": {
-            "feature": "Sustainably Sourced & Packaged",
-            "aurelle_check": true,
-            "aurelle_value": "",
+            "feature": "Water-Resistant & Daily Wear",
+            "lien_check": true,
+            "lien_value": "",
             "others_partial": true,
             "others_value": ""
           }
         }
       },
-      "block_order": [
-        "cmp_1",
-        "cmp_2",
-        "cmp_3",
-        "cmp_4",
-        "cmp_5",
-        "cmp_6"
-      ],
+      "block_order": ["cmp_1", "cmp_2", "cmp_3", "cmp_4", "cmp_5", "cmp_6"],
       "settings": {
         "label": "The Difference",
-        "heading": "Aurelle vs. The Rest",
-        "subtitle": "Not all skincare is created equal. Here's why Aurelle stands apart.",
-        "col_aurelle": "Aurelle",
+        "heading": "Lien vs. The Rest",
+        "subtitle": "Not all couple bracelets are created equal. Here's why Lien stands apart.",
+        "col_lien": "Lien",
         "col_others": "Typical Brands",
-        "cta_subtext": "Ready to experience the Aurelle difference?",
-        "cta_label": "Shop Now",
-        "cta_link": "shopify://products/aurelle-glow-ritual-the-complete-set"
+        "cta_subtext": "Ready to wear your bond?",
+        "cta_label": "Shop the Set",
+        "cta_link": ""
       }
     },
-    "aurelle_why": {
-      "type": "aurelle-why-aurelle",
+    "lien_why": {
+      "type": "lien-why-lien",
       "blocks": {
         "reason_1": {
           "type": "reason_card",
           "settings": {
-            "icon": "leaf",
-            "title": "Clean Ingredients",
-            "description": "Every formula is crafted with naturally-derived, ethically-sourced ingredients."
+            "icon": "heart",
+            "title": "Built for Couples",
+            "description": "Designed as a matched pair — two bracelets that belong together, just like you."
           }
         },
         "reason_2": {
           "type": "reason_card",
           "settings": {
-            "icon": "lab",
-            "title": "Clinically Tested",
-            "description": "Backed by science and validated through rigorous dermatological testing."
+            "icon": "sparkle",
+            "title": "Premium Materials",
+            "description": "High-quality cord and stainless steel charm. Durable, water-resistant, made to be worn daily."
           }
         },
         "reason_3": {
           "type": "reason_card",
           "settings": {
-            "icon": "globe",
-            "title": "Sustainably Made",
-            "description": "Eco-conscious packaging and cruelty-free practices from formulation to delivery."
+            "icon": "shield",
+            "title": "Gift-Ready Always",
+            "description": "Every order ships in a beautiful gift box — no wrapping needed. Perfect from day one."
           }
         }
       },
-      "block_order": [
-        "reason_1",
-        "reason_2",
-        "reason_3"
-      ],
+      "block_order": ["reason_1", "reason_2", "reason_3"],
       "settings": {
         "label": "The Difference",
-        "heading": "Why Aurelle",
-        "subtitle": "We believe in formulas that work, ingredients that matter, and results you can see."
+        "heading": "Why Lien",
+        "subtitle": "We believe in connections that last, details that matter, and gifts that actually mean something."
       }
     },
-    "aurelle_bundles": {
-      "type": "aurelle-bundles",
+    "lien_bundles": {
+      "type": "lien-bundles",
       "blocks": {
         "bundle_1": {
           "type": "bundle",
           "settings": {
             "badge": "",
             "featured": false,
-            "name": "1 Bottle",
-            "description": "Start your Aurelle ritual. Perfect for first-timers who want to experience the difference.",
-            "items": "1 × Aurelle Serum (30ml)",
-            "price": "$30",
+            "name": "1 Set",
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets (1 black + 1 white)",
+            "price": "$24.99",
             "original_price": "",
             "savings_label": "",
-            "button_label": "Add to Cart",
+            "button_label": "Get the Set",
             "button_link": ""
           }
         },
@@ -291,55 +256,51 @@
           "settings": {
             "badge": "Most Popular",
             "featured": true,
-            "name": "2 Bottles",
-            "description": "The smart choice. Two months of radiant skin — and you save on every bottle.",
-            "items": "2 × Aurelle Serum (30ml)",
-            "price": "$55",
-            "original_price": "$60",
+            "name": "2 Sets",
+            "description": "Two pairs — keep one and gift one. Perfect for couples and best friends.",
+            "items": "4 bracelets (2 pairs)",
+            "price": "$44.99",
+            "original_price": "$49.98",
             "savings_label": "Save $5",
-            "button_label": "Add to Cart",
+            "button_label": "Get 2 Sets",
             "button_link": ""
           }
         },
         "bundle_3": {
           "type": "bundle",
           "settings": {
-            "badge": "",
+            "badge": "Best Value",
             "featured": false,
-            "name": "3 Bottles",
-            "description": "Commit to your glow. Stock up and enjoy the biggest saving per bottle.",
-            "items": "3 × Aurelle Serum (30ml)",
-            "price": "$80",
-            "original_price": "$90",
-            "savings_label": "Save $10",
-            "button_label": "Add to Cart",
+            "name": "3 Sets",
+            "description": "Share the love — for couples, siblings, and best friends. Biggest saving per set.",
+            "items": "6 bracelets (3 pairs)",
+            "price": "$59.99",
+            "original_price": "$74.97",
+            "savings_label": "Save $15",
+            "button_label": "Get 3 Sets",
             "button_link": ""
           }
         }
       },
-      "block_order": [
-        "bundle_1",
-        "bundle_2",
-        "bundle_3"
-      ],
+      "block_order": ["bundle_1", "bundle_2", "bundle_3"],
       "settings": {
         "label": "Save More",
         "heading": "Bundle & Save",
-        "subtitle": "Stock up and save. The more you invest in your skin, the more you save."
+        "subtitle": "Order multiple sets and save — perfect for gifting to every couple you know."
       }
     },
-    "aurelle_offers": {
-      "type": "aurelle-offers",
+    "lien_offers": {
+      "type": "lien-offers",
       "blocks": {
         "offer_1": {
           "type": "offer",
           "settings": {
-            "offer_label": "New Customer",
+            "offer_label": "New Couple",
             "badge": "15% Off",
             "featured": false,
-            "title": "Welcome Gift",
-            "description": "Get 15% off your very first order. Enter the code at checkout and experience Aurelle at a special price.",
-            "code": "AURELLE15",
+            "title": "First Order Gift",
+            "description": "Get 15% off your very first set. Enter the code at checkout and start wearing your bond.",
+            "code": "LIEN15",
             "expiry": "Valid for new customers only",
             "button_label": "Shop Now",
             "button_link": ""
@@ -352,8 +313,8 @@
             "badge": "Save 25%",
             "featured": true,
             "title": "Bundle Deal",
-            "description": "Save 25% when you purchase any bundle. The easiest way to build a complete skincare ritual.",
-            "code": "BUNDLE25",
+            "description": "Save 25% when you buy 2 or more sets. The easiest way to share the bond with everyone you love.",
+            "code": "BOND25",
             "expiry": "Offer ends Sunday at midnight",
             "button_label": "Shop Bundles",
             "button_link": ""
@@ -365,97 +326,89 @@
             "offer_label": "Free Gift",
             "badge": "Gift with Purchase",
             "featured": false,
-            "title": "Free Facial Mist",
-            "description": "Receive a complimentary Facial Mist (75ml) with any order over $100. No code needed.",
-            "code": "AURELLE15",
+            "title": "Free Gift Wrap",
+            "description": "Every order over $50 gets a handwritten gift card included. No code needed — automatic at checkout.",
+            "code": "",
             "expiry": "While stocks last",
             "button_label": "Shop Now",
             "button_link": ""
           }
         }
       },
-      "block_order": [
-        "offer_1",
-        "offer_2",
-        "offer_3"
-      ],
+      "block_order": ["offer_1", "offer_2", "offer_3"],
       "settings": {
         "label": "Exclusive Deals",
         "heading": "Current Offers",
-        "subtitle": "Limited-time offers to help you start your Aurelle ritual at exceptional value."
+        "subtitle": "Limited-time offers to help you start your Lien story at exceptional value."
       }
     },
-    "aurelle_reviews": {
-      "type": "aurelle-reviews",
+    "lien_reviews": {
+      "type": "lien-reviews",
       "blocks": {
         "review_1": {
           "type": "review",
           "settings": {
-            "name": "Sarah M.",
+            "name": "Camille & Nico",
             "rating": 5,
-            "review_text": "I've been using this for three weeks and the difference is remarkable. My skin feels softer, looks brighter, and the fine lines around my eyes have visibly diminished.",
+            "review_text": "We ordered these for our anniversary and I cried when we opened the box. The quality is so much better than I expected. We wear them every single day now.",
             "verified": true
           }
         },
         "review_2": {
           "type": "review",
           "settings": {
-            "name": "Elena K.",
+            "name": "Jade R.",
             "rating": 5,
-            "review_text": "Finally a product that delivers on its promises. The texture is divine and a little goes a long way. My morning routine has never felt so luxurious.",
+            "review_text": "Long distance relationship and these bracelets make it feel like he's right here. The magnetic snap is so satisfying. 10/10 would buy again for every couple I know.",
             "verified": true
           }
         },
         "review_3": {
           "type": "review",
           "settings": {
-            "name": "Priya D.",
+            "name": "Marcus T.",
             "rating": 5,
-            "review_text": "As someone with sensitive skin, I'm always cautious. This formula is gentle yet effective. No irritation, just beautiful, healthy-looking skin.",
+            "review_text": "Bought this as a gift and she absolutely loved it. The packaging alone is worth it. We matched them up the moment she opened the box. Such a simple but powerful idea.",
             "verified": true
           }
         }
       },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
+      "block_order": ["review_1", "review_2", "review_3"],
       "settings": {
-        "label": "Real Results",
-        "heading": "What Our Customers Say",
-        "subtitle": "Join thousands who have transformed their skincare routine."
+        "label": "Real Couples",
+        "heading": "What Couples Say",
+        "subtitle": "Join 50,000+ couples who wear their bond every day."
       }
     },
-    "aurelle_faq": {
-      "type": "aurelle-faq",
+    "lien_faq": {
+      "type": "lien-faq",
       "blocks": {
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "When will I see results?",
-            "answer": "<p>Most customers notice a visible improvement in skin texture and radiance within 2–4 weeks of consistent use. For deeper concerns like fine lines and uneven tone, allow 6–8 weeks for full results.</p>"
+            "question": "What's included in the set?",
+            "answer": "<p>Each Lien set includes 2 bracelets — one black cord and one white cord, both with a matching magnetic heart charm. They arrive in a premium gift box, ready to give or keep.</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Is Aurelle suitable for sensitive skin?",
-            "answer": "<p>Yes. Our formula uses encapsulated retinol and carefully balanced actives chosen to minimise irritation. We recommend doing a patch test before first use, as individual responses vary.</p>"
+            "question": "How does the magnetic clasp work?",
+            "answer": "<p>Each bracelet has a small magnetic tip. When the two bracelets are brought close together, they snap together instantly. It's a symbolic reminder that no matter how far apart you are, you're always drawn to each other.</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use Aurelle with other products?",
-            "answer": "<p>Absolutely. Aurelle layers well with other skincare. Apply after cleansing and toning, before heavier creams and oils. Always finish with SPF in the morning.</p>"
+            "question": "Is it adjustable? Will it fit?",
+            "answer": "<p>Yes — both bracelets are fully adjustable with a sliding knot design. They fit all wrist sizes comfortably and can be loosened or tightened in seconds.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Is the formula cruelty-free and vegan?",
-            "answer": "<p>Yes — Aurelle is 100% cruelty-free and vegan certified. We never test on animals and none of our ingredients are derived from animal sources.</p>"
+            "question": "Can I wear it in the shower or swimming?",
+            "answer": "<p>The cord is water-resistant and designed for daily wear. We recommend removing it before prolonged water exposure (like swimming) to preserve the cord's quality over time.</p>"
           }
         },
         "faq_5": {
@@ -468,23 +421,16 @@
         "faq_6": {
           "type": "faq_item",
           "settings": {
-            "question": "How long does one bottle last?",
-            "answer": "<p>One 30ml bottle typically lasts 6–8 weeks with twice-daily use. Our 2- and 3-bottle bundles offer the best value for maintaining a consistent routine.</p>"
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders are processed within 1–2 business days. Standard shipping takes 5–10 days worldwide. Expedited options are available at checkout.</p>"
           }
         }
       },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3",
-        "faq_4",
-        "faq_5",
-        "faq_6"
-      ],
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
       "settings": {
         "label": "Got Questions?",
         "heading": "Frequently Asked Questions",
-        "subtitle": "Everything you need to know about Aurelle.",
+        "subtitle": "Everything you need to know about Lien.",
         "two_column": true,
         "bg_cream": false,
         "cta_text": "Still have questions? We're here to help.",
@@ -492,43 +438,43 @@
         "cta_link": "/pages/contact"
       }
     },
-    "aurelle_newsletter": {
-      "type": "aurelle-newsletter",
+    "lien_newsletter": {
+      "type": "lien-newsletter",
       "settings": {
         "label": "Join the Community",
-        "heading": "Your Best Skin Starts Here",
-        "subtitle": "Subscribe for exclusive offers, skincare tips, and early access to new launches. No spam — ever.",
+        "heading": "For Couples Who Wear Their Story",
+        "subtitle": "Subscribe for exclusive offers, new drops, and couple content. No spam — ever.",
         "placeholder": "Your email address",
         "button_text": "Subscribe",
-        "success_message": "Thank you — welcome to the Aurelle family.",
+        "success_message": "Thank you — welcome to the Lien family.",
         "privacy_text": "We respect your privacy. Unsubscribe at any time.",
         "show_perks": true
       }
     },
-    "aurelle_cta": {
-      "type": "aurelle-cta-banner",
+    "lien_cta": {
+      "type": "lien-cta-banner",
       "settings": {
-        "label": "Limited Time",
-        "heading": "Your Skin Deserves the Best",
-        "subtitle": "Experience the difference of clean, effective skincare. Start your journey today.",
-        "button_label": "Shop Now",
+        "label": "For the Two of You",
+        "heading": "Made for the Two of You",
+        "subtitle": "One set. Two bracelets. A bond you can wear every day.",
+        "button_label": "Shop the Set",
         "button_link": "",
-        "color_scheme": "light"
+        "color_scheme": "dark"
       }
     }
   },
   "order": [
-    "aurelle_hero",
-    "aurelle_trust_bar",
-    "aurelle_featured_product",
-    "aurelle_how_it_works",
-    "aurelle_comparison",
-    "aurelle_why",
-    "aurelle_bundles",
-    "aurelle_offers",
-    "aurelle_reviews",
-    "aurelle_faq",
-    "aurelle_newsletter",
-    "aurelle_cta"
+    "lien_hero",
+    "lien_trust_bar",
+    "lien_featured_product",
+    "lien_how_it_works",
+    "lien_comparison",
+    "lien_why",
+    "lien_bundles",
+    "lien_offers",
+    "lien_reviews",
+    "lien_faq",
+    "lien_newsletter",
+    "lien_cta"
   ]
 }

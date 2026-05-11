@@ -1,0 +1,509 @@
+/* ==========================================================================
+   Lien — Base Design System
+   Modern romantic accessories brand tokens, utilities, and typography
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Colors */
+  --lien-accent: #7B8FA6;
+  --lien-accent-hover: #6B7E95;
+  --lien-accent-light: #9AAFC2;
+  --lien-cream: #EEF1F5;
+  --lien-cream-dark: #E2E7EE;
+  --lien-dark: #1A1C22;
+  --lien-dark-hover: #252830;
+  --lien-offwhite: #F7F9FC;
+  --lien-white: #FFFFFF;
+  --lien-text: #1A1C22;
+  --lien-text-secondary: #4A5568;
+  --lien-text-muted: #8896A8;
+  --lien-border: #DDE3EB;
+  --lien-border-light: #EBF0F5;
+  --lien-overlay: rgba(26, 28, 34, 0.4);
+
+  /* Typography */
+  --lien-font-heading: 'Outfit', sans-serif;
+  --lien-font-body: 'Inter', sans-serif;
+
+  /* Font Sizes — fluid with clamp (values ×1.6 to compensate for Dawn's 62.5% html font-size base) */
+  --lien-text-xs: clamp(1rem, 0.96rem + 0.16vw, 1.2rem);          /* 10-12px */
+  --lien-text-sm: clamp(1.2rem, 1.12rem + 0.32vw, 1.4rem);        /* 12-14px */
+  --lien-text-base: clamp(1.4rem, 1.36rem + 0.24vw, 1.6rem);      /* 14-16px */
+  --lien-text-md: clamp(1.6rem, 1.52rem + 0.32vw, 1.8rem);        /* 16-18px */
+  --lien-text-lg: clamp(1.8rem, 1.6rem + 0.64vw, 2.2rem);         /* 18-22px */
+  --lien-text-xl: clamp(2.2rem, 1.92rem + 0.96vw, 2.8rem);        /* 22-28px */
+  --lien-text-2xl: clamp(2.8rem, 2.4rem + 1.6vw, 4rem);           /* 28-40px */
+  --lien-text-3xl: clamp(3.2rem, 2.56rem + 2.4vw, 5.2rem);        /* 32-52px */
+  --lien-text-4xl: clamp(4rem, 3.2rem + 3.2vw, 6.4rem);           /* 40-64px */
+  --lien-text-5xl: clamp(4.8rem, 3.52rem + 4.8vw, 8rem);          /* 48-80px */
+
+  /* Font Weights */
+  --lien-weight-light: 300;
+  --lien-weight-regular: 400;
+  --lien-weight-medium: 500;
+  --lien-weight-semibold: 600;
+  --lien-weight-bold: 700;
+  --lien-weight-extrabold: 800;
+
+  /* Spacing */
+  --lien-space-xs: 0.5rem;    /* 8px */
+  --lien-space-sm: 0.75rem;   /* 12px */
+  --lien-space-md: 1rem;      /* 16px */
+  --lien-space-lg: 1.5rem;    /* 24px */
+  --lien-space-xl: 2rem;      /* 32px */
+  --lien-space-2xl: 3rem;     /* 48px */
+  --lien-space-3xl: 4rem;     /* 64px */
+  --lien-space-4xl: 6rem;     /* 96px */
+  --lien-space-5xl: 8rem;     /* 128px */
+
+  /* Section Spacing */
+  --lien-section-padding-desktop: 100px;
+  --lien-section-padding-mobile: 60px;
+  --lien-container-max: 1400px;
+  --lien-container-padding: 40px;
+  --lien-container-padding-mobile: 20px;
+
+  /* Transitions */
+  --lien-transition-fast: 150ms ease;
+  --lien-transition-base: 250ms ease;
+  --lien-transition-slow: 400ms ease;
+  --lien-transition-smooth: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Borders */
+  --lien-radius-sm: 4px;
+  --lien-radius-md: 8px;
+  --lien-radius-lg: 12px;
+  --lien-radius-full: 9999px;
+
+  /* Shadows */
+  --lien-shadow-sm: 0 1px 3px rgba(26, 28, 34, 0.05);
+  --lien-shadow-md: 0 4px 16px rgba(26, 28, 34, 0.08);
+  --lien-shadow-lg: 0 8px 32px rgba(26, 28, 34, 0.1);
+  --lien-shadow-glow: 0 0 20px rgba(123, 143, 166, 0.15);
+}
+
+
+/* --------------------------------------------------------------------------
+   2. BASE TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+
+.lien-heading {
+  font-family: var(--lien-font-heading);
+  font-weight: var(--lien-weight-bold);
+  color: var(--lien-text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.lien-heading--xl {
+  font-size: var(--lien-text-5xl);
+  font-weight: var(--lien-weight-extrabold);
+  letter-spacing: -0.03em;
+}
+
+.lien-heading--lg {
+  font-size: var(--lien-text-4xl);
+  font-weight: var(--lien-weight-extrabold);
+  letter-spacing: -0.03em;
+}
+
+.lien-heading--md {
+  font-size: var(--lien-text-3xl);
+}
+
+.lien-heading--sm {
+  font-size: var(--lien-text-2xl);
+}
+
+.lien-heading--xs {
+  font-size: var(--lien-text-xl);
+}
+
+.lien-body {
+  font-family: var(--lien-font-body);
+  font-weight: var(--lien-weight-regular);
+  color: var(--lien-text-secondary);
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.lien-body--lg {
+  font-size: var(--lien-text-lg);
+}
+
+.lien-body--md {
+  font-size: var(--lien-text-base);
+}
+
+.lien-body--sm {
+  font-size: var(--lien-text-sm);
+}
+
+.lien-label {
+  font-family: var(--lien-font-heading);
+  font-weight: var(--lien-weight-semibold);
+  font-size: var(--lien-text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--lien-text-muted);
+}
+
+.lien-subheading {
+  font-family: var(--lien-font-body);
+  font-weight: var(--lien-weight-regular);
+  font-size: var(--lien-text-md);
+  color: var(--lien-text-secondary);
+  line-height: 1.6;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
+
+.lien-container {
+  width: 100%;
+  max-width: var(--lien-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--lien-container-padding-mobile);
+  padding-right: var(--lien-container-padding-mobile);
+}
+
+@media screen and (min-width: 768px) {
+  .lien-container {
+    padding-left: var(--lien-container-padding);
+    padding-right: var(--lien-container-padding);
+  }
+}
+
+.lien-section {
+  padding-top: var(--lien-section-padding-mobile);
+  padding-bottom: var(--lien-section-padding-mobile);
+}
+
+@media screen and (min-width: 768px) {
+  .lien-section {
+    padding-top: var(--lien-section-padding-desktop);
+    padding-bottom: var(--lien-section-padding-desktop);
+  }
+}
+
+.lien-section--cream {
+  background-color: var(--lien-cream);
+}
+
+.lien-section--dark {
+  background-color: var(--lien-dark);
+}
+
+.lien-section--offwhite {
+  background-color: var(--lien-offwhite);
+}
+
+.lien-grid {
+  display: grid;
+  gap: var(--lien-space-lg);
+}
+
+.lien-grid--2 {
+  grid-template-columns: 1fr;
+}
+
+.lien-grid--3 {
+  grid-template-columns: 1fr;
+}
+
+.lien-grid--4 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .lien-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lien-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lien-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.lien-flex {
+  display: flex;
+}
+
+.lien-flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.lien-flex--between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lien-flex--column {
+  flex-direction: column;
+}
+
+.lien-text-center {
+  text-align: center;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS
+   -------------------------------------------------------------------------- */
+
+.lien-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lien-space-xs);
+  font-family: var(--lien-font-heading);
+  font-weight: var(--lien-weight-semibold);
+  font-size: var(--lien-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  padding: 16px 40px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--lien-transition-base);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lien-btn--accent {
+  background-color: var(--lien-accent);
+  color: var(--lien-white);
+}
+
+.lien-btn--accent:hover {
+  background-color: var(--lien-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--lien-shadow-md);
+}
+
+.lien-btn--dark {
+  background-color: var(--lien-dark);
+  color: var(--lien-white);
+}
+
+.lien-btn--dark:hover {
+  background-color: var(--lien-dark-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--lien-shadow-md);
+}
+
+.lien-btn--outline {
+  background-color: transparent;
+  color: var(--lien-dark);
+  border: 1.5px solid var(--lien-dark);
+}
+
+.lien-btn--outline:hover {
+  background-color: var(--lien-dark);
+  color: var(--lien-white);
+}
+
+.lien-btn--outline-accent {
+  background-color: transparent;
+  color: var(--lien-accent);
+  border: 1.5px solid var(--lien-accent);
+}
+
+.lien-btn--outline-accent:hover {
+  background-color: var(--lien-accent);
+  color: var(--lien-white);
+}
+
+.lien-btn--sm {
+  padding: 12px 28px;
+  font-size: var(--lien-text-xs);
+}
+
+.lien-btn--lg {
+  padding: 20px 52px;
+  font-size: var(--lien-text-sm);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. SECTION HEADERS (reusable pattern)
+   -------------------------------------------------------------------------- */
+
+.lien-section-header {
+  text-align: center;
+  margin-bottom: var(--lien-space-3xl);
+}
+
+.lien-section-header__label {
+  display: block;
+  margin-bottom: var(--lien-space-sm);
+}
+
+.lien-section-header__title {
+  margin-bottom: var(--lien-space-md);
+}
+
+.lien-section-header__subtitle {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. CARDS
+   -------------------------------------------------------------------------- */
+
+.lien-card {
+  background-color: var(--lien-white);
+  padding: var(--lien-space-xl);
+  transition: all var(--lien-transition-base);
+}
+
+.lien-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lien-shadow-lg);
+}
+
+.lien-card--dark {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lien-card--dark:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(123, 143, 166, 0.3);
+  box-shadow: var(--lien-shadow-glow);
+}
+
+
+/* --------------------------------------------------------------------------
+   7. ANIMATIONS
+   -------------------------------------------------------------------------- */
+
+@keyframes lien-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lien-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lien-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lien-animate-in {
+  animation: lien-fade-in 0.6s ease forwards;
+}
+
+.lien-animate-in-up {
+  animation: lien-fade-in-up 0.7s ease forwards;
+}
+
+.lien-animate-delay-1 { animation-delay: 0.1s; }
+.lien-animate-delay-2 { animation-delay: 0.2s; }
+.lien-animate-delay-3 { animation-delay: 0.3s; }
+.lien-animate-delay-4 { animation-delay: 0.4s; }
+
+
+/* --------------------------------------------------------------------------
+   8. DIVIDERS & DECORATIVE
+   -------------------------------------------------------------------------- */
+
+.lien-divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--lien-accent);
+  border: none;
+  margin: var(--lien-space-lg) 0;
+}
+
+.lien-divider--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lien-accent-text {
+  color: var(--lien-accent);
+}
+
+
+/* --------------------------------------------------------------------------
+   9. IMAGE UTILITIES
+   -------------------------------------------------------------------------- */
+
+.lien-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lien-img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lien-aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.lien-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.lien-aspect-landscape {
+  aspect-ratio: 4 / 3;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+
+.lien-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

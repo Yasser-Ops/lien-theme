@@ -39,7 +39,7 @@
         "trust_signals": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"aurelle-product-trust\"><span class=\"aurelle-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>Free shipping over $50</span><span class=\"aurelle-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>30-day guarantee</span><span class=\"aurelle-product-trust__item\"><svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>Secure checkout</span></div>"
+            "custom_liquid": "<div class=\"lien-product-trust\"><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>Free shipping over $50</span><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>30-day guarantee</span><span class=\"lien-product-trust__item\"><svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>Secure checkout</span></div>"
           }
         },
         "tab_how_to_use": {
@@ -104,8 +104,8 @@
         "padding_bottom": 36
       }
     },
-    "aurelle_product_trust": {
-      "type": "aurelle-trust-bar",
+    "lien_product_trust": {
+      "type": "lien-trust-bar",
       "blocks": {
         "trust_1": {
           "type": "trust_item",
@@ -143,8 +143,8 @@
       "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
       "settings": {}
     },
-    "aurelle_product_reviews": {
-      "type": "aurelle-reviews",
+    "lien_product_reviews": {
+      "type": "lien-reviews",
       "blocks": {
         "review_1": {
           "type": "review",
@@ -181,8 +181,8 @@
         "subtitle": "Join thousands who have transformed their skincare routine."
       }
     },
-    "aurelle_product_faq": {
-      "type": "aurelle-faq",
+    "lien_product_faq": {
+      "type": "lien-faq",
       "blocks": {
         "faq_1": {
           "type": "faq_item",
@@ -224,8 +224,8 @@
         "cta_label": ""
       }
     },
-    "aurelle_sticky_atc": {
-      "type": "aurelle-sticky-atc",
+    "lien_sticky_atc": {
+      "type": "lien-sticky-atc",
       "settings": {
         "button_text": "Add to Cart"
       }
@@ -233,9 +233,9 @@
   },
   "order": [
     "main",
-    "aurelle_product_trust",
-    "aurelle_product_reviews",
-    "aurelle_product_faq",
-    "aurelle_sticky_atc"
+    "lien_product_trust",
+    "lien_product_reviews",
+    "lien_product_faq",
+    "lien_sticky_atc"
   ]
 }

@@ -1,24 +1,24 @@
-# Aurelle — Shopify Theme Product Requirements Document (PRD)
+# Lien — Shopify Theme Product Requirements Document (PRD)
 
 ## Vision
 
-Aurelle is a premium modern beauty brand designed to feel:
+Lien is a modern romantic accessories brand designed to feel:
 
-- luxurious but minimal
-- feminine without being cliché
-- elegant without being cold
-- conversion-focused without looking “dropshippy”
-- editorial and cinematic rather than template-based
+- clean and minimal
+- romantic without being cheesy
+- editorial and cinematic
+- conversion-focused without looking "dropshippy"
+- modern and couple-oriented
 
 The store should emotionally communicate:
 
-> “This is a real premium beauty brand.”
+> "This is a real brand made for couples."
 
 The experience should feel closer to:
 
-- modern luxury skincare brands
-- high-end cosmetics campaigns
-- fashion editorial landing pages
+- modern minimalist jewelry brands
+- couple lifestyle editorial content
+- clean DTC accessories campaigns
 
 rather than:
 
@@ -32,28 +32,28 @@ rather than:
 
 ## Brand Name
 
-Aurelle
+Lien
 
 ## Brand Personality
 
-- refined
-- confident
-- feminine
 - modern
-- soft luxury
-- calm sophistication
-- premium simplicity
+- romantic
+- minimal
+- clean
+- confident
+- calm
+- editorial
 
 ## Emotional Goal
 
 Users should feel:
 
+- connection
+- love
 - trust
-- aspiration
-- elegance
-- self-care
-- exclusivity
-- confidence
+- modern elegance
+- gifting intent
+- "this is made for us"
 
 ---
 
@@ -63,13 +63,13 @@ Users should feel:
 
 The theme should use:
 
-- large elegant typography
-- soft spacing
-- asymmetrical layouts
-- cinematic product imagery
-- minimal clutter
+- large clean typography
+- cool-toned color palette
 - generous whitespace
+- cinematic product imagery
+- asymmetrical editorial layouts
 - premium micro-interactions
+- minimal decoration
 
 The site should never feel:
 
@@ -77,7 +77,7 @@ The site should never feel:
 - flashy
 - cheap
 - gimmicky
-- “AliExpress”
+- "AliExpress"
 - over-animated
 
 ---
@@ -86,50 +86,49 @@ The site should never feel:
 
 ## Core Palette
 
-### Gold
+### Accent (Blue-Slate)
 
 ```css
-#B8956A
+#7B8FA6
 ```
 
 Used for:
+- CTA buttons
 - highlights
-- accents
-- premium cues
-- luxury contrast
+- accent elements
+- hover states
 
-### Cream
+### Cool Off-White
 
 ```css
-#F5F0EB
+#EEF1F5
 ```
 
 Used for:
-- soft backgrounds
-- warmth
-- elegance
+- section backgrounds
+- card fills
 
 ### Dark
 
 ```css
-#1C1C1C
+#1A1C22
 ```
 
 Used for:
 - typography
+- dark sections
 - premium contrast
-- CTA grounding
 
-### Off White
+### Page Background
 
 ```css
-#FAFAF8
+#F7F9FC
 ```
 
 Used for:
-- page backgrounds
+- main page background
 - cleanliness
-- minimalism
+- modern minimalism
 
 ---
 
@@ -188,16 +187,16 @@ Sections should be individually manageable from the Shopify editor.
 
 ### Purpose
 
-Create immediate emotional impact.
+Create immediate emotional impact for couples.
 
 ### Requirements
 
 - split layout
-- cinematic imagery
+- cinematic product imagery
 - strong typography
 - elegant CTA buttons
 - social proof
-- minimal but premium copywriting
+- minimal but romantic copywriting
 
 ### Features
 
@@ -207,14 +206,6 @@ Create immediate emotional impact.
 - dual CTA buttons
 - optional proof area
 - responsive layout
-
-### UX Goal
-
-User should immediately understand:
-
-- this is a premium beauty brand
-- products are luxurious
-- the experience feels trustworthy
 
 ---
 
@@ -236,7 +227,7 @@ Reinforce trust and purchase confidence.
 - free shipping
 - money-back guarantee
 - secure checkout
-- dermatologist tested
+- ships as a gift set
 
 ---
 
@@ -279,16 +270,9 @@ Simplify the customer journey.
 
 Each step must be a block.
 
-Merchant should be able to:
-
-- add steps
-- remove steps
-- reorder steps
-- duplicate steps
-
 ---
 
-# 5. Why Aurelle
+# 5. Why Lien
 
 ### Purpose
 
@@ -311,7 +295,7 @@ Cards MUST be blocks.
 
 ### Purpose
 
-Provide emotional social proof.
+Provide emotional social proof from real couples.
 
 ### Requirements
 
@@ -325,12 +309,6 @@ Provide emotional social proof.
 
 Reviews MUST use blocks.
 
-Merchant must be able to:
-
-- add reviews
-- delete reviews
-- reorder reviews
-
 ---
 
 # 7. CTA Banner
@@ -342,7 +320,7 @@ Drive final conversion intent.
 ### Requirements
 
 - oversized typography
-- luxury spacing
+- generous spacing
 - strong CTA button
 - premium contrast
 - simple focused layout
@@ -353,31 +331,7 @@ Drive final conversion intent.
 
 ## Core Requirement
 
-Everything repetitive should use blocks.
-
-Avoid:
-
-```json
-feature_1
-feature_2
-feature_3
-```
-
-Prefer:
-
-```json
-blocks
-```
-
-because blocks allow:
-
-- add
-- delete
-- duplicate
-- reorder
-- insert between
-
-which is central to Shopify 2.0.
+Everything repetitive should use blocks, not numbered settings.
 
 ---
 
@@ -393,23 +347,13 @@ Use:
 - schema-driven settings
 - dynamic objects
 
-Avoid:
-
-- outdated filters
-- massive inline logic
-- repeated code
-- hardcoded repetitive settings
-
 ---
 
 # CSS Standards
 
-## Requirements
-
 Use:
 
 - CSS variables
-- utility-like consistency
 - responsive-first design
 - minimal animation
 - premium transitions
@@ -419,148 +363,30 @@ Avoid:
 - flashy gradients
 - excessive shadows
 - aggressive motion
-- cluttered spacing
 
 ---
 
 # JavaScript Standards
 
-## Philosophy
-
-JavaScript should enhance UX, not dominate it.
-
-### Use JS for:
-
-- quick add
-- sliders
-- animations
-- sticky CTA
-- dynamic interactions
-
-### Avoid:
-
-- bloated libraries
-- unnecessary frameworks
-- excessive frontend complexity
+JS should enhance UX, not dominate it. Vanilla JS preferred. No bloated libraries.
 
 ---
 
 # Performance Goals
 
-## Theme Must Feel:
-
-- fast
-- lightweight
-- premium
-- smooth
-
-### Requirements
-
 - lazy loading
-- optimized images
-- minimal JS
-- reusable CSS
-- low layout shift
+- optimized images via `image_url`
+- minimal JS payload
+- low cumulative layout shift
 
 ---
 
 # Mobile Experience
 
-## CRITICAL
-
-The mobile version must feel:
-
-- premium
-- spacious
-- intentional
-- not compressed
-
-### Mobile Goals
-
-- large tap targets
-- clean stacking
-- readable typography
-- smooth scrolling
-- no cramped layouts
-
----
-
-# Future Expansion
-
-The architecture should support future sections such as:
-
-- FAQ accordions
-- bundles
-- collection showcases
-- TikTok/video embeds
-- before/after sliders
-- comparison tables
-- announcement bars
-- influencer testimonials
-- UGC galleries
-- sticky add-to-cart
-- metafields/metaobjects
-
-without requiring major rewrites.
-
----
-
-# Development Workflow
-
-## Preferred Workflow
-
-### Step 1
-
-Design section in:
-
-- HTML
-- CSS
-- JS
-
-### Step 2
-
-Refine:
-
-- responsiveness
-- spacing
-- aesthetics
-- interactions
-
-### Step 3
-
-Convert into Shopify Liquid section.
-
-### Step 4
-
-Add:
-
-- schema
-- blocks
-- dynamic settings
-
-### Step 5
-
-Integrate into Dawn-based architecture.
+Mobile must feel premium, spacious, and intentional. Large tap targets, clean stacking, readable type.
 
 ---
 
 # Primary Goal
 
-Build a Shopify storefront that:
-
-- looks custom
-- feels premium
-- converts effectively
-- scales cleanly
-- avoids generic theme aesthetics
-- creates a believable luxury beauty identity
-
-while remaining:
-
-- modular
-- maintainable
-- Shopify-native
-- editor-friendly
-- performant
-.
-
+Build a Shopify storefront that looks custom, feels modern and romantic, converts effectively, and avoids generic theme aesthetics — while remaining modular, Shopify-native, and editor-friendly.

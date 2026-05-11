@@ -1,17 +1,17 @@
 {%- style -%}
   /* ======================================================================
-     Aurelle Offers & Discounts
+     Lien Offers & Discounts
      Promotional offer cards with discount codes
      ====================================================================== */
 
-  .aurelle-offers {
-    background-color: var(--aurelle-dark);
+  .lien-offers {
+    background-color: var(--lien-dark);
     overflow: hidden;
     position: relative;
   }
 
   /* Subtle decorative grain overlay */
-  .aurelle-offers::before {
+  .lien-offers::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -20,48 +20,48 @@
     opacity: 0.5;
   }
 
-  .aurelle-offers__inner {
-    max-width: var(--aurelle-container-max);
+  .lien-offers__inner {
+    max-width: var(--lien-container-max);
     margin: 0 auto;
-    padding: var(--aurelle-section-padding-mobile) var(--aurelle-container-padding-mobile);
+    padding: var(--lien-section-padding-mobile) var(--lien-container-padding-mobile);
     position: relative;
   }
 
   @media screen and (min-width: 768px) {
-    .aurelle-offers__inner {
-      padding: var(--aurelle-section-padding-desktop) var(--aurelle-container-padding);
+    .lien-offers__inner {
+      padding: var(--lien-section-padding-desktop) var(--lien-container-padding);
     }
   }
 
-  .aurelle-offers__header {
+  .lien-offers__header {
     text-align: center;
-    margin-bottom: var(--aurelle-space-3xl);
+    margin-bottom: var(--lien-space-3xl);
   }
 
-  .aurelle-offers__label {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-xs);
+  .lien-offers__label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--aurelle-gold);
+    color: var(--lien-accent);
     display: block;
-    margin-bottom: var(--aurelle-space-sm);
+    margin-bottom: var(--lien-space-sm);
   }
 
-  .aurelle-offers__title {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-bold);
-    font-size: var(--aurelle-text-3xl);
+  .lien-offers__title {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-3xl);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--aurelle-offwhite);
-    margin: 0 0 var(--aurelle-space-md) 0;
+    color: var(--lien-offwhite);
+    margin: 0 0 var(--lien-space-md) 0;
   }
 
-  .aurelle-offers__subtitle {
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-md);
+  .lien-offers__subtitle {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
     color: rgba(250, 250, 248, 0.6);
     line-height: 1.7;
     max-width: 540px;
@@ -69,158 +69,158 @@
   }
 
   /* Cards grid */
-  .aurelle-offers__grid {
+  .lien-offers__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--aurelle-space-lg);
+    gap: var(--lien-space-lg);
   }
 
   @media screen and (min-width: 640px) {
-    .aurelle-offers__grid {
+    .lien-offers__grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media screen and (min-width: 1024px) {
-    .aurelle-offers__grid--3 {
+    .lien-offers__grid--3 {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   /* Offer card */
-  .aurelle-offers__card {
+  .lien-offers__card {
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: var(--aurelle-space-2xl) var(--aurelle-space-xl);
+    padding: var(--lien-space-2xl) var(--lien-space-xl);
     display: flex;
     flex-direction: column;
-    gap: var(--aurelle-space-lg);
-    transition: all var(--aurelle-transition-base);
+    gap: var(--lien-space-lg);
+    transition: all var(--lien-transition-base);
     position: relative;
     overflow: hidden;
   }
 
-  .aurelle-offers__card:hover {
+  .lien-offers__card:hover {
     border-color: rgba(184, 149, 106, 0.3);
     background-color: rgba(255, 255, 255, 0.07);
   }
 
   /* Featured card accent line */
-  .aurelle-offers__card--featured {
+  .lien-offers__card--featured {
     border-color: rgba(184, 149, 106, 0.4);
   }
 
-  .aurelle-offers__card--featured::after {
+  .lien-offers__card--featured::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--aurelle-gold), var(--aurelle-gold-light));
+    background: linear-gradient(90deg, var(--lien-accent), var(--lien-accent-light));
   }
 
   /* Card top */
-  .aurelle-offers__card-top {
+  .lien-offers__card-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: var(--aurelle-space-md);
+    gap: var(--lien-space-md);
   }
 
-  .aurelle-offers__offer-label {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-xs);
+  .lien-offers__offer-label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--aurelle-gold);
+    color: var(--lien-accent);
   }
 
-  .aurelle-offers__badge {
-    background-color: var(--aurelle-gold);
-    color: var(--aurelle-white);
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-bold);
-    font-size: var(--aurelle-text-sm);
+  .lien-offers__badge {
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-sm);
     padding: 6px 14px;
     letter-spacing: 0.02em;
     white-space: nowrap;
   }
 
   /* Offer headline */
-  .aurelle-offers__offer-title {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-bold);
-    font-size: var(--aurelle-text-xl);
-    color: var(--aurelle-offwhite);
+  .lien-offers__offer-title {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-xl);
+    color: var(--lien-offwhite);
     line-height: 1.2;
     margin: 0;
   }
 
   /* Description */
-  .aurelle-offers__offer-text {
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-base);
+  .lien-offers__offer-text {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-base);
     color: rgba(250, 250, 248, 0.6);
     line-height: 1.6;
     margin: 0;
   }
 
   /* Discount code block */
-  .aurelle-offers__code-block {
-    background-color: rgba(184, 149, 106, 0.08);
+  .lien-offers__code-block {
+    background-color: rgba(123, 143, 166, 0.08);
     border: 1px dashed rgba(184, 149, 106, 0.4);
-    padding: var(--aurelle-space-md) var(--aurelle-space-lg);
+    padding: var(--lien-space-md) var(--lien-space-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--aurelle-space-md);
+    gap: var(--lien-space-md);
     cursor: pointer;
-    transition: all var(--aurelle-transition-fast);
+    transition: all var(--lien-transition-fast);
   }
 
-  .aurelle-offers__code-block:hover {
+  .lien-offers__code-block:hover {
     background-color: rgba(184, 149, 106, 0.12);
     border-color: rgba(184, 149, 106, 0.6);
   }
 
-  .aurelle-offers__code {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-bold);
-    font-size: var(--aurelle-text-lg);
-    color: var(--aurelle-gold);
+  .lien-offers__code {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-lg);
+    color: var(--lien-accent);
     letter-spacing: 0.08em;
     user-select: all;
   }
 
-  .aurelle-offers__code-hint {
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-xs);
+  .lien-offers__code-hint {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-xs);
     color: rgba(250, 250, 248, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     white-space: nowrap;
-    transition: all var(--aurelle-transition-fast);
+    transition: all var(--lien-transition-fast);
   }
 
-  .aurelle-offers__code-hint--copied {
-    color: var(--aurelle-gold);
+  .lien-offers__code-hint--copied {
+    color: var(--lien-accent);
   }
 
   /* Expiry */
-  .aurelle-offers__expiry {
+  .lien-offers__expiry {
     display: flex;
     align-items: center;
-    gap: var(--aurelle-space-xs);
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-xs);
+    gap: var(--lien-space-xs);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-xs);
     color: rgba(250, 250, 248, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
 
-  .aurelle-offers__expiry svg {
+  .lien-offers__expiry svg {
     width: 14px;
     height: 14px;
     stroke: currentColor;
@@ -231,102 +231,102 @@
   }
 
   /* CTA button */
-  .aurelle-offers__card-btn {
+  .lien-offers__card-btn {
     display: block;
     text-align: center;
     padding: 14px;
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-sm);
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-sm);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
     border: 1.5px solid rgba(184, 149, 106, 0.5);
-    color: var(--aurelle-gold);
+    color: var(--lien-accent);
     background: transparent;
     cursor: pointer;
-    transition: all var(--aurelle-transition-base);
+    transition: all var(--lien-transition-base);
     margin-top: auto;
   }
 
-  .aurelle-offers__card-btn:hover {
-    background-color: var(--aurelle-gold);
-    color: var(--aurelle-white);
-    border-color: var(--aurelle-gold);
+  .lien-offers__card-btn:hover {
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+    border-color: var(--lien-accent);
   }
 
-  .aurelle-offers__card--featured .aurelle-offers__card-btn {
-    background-color: var(--aurelle-gold);
-    color: var(--aurelle-white);
-    border-color: var(--aurelle-gold);
+  .lien-offers__card--featured .lien-offers__card-btn {
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+    border-color: var(--lien-accent);
   }
 
-  .aurelle-offers__card--featured .aurelle-offers__card-btn:hover {
-    background-color: var(--aurelle-gold-hover);
-    border-color: var(--aurelle-gold-hover);
+  .lien-offers__card--featured .lien-offers__card-btn:hover {
+    background-color: var(--lien-accent-hover);
+    border-color: var(--lien-accent-hover);
   }
 {%- endstyle -%}
 
-<section class="aurelle-offers" id="aurelle-offers-{{ section.id }}">
-  <div class="aurelle-offers__inner">
+<section class="lien-offers" id="lien-offers-{{ section.id }}">
+  <div class="lien-offers__inner">
 
-    <div class="aurelle-offers__header">
+    <div class="lien-offers__header">
       {%- if section.settings.label != blank -%}
-        <span class="aurelle-offers__label">{{ section.settings.label }}</span>
+        <span class="lien-offers__label">{{ section.settings.label }}</span>
       {%- endif -%}
-      <h2 class="aurelle-offers__title">{{ section.settings.heading }}</h2>
+      <h2 class="lien-offers__title">{{ section.settings.heading }}</h2>
       {%- if section.settings.subtitle != blank -%}
-        <p class="aurelle-offers__subtitle">{{ section.settings.subtitle }}</p>
+        <p class="lien-offers__subtitle">{{ section.settings.subtitle }}</p>
       {%- endif -%}
     </div>
 
-    {%- assign grid_class = 'aurelle-offers__grid' -%}
+    {%- assign grid_class = 'lien-offers__grid' -%}
     {%- if section.blocks.size >= 3 -%}
-      {%- assign grid_class = 'aurelle-offers__grid aurelle-offers__grid--3' -%}
+      {%- assign grid_class = 'lien-offers__grid lien-offers__grid--3' -%}
     {%- endif -%}
 
     <div class="{{ grid_class }}">
       {%- for block in section.blocks -%}
         <div
-          class="aurelle-offers__card{% if block.settings.featured %} aurelle-offers__card--featured{% endif %}"
+          class="lien-offers__card{% if block.settings.featured %} lien-offers__card--featured{% endif %}"
           {{ block.shopify_attributes }}
         >
-          <div class="aurelle-offers__card-top">
+          <div class="lien-offers__card-top">
             {%- if block.settings.offer_label != blank -%}
-              <span class="aurelle-offers__offer-label">{{ block.settings.offer_label }}</span>
+              <span class="lien-offers__offer-label">{{ block.settings.offer_label }}</span>
             {%- endif -%}
             {%- if block.settings.badge != blank -%}
-              <span class="aurelle-offers__badge">{{ block.settings.badge }}</span>
+              <span class="lien-offers__badge">{{ block.settings.badge }}</span>
             {%- endif -%}
           </div>
 
-          <h3 class="aurelle-offers__offer-title">{{ block.settings.title }}</h3>
+          <h3 class="lien-offers__offer-title">{{ block.settings.title }}</h3>
 
           {%- if block.settings.description != blank -%}
-            <p class="aurelle-offers__offer-text">{{ block.settings.description }}</p>
+            <p class="lien-offers__offer-text">{{ block.settings.description }}</p>
           {%- endif -%}
 
           {%- if block.settings.code != blank -%}
             <button
-              class="aurelle-offers__code-block"
+              class="lien-offers__code-block"
               type="button"
-              data-aurelle-copy-code="{{ block.settings.code }}"
+              data-lien-copy-code="{{ block.settings.code }}"
               aria-label="Copy discount code {{ block.settings.code }}"
             >
-              <span class="aurelle-offers__code">{{ block.settings.code }}</span>
-              <span class="aurelle-offers__code-hint" data-copy-hint>Click to copy</span>
+              <span class="lien-offers__code">{{ block.settings.code }}</span>
+              <span class="lien-offers__code-hint" data-copy-hint>Click to copy</span>
             </button>
           {%- endif -%}
 
           {%- if block.settings.expiry != blank -%}
-            <div class="aurelle-offers__expiry">
+            <div class="lien-offers__expiry">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               {{ block.settings.expiry }}
             </div>
           {%- endif -%}
 
           {%- if block.settings.button_label != blank -%}
-            <a href="{{ block.settings.button_link }}" class="aurelle-offers__card-btn">
+            <a href="{{ block.settings.button_link }}" class="lien-offers__card-btn">
               {{ block.settings.button_label }}
             </a>
           {%- endif -%}
@@ -339,16 +339,16 @@
 
 <script>
   (function () {
-    document.querySelectorAll('[data-aurelle-copy-code]').forEach(function (btn) {
+    document.querySelectorAll('[data-lien-copy-code]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var code = btn.getAttribute('data-aurelle-copy-code');
+        var code = btn.getAttribute('data-lien-copy-code');
         var hint = btn.querySelector('[data-copy-hint]');
         navigator.clipboard.writeText(code).then(function () {
           hint.textContent = 'Copied!';
-          hint.classList.add('aurelle-offers__code-hint--copied');
+          hint.classList.add('lien-offers__code-hint--copied');
           setTimeout(function () {
             hint.textContent = 'Click to copy';
-            hint.classList.remove('aurelle-offers__code-hint--copied');
+            hint.classList.remove('lien-offers__code-hint--copied');
           }, 2000);
         });
       });
@@ -358,9 +358,9 @@
 
 {% schema %}
 {
-  "name": "Aurelle Offers",
+  "name": "Lien Offers",
   "tag": "section",
-  "class": "aurelle-offers-section",
+  "class": "lien-offers-section",
   "settings": [
     {
       "type": "text",
@@ -378,7 +378,7 @@
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Limited-time offers to help you start your Aurelle ritual at exceptional value."
+      "default": "Limited-time offers to help you start your Lien ritual at exceptional value."
     }
   ],
   "blocks": [
@@ -421,7 +421,7 @@
           "type": "text",
           "id": "code",
           "label": "Discount code",
-          "default": "AURELLE15",
+          "default": "LIEN15",
           "info": "Displayed prominently; visitors can click to copy it"
         },
         {
@@ -447,7 +447,7 @@
   ],
   "presets": [
     {
-      "name": "Aurelle Offers",
+      "name": "Lien Offers",
       "blocks": [
         {
           "type": "offer",
@@ -455,8 +455,8 @@
             "offer_label": "New Customer",
             "badge": "15% Off",
             "title": "Welcome Gift",
-            "description": "Get 15% off your very first order. Enter the code at checkout and experience Aurelle at a special price.",
-            "code": "AURELLE15",
+            "description": "Get 15% off your very first order. Enter the code at checkout and experience Lien at a special price.",
+            "code": "LIEN15",
             "expiry": "Valid for new customers only",
             "button_label": "Shop Now",
             "featured": false

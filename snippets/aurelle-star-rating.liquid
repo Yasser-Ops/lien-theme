@@ -1,6 +1,6 @@
 {%- comment -%}
-  Aurelle Star Rating Snippet
-  Usage: {% render 'aurelle-star-rating', rating: 5, size: 'md' %}
+  Lien Star Rating Snippet
+  Usage: {% render 'lien-star-rating', rating: 5, size: 'md' %}
   
   Parameters:
     rating - Number 1-5 (required)
@@ -18,7 +18,7 @@
   assign rating_val = rating | default: 5 | round
 -%}
 
-<div class="aurelle-stars" role="img" aria-label="{{ rating_val }} out of 5 stars" style="display:inline-flex;gap:2px;">
+<div class="lien-stars" role="img" aria-label="{{ rating_val }} out of 5 stars" style="display:inline-flex;gap:2px;">
   {%- for i in (1..5) -%}
     {%- if i <= rating_val -%}
       <svg width="{{ star_size }}" height="{{ star_size }}" viewBox="0 0 24 24" fill="#B8956A" stroke="none">

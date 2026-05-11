@@ -1,0 +1,211 @@
+{%- style -%}
+  /* ======================================================================
+     Lien CTA Banner
+     Final conversion section — oversized typography
+     ====================================================================== */
+
+  .lien-cta {
+    background-color: var(--lien-offwhite);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lien-cta--dark {
+    background-color: var(--lien-dark);
+  }
+
+  .lien-cta--cream {
+    background-color: var(--lien-cream);
+  }
+
+  .lien-cta__inner {
+    max-width: var(--lien-container-max);
+    margin: 0 auto;
+    padding: 80px var(--lien-container-padding-mobile);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--lien-space-lg);
+  }
+
+  @media screen and (min-width: 768px) {
+    .lien-cta__inner {
+      padding: 140px var(--lien-container-padding);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .lien-cta__inner {
+      padding: 160px var(--lien-container-padding);
+    }
+  }
+
+  .lien-cta__label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--lien-accent);
+    display: block;
+  }
+
+  .lien-cta--dark .lien-cta__label {
+    color: var(--lien-accent-light);
+  }
+
+  .lien-cta__heading {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-extrabold);
+    font-size: var(--lien-text-4xl);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--lien-text);
+    margin: 0;
+    max-width: 800px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .lien-cta__heading {
+      font-size: var(--lien-text-5xl);
+    }
+  }
+
+  .lien-cta--dark .lien-cta__heading {
+    color: var(--lien-offwhite);
+  }
+
+  .lien-cta__subtitle {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0;
+  }
+
+  .lien-cta--dark .lien-cta__subtitle {
+    color: rgba(250, 250, 248, 0.6);
+  }
+
+  .lien-cta__actions {
+    margin-top: var(--lien-space-md);
+  }
+
+  /* Decorative background element */
+  .lien-cta__deco {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123, 143, 166, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .lien-cta__deco--left {
+    left: -200px;
+    top: -100px;
+  }
+
+  .lien-cta__deco--right {
+    right: -200px;
+    bottom: -100px;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign bg_class = ''
+  if section.settings.color_scheme == 'dark'
+    assign bg_class = 'lien-cta--dark'
+  elsif section.settings.color_scheme == 'cream'
+    assign bg_class = 'lien-cta--cream'
+  endif
+
+  assign btn_class = 'lien-btn lien-btn--lg'
+  if section.settings.color_scheme == 'dark'
+    assign btn_class = btn_class | append: ' lien-btn--accent'
+  else
+    assign btn_class = btn_class | append: ' lien-btn--dark'
+  endif
+-%}
+
+<section class="lien-cta {{ bg_class }}" id="lien-cta-{{ section.id }}">
+  <div class="lien-cta__deco lien-cta__deco--left"></div>
+  <div class="lien-cta__deco lien-cta__deco--right"></div>
+
+  <div class="lien-cta__inner">
+    {%- if section.settings.label != blank -%}
+      <span class="lien-cta__label">{{ section.settings.label }}</span>
+    {%- endif -%}
+
+    <h2 class="lien-cta__heading">{{ section.settings.heading }}</h2>
+
+    {%- if section.settings.subtitle != blank -%}
+      <p class="lien-cta__subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="lien-cta__actions">
+        <a href="{{ section.settings.button_link }}" class="{{ btn_class }}">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Lien CTA Banner",
+  "tag": "section",
+  "class": "lien-cta-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "For the Two of You"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Made for the Two of You"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "One set. Two bracelets. A bond you can wear every day."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop the Set"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" },
+        { "value": "cream", "label": "Cream" }
+      ],
+      "default": "light"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lien CTA Banner"
+    }
+  ]
+}
+{% endschema %}

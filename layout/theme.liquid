@@ -15,16 +15,16 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {%- comment -%} Aurelle — Google Fonts (Outfit + Inter) {%- endcomment -%}
+    {%- comment -%} Lien — Google Fonts (Outfit + Inter) {%- endcomment -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    {%- comment -%} Aurelle — Design System {%- endcomment -%}
-    {{ 'aurelle-base.css' | asset_url | stylesheet_tag }}
-    {{ 'aurelle-header-footer.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Lien — Design System {%- endcomment -%}
+    {{ 'lien-base.css' | asset_url | stylesheet_tag }}
+    {{ 'lien-header-footer.css' | asset_url | stylesheet_tag }}
     {%- if request.page_type == 'product' -%}
-      {{ 'aurelle-product-page.css' | asset_url | stylesheet_tag }}
+      {{ 'lien-product-page.css' | asset_url | stylesheet_tag }}
     {%- endif -%}
 
     <title>

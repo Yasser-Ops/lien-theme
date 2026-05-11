@@ -1,265 +1,265 @@
 {%- style -%}
   /* ======================================================================
-     Aurelle FAQ
+     Lien FAQ
      Animated accordion Q&A section
      ====================================================================== */
 
-  .aurelle-faq {
-    background-color: var(--aurelle-offwhite);
+  .lien-faq {
+    background-color: var(--lien-offwhite);
   }
 
-  .aurelle-faq--cream {
-    background-color: var(--aurelle-cream);
+  .lien-faq--cream {
+    background-color: var(--lien-cream);
   }
 
-  .aurelle-faq__inner {
-    max-width: var(--aurelle-container-max);
+  .lien-faq__inner {
+    max-width: var(--lien-container-max);
     margin: 0 auto;
-    padding: var(--aurelle-section-padding-mobile) var(--aurelle-container-padding-mobile);
+    padding: var(--lien-section-padding-mobile) var(--lien-container-padding-mobile);
   }
 
   @media screen and (min-width: 768px) {
-    .aurelle-faq__inner {
-      padding: var(--aurelle-section-padding-desktop) var(--aurelle-container-padding);
+    .lien-faq__inner {
+      padding: var(--lien-section-padding-desktop) var(--lien-container-padding);
     }
   }
 
-  .aurelle-faq__header {
+  .lien-faq__header {
     text-align: center;
-    margin-bottom: var(--aurelle-space-3xl);
+    margin-bottom: var(--lien-space-3xl);
   }
 
-  .aurelle-faq__label {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-xs);
+  .lien-faq__label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--aurelle-gold);
+    color: var(--lien-accent);
     display: block;
-    margin-bottom: var(--aurelle-space-sm);
+    margin-bottom: var(--lien-space-sm);
   }
 
-  .aurelle-faq__title {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-bold);
-    font-size: var(--aurelle-text-3xl);
+  .lien-faq__title {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-3xl);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--aurelle-text);
-    margin: 0 0 var(--aurelle-space-md) 0;
+    color: var(--lien-text);
+    margin: 0 0 var(--lien-space-md) 0;
   }
 
-  .aurelle-faq__subtitle {
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-md);
-    color: var(--aurelle-text-secondary);
+  .lien-faq__subtitle {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text-secondary);
     line-height: 1.7;
     max-width: 560px;
     margin: 0 auto;
   }
 
   /* Layout: single or two-column */
-  .aurelle-faq__body {
+  .lien-faq__body {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  .aurelle-faq__body--wide {
+  .lien-faq__body--wide {
     max-width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0 var(--aurelle-space-4xl);
+    gap: 0 var(--lien-space-4xl);
   }
 
   @media screen and (min-width: 900px) {
-    .aurelle-faq__body--wide {
+    .lien-faq__body--wide {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   /* Individual accordion item */
-  .aurelle-faq__item {
-    border-bottom: 1px solid var(--aurelle-border-light);
+  .lien-faq__item {
+    border-bottom: 1px solid var(--lien-border-light);
   }
 
-  .aurelle-faq__item:first-child {
-    border-top: 1px solid var(--aurelle-border-light);
+  .lien-faq__item:first-child {
+    border-top: 1px solid var(--lien-border-light);
   }
 
-  .aurelle-faq__body--wide .aurelle-faq__item:first-child,
-  .aurelle-faq__body--wide .aurelle-faq__item:nth-child(2) {
-    border-top: 1px solid var(--aurelle-border-light);
+  .lien-faq__body--wide .lien-faq__item:first-child,
+  .lien-faq__body--wide .lien-faq__item:nth-child(2) {
+    border-top: 1px solid var(--lien-border-light);
   }
 
   /* Question row */
-  .aurelle-faq__question {
+  .lien-faq__question {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--aurelle-space-lg);
-    padding: var(--aurelle-space-xl) 0;
+    gap: var(--lien-space-lg);
+    padding: var(--lien-space-xl) 0;
     cursor: pointer;
     list-style: none;
     user-select: none;
   }
 
-  .aurelle-faq__question::-webkit-details-marker {
+  .lien-faq__question::-webkit-details-marker {
     display: none;
   }
 
-  .aurelle-faq__question-text {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-md);
-    color: var(--aurelle-text);
+  .lien-faq__question-text {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text);
     line-height: 1.4;
     flex: 1;
-    transition: color var(--aurelle-transition-fast);
+    transition: color var(--lien-transition-fast);
   }
 
-  .aurelle-faq__item[open] .aurelle-faq__question-text {
-    color: var(--aurelle-gold);
+  .lien-faq__item[open] .lien-faq__question-text {
+    color: var(--lien-accent);
   }
 
   /* +/- icon */
-  .aurelle-faq__icon {
+  .lien-faq__icon {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
     position: relative;
-    border: 1.5px solid var(--aurelle-border);
+    border: 1.5px solid var(--lien-border);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all var(--aurelle-transition-fast);
-    color: var(--aurelle-text-muted);
+    transition: all var(--lien-transition-fast);
+    color: var(--lien-text-muted);
   }
 
-  .aurelle-faq__item[open] .aurelle-faq__icon {
-    border-color: var(--aurelle-gold);
-    background-color: var(--aurelle-gold);
-    color: var(--aurelle-white);
+  .lien-faq__item[open] .lien-faq__icon {
+    border-color: var(--lien-accent);
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
   }
 
-  .aurelle-faq__icon svg {
+  .lien-faq__icon svg {
     width: 12px;
     height: 12px;
     stroke: currentColor;
     fill: none;
     stroke-width: 2.5;
     stroke-linecap: round;
-    transition: transform var(--aurelle-transition-base);
+    transition: transform var(--lien-transition-base);
   }
 
-  .aurelle-faq__icon .aurelle-faq__icon-minus {
+  .lien-faq__icon .lien-faq__icon-minus {
     position: absolute;
     opacity: 0;
     transform: rotate(90deg);
   }
 
-  .aurelle-faq__item[open] .aurelle-faq__icon-plus {
+  .lien-faq__item[open] .lien-faq__icon-plus {
     opacity: 0;
     transform: rotate(-90deg);
   }
 
-  .aurelle-faq__item[open] .aurelle-faq__icon-minus {
+  .lien-faq__item[open] .lien-faq__icon-minus {
     opacity: 1;
     transform: rotate(0deg);
   }
 
   /* Answer */
-  .aurelle-faq__answer {
+  .lien-faq__answer {
     overflow: hidden;
   }
 
-  .aurelle-faq__answer-inner {
-    padding: 0 0 var(--aurelle-space-xl) 0;
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-md);
-    color: var(--aurelle-text-secondary);
+  .lien-faq__answer-inner {
+    padding: 0 0 var(--lien-space-xl) 0;
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text-secondary);
     line-height: 1.75;
   }
 
-  .aurelle-faq__answer-inner p {
-    margin: 0 0 var(--aurelle-space-sm) 0;
+  .lien-faq__answer-inner p {
+    margin: 0 0 var(--lien-space-sm) 0;
   }
 
-  .aurelle-faq__answer-inner p:last-child {
+  .lien-faq__answer-inner p:last-child {
     margin-bottom: 0;
   }
 
-  .aurelle-faq__answer-inner a {
-    color: var(--aurelle-gold);
+  .lien-faq__answer-inner a {
+    color: var(--lien-accent);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .aurelle-faq__answer-inner strong {
-    color: var(--aurelle-text);
-    font-weight: var(--aurelle-weight-semibold);
+  .lien-faq__answer-inner strong {
+    color: var(--lien-text);
+    font-weight: var(--lien-weight-semibold);
   }
 
   /* CTA below */
-  .aurelle-faq__cta {
+  .lien-faq__cta {
     text-align: center;
-    margin-top: var(--aurelle-space-3xl);
-    padding-top: var(--aurelle-space-3xl);
-    border-top: 1px solid var(--aurelle-border-light);
+    margin-top: var(--lien-space-3xl);
+    padding-top: var(--lien-space-3xl);
+    border-top: 1px solid var(--lien-border-light);
   }
 
-  .aurelle-faq__cta-text {
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-md);
-    color: var(--aurelle-text-secondary);
-    margin-bottom: var(--aurelle-space-lg);
+  .lien-faq__cta-text {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-text-secondary);
+    margin-bottom: var(--lien-space-lg);
   }
 
-  .aurelle-faq__cta-text a {
-    color: var(--aurelle-gold);
+  .lien-faq__cta-text a {
+    color: var(--lien-accent);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 {%- endstyle -%}
 
 <section
-  class="aurelle-faq{% if section.settings.bg_cream %} aurelle-faq--cream{% endif %}"
-  id="aurelle-faq-{{ section.id }}"
+  class="lien-faq{% if section.settings.bg_cream %} lien-faq--cream{% endif %}"
+  id="lien-faq-{{ section.id }}"
 >
-  <div class="aurelle-faq__inner">
+  <div class="lien-faq__inner">
 
     {%- if section.settings.label != blank or section.settings.heading != blank -%}
-      <div class="aurelle-faq__header">
+      <div class="lien-faq__header">
         {%- if section.settings.label != blank -%}
-          <span class="aurelle-faq__label">{{ section.settings.label }}</span>
+          <span class="lien-faq__label">{{ section.settings.label }}</span>
         {%- endif -%}
         {%- if section.settings.heading != blank -%}
-          <h2 class="aurelle-faq__title">{{ section.settings.heading }}</h2>
+          <h2 class="lien-faq__title">{{ section.settings.heading }}</h2>
         {%- endif -%}
         {%- if section.settings.subtitle != blank -%}
-          <p class="aurelle-faq__subtitle">{{ section.settings.subtitle }}</p>
+          <p class="lien-faq__subtitle">{{ section.settings.subtitle }}</p>
         {%- endif -%}
       </div>
     {%- endif -%}
 
-    <div class="aurelle-faq__body{% if section.settings.two_column %} aurelle-faq__body--wide{% endif %}">
+    <div class="lien-faq__body{% if section.settings.two_column %} lien-faq__body--wide{% endif %}">
       {%- for block in section.blocks -%}
-        <details class="aurelle-faq__item" {{ block.shopify_attributes }}>
-          <summary class="aurelle-faq__question">
-            <span class="aurelle-faq__question-text">{{ block.settings.question }}</span>
-            <span class="aurelle-faq__icon" aria-hidden="true">
-              <svg class="aurelle-faq__icon-plus" viewBox="0 0 24 24">
+        <details class="lien-faq__item" {{ block.shopify_attributes }}>
+          <summary class="lien-faq__question">
+            <span class="lien-faq__question-text">{{ block.settings.question }}</span>
+            <span class="lien-faq__icon" aria-hidden="true">
+              <svg class="lien-faq__icon-plus" viewBox="0 0 24 24">
                 <line x1="12" y1="5" x2="12" y2="19"/>
                 <line x1="5" y1="12" x2="19" y2="12"/>
               </svg>
-              <svg class="aurelle-faq__icon-minus" viewBox="0 0 24 24">
+              <svg class="lien-faq__icon-minus" viewBox="0 0 24 24">
                 <line x1="5" y1="12" x2="19" y2="12"/>
               </svg>
             </span>
           </summary>
-          <div class="aurelle-faq__answer">
-            <div class="aurelle-faq__answer-inner">
+          <div class="lien-faq__answer">
+            <div class="lien-faq__answer-inner">
               {{ block.settings.answer }}
             </div>
           </div>
@@ -268,10 +268,10 @@
     </div>
 
     {%- if section.settings.cta_text != blank -%}
-      <div class="aurelle-faq__cta">
-        <p class="aurelle-faq__cta-text">{{ section.settings.cta_text }}</p>
+      <div class="lien-faq__cta">
+        <p class="lien-faq__cta-text">{{ section.settings.cta_text }}</p>
         {%- if section.settings.cta_label != blank -%}
-          <a href="{{ section.settings.cta_link }}" class="aurelle-btn aurelle-btn--outline">
+          <a href="{{ section.settings.cta_link }}" class="lien-btn lien-btn--outline">
             {{ section.settings.cta_label }}
           </a>
         {%- endif -%}
@@ -283,9 +283,9 @@
 
 {% schema %}
 {
-  "name": "Aurelle FAQ",
+  "name": "Lien FAQ",
   "tag": "section",
-  "class": "aurelle-faq-section",
+  "class": "lien-faq-section",
   "settings": [
     {
       "type": "text",
@@ -303,7 +303,7 @@
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Everything you need to know about Aurelle."
+      "default": "Everything you need to know about Lien."
     },
     {
       "type": "checkbox",
@@ -362,7 +362,7 @@
   ],
   "presets": [
     {
-      "name": "Aurelle FAQ",
+      "name": "Lien FAQ",
       "blocks": [
         {
           "type": "faq_item",
@@ -374,22 +374,22 @@
         {
           "type": "faq_item",
           "settings": {
-            "question": "Is Aurelle suitable for sensitive skin?",
+            "question": "Is Lien suitable for sensitive skin?",
             "answer": "<p>Yes. Our formula uses encapsulated retinol and carefully balanced actives specifically chosen to minimise irritation. We recommend doing a patch test on a small area before first use, as individual skin responses vary.</p>"
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "Can I use Aurelle with other skincare products?",
-            "answer": "<p>Absolutely. Aurelle is designed to layer well with other skincare. We recommend applying it after cleansing and toning but before heavier creams and oils. In the morning, always finish with SPF.</p>"
+            "question": "Can I use Lien with other skincare products?",
+            "answer": "<p>Absolutely. Lien is designed to layer well with other skincare. We recommend applying it after cleansing and toning but before heavier creams and oils. In the morning, always finish with SPF.</p>"
           }
         },
         {
           "type": "faq_item",
           "settings": {
             "question": "Is the formula cruelty-free and vegan?",
-            "answer": "<p>Yes — Aurelle is 100% cruelty-free and vegan certified. We never test on animals and none of our ingredients are derived from animal sources.</p>"
+            "answer": "<p>Yes — Lien is 100% cruelty-free and vegan certified. We never test on animals and none of our ingredients are derived from animal sources.</p>"
           }
         },
         {

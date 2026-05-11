@@ -1,6 +1,6 @@
 {%- comment -%}
-  Aurelle Button Snippet
-  Usage: {% render 'aurelle-btn', label: 'Shop Now', url: '/collections/all', style: 'gold', size: 'md' %}
+  Lien Button Snippet
+  Usage: {% render 'lien-btn', label: 'Shop Now', url: '/collections/all', style: 'gold', size: 'md' %}
   
   Parameters:
     label    - Button text (required)
@@ -14,24 +14,24 @@
 {%- endcomment -%}
 
 {%- liquid
-  assign btn_class = 'aurelle-btn'
+  assign btn_class = 'lien-btn'
   
   case style
     when 'dark'
-      assign btn_class = btn_class | append: ' aurelle-btn--dark'
+      assign btn_class = btn_class | append: ' lien-btn--dark'
     when 'outline'
-      assign btn_class = btn_class | append: ' aurelle-btn--outline'
+      assign btn_class = btn_class | append: ' lien-btn--outline'
     when 'outline-gold'
-      assign btn_class = btn_class | append: ' aurelle-btn--outline-gold'
+      assign btn_class = btn_class | append: ' lien-btn--outline-accent'
     else
-      assign btn_class = btn_class | append: ' aurelle-btn--gold'
+      assign btn_class = btn_class | append: ' lien-btn--accent'
   endcase
   
   case size
     when 'sm'
-      assign btn_class = btn_class | append: ' aurelle-btn--sm'
+      assign btn_class = btn_class | append: ' lien-btn--sm'
     when 'lg'
-      assign btn_class = btn_class | append: ' aurelle-btn--lg'
+      assign btn_class = btn_class | append: ' lien-btn--lg'
   endcase
   
   if class != blank

@@ -1,75 +1,75 @@
 {%- style -%}
   /* ======================================================================
-     Aurelle Newsletter
+     Lien Newsletter
      Email capture — dark section with editorial feel
      ====================================================================== */
 
-  .aurelle-newsletter {
-    background-color: var(--aurelle-dark);
+  .lien-newsletter {
+    background-color: var(--lien-dark);
     position: relative;
     overflow: hidden;
   }
 
   /* Subtle decorative circle */
-  .aurelle-newsletter::before {
+  .lien-newsletter::before {
     content: '';
     position: absolute;
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(184, 149, 106, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(123, 143, 166, 0.06) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
 
-  .aurelle-newsletter__inner {
+  .lien-newsletter__inner {
     max-width: 680px;
     margin: 0 auto;
-    padding: var(--aurelle-section-padding-mobile) var(--aurelle-container-padding-mobile);
+    padding: var(--lien-section-padding-mobile) var(--lien-container-padding-mobile);
     text-align: center;
     position: relative;
   }
 
   @media screen and (min-width: 768px) {
-    .aurelle-newsletter__inner {
-      padding: var(--aurelle-section-padding-desktop) var(--aurelle-container-padding);
+    .lien-newsletter__inner {
+      padding: var(--lien-section-padding-desktop) var(--lien-container-padding);
     }
   }
 
-  .aurelle-newsletter__label {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-xs);
+  .lien-newsletter__label {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-xs);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--aurelle-gold);
+    color: var(--lien-accent);
     display: block;
-    margin-bottom: var(--aurelle-space-sm);
+    margin-bottom: var(--lien-space-sm);
   }
 
-  .aurelle-newsletter__title {
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-bold);
-    font-size: var(--aurelle-text-3xl);
+  .lien-newsletter__title {
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-bold);
+    font-size: var(--lien-text-3xl);
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--aurelle-offwhite);
-    margin: 0 0 var(--aurelle-space-md) 0;
+    color: var(--lien-offwhite);
+    margin: 0 0 var(--lien-space-md) 0;
   }
 
-  .aurelle-newsletter__subtitle {
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-md);
+  .lien-newsletter__subtitle {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
     color: rgba(250, 250, 248, 0.6);
     line-height: 1.7;
-    margin: 0 auto var(--aurelle-space-2xl);
+    margin: 0 auto var(--lien-space-2xl);
     max-width: 480px;
   }
 
   /* Form */
-  .aurelle-newsletter__form {
+  .lien-newsletter__form {
     display: flex;
     gap: 0;
     max-width: 480px;
@@ -77,120 +77,120 @@
   }
 
   @media screen and (max-width: 480px) {
-    .aurelle-newsletter__form {
+    .lien-newsletter__form {
       flex-direction: column;
-      gap: var(--aurelle-space-sm);
+      gap: var(--lien-space-sm);
     }
   }
 
-  .aurelle-newsletter__input {
+  .lien-newsletter__input {
     flex: 1;
     padding: 1.6rem 2rem;
     background-color: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-right: none;
-    color: var(--aurelle-offwhite);
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-base);
+    color: var(--lien-offwhite);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-base);
     outline: none;
-    transition: border-color var(--aurelle-transition-fast);
+    transition: border-color var(--lien-transition-fast);
     appearance: none;
     -webkit-appearance: none;
     border-radius: 0;
   }
 
   @media screen and (max-width: 480px) {
-    .aurelle-newsletter__input {
+    .lien-newsletter__input {
       border-right: 1px solid rgba(255, 255, 255, 0.12);
     }
   }
 
-  .aurelle-newsletter__input::placeholder {
+  .lien-newsletter__input::placeholder {
     color: rgba(250, 250, 248, 0.35);
   }
 
-  .aurelle-newsletter__input:focus {
-    border-color: var(--aurelle-gold);
+  .lien-newsletter__input:focus {
+    border-color: var(--lien-accent);
     background-color: rgba(255, 255, 255, 0.09);
   }
 
-  .aurelle-newsletter__submit {
+  .lien-newsletter__submit {
     padding: 1.6rem 2.8rem;
-    background-color: var(--aurelle-gold);
-    color: var(--aurelle-white);
-    font-family: var(--aurelle-font-heading);
-    font-weight: var(--aurelle-weight-semibold);
-    font-size: var(--aurelle-text-sm);
+    background-color: var(--lien-accent);
+    color: var(--lien-white);
+    font-family: var(--lien-font-heading);
+    font-weight: var(--lien-weight-semibold);
+    font-size: var(--lien-text-sm);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border: none;
     cursor: pointer;
-    transition: background-color var(--aurelle-transition-fast);
+    transition: background-color var(--lien-transition-fast);
     white-space: nowrap;
     border-radius: 0;
     flex-shrink: 0;
   }
 
-  .aurelle-newsletter__submit:hover {
-    background-color: var(--aurelle-gold-hover);
+  .lien-newsletter__submit:hover {
+    background-color: var(--lien-accent-hover);
   }
 
   /* Success state */
-  .aurelle-newsletter__success {
+  .lien-newsletter__success {
     display: none;
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-md);
-    color: var(--aurelle-offwhite);
-    margin-top: var(--aurelle-space-lg);
-    padding: var(--aurelle-space-md) var(--aurelle-space-lg);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-md);
+    color: var(--lien-offwhite);
+    margin-top: var(--lien-space-lg);
+    padding: var(--lien-space-md) var(--lien-space-lg);
     border: 1px solid rgba(184, 149, 106, 0.3);
-    background-color: rgba(184, 149, 106, 0.06);
+    background-color: rgba(123, 143, 166, 0.06);
   }
 
-  .aurelle-newsletter__success.is-visible {
+  .lien-newsletter__success.is-visible {
     display: block;
   }
 
   /* Privacy note */
-  .aurelle-newsletter__privacy {
-    margin-top: var(--aurelle-space-md);
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-xs);
+  .lien-newsletter__privacy {
+    margin-top: var(--lien-space-md);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-xs);
     color: rgba(250, 250, 248, 0.3);
     line-height: 1.5;
   }
 
-  .aurelle-newsletter__privacy a {
+  .lien-newsletter__privacy a {
     color: rgba(250, 250, 248, 0.5);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   /* Perks row */
-  .aurelle-newsletter__perks {
+  .lien-newsletter__perks {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--aurelle-space-xl);
+    gap: var(--lien-space-xl);
     flex-wrap: wrap;
-    margin-top: var(--aurelle-space-2xl);
-    padding-top: var(--aurelle-space-2xl);
+    margin-top: var(--lien-space-2xl);
+    padding-top: var(--lien-space-2xl);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  .aurelle-newsletter__perk {
+  .lien-newsletter__perk {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    font-family: var(--aurelle-font-body);
-    font-size: var(--aurelle-text-xs);
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-xs);
     color: rgba(250, 250, 248, 0.45);
   }
 
-  .aurelle-newsletter__perk svg {
+  .lien-newsletter__perk svg {
     width: 1.4rem;
     height: 1.4rem;
-    stroke: var(--aurelle-gold);
+    stroke: var(--lien-accent);
     fill: none;
     stroke-width: 1.8;
     stroke-linecap: round;
@@ -199,45 +199,45 @@
   }
 {%- endstyle -%}
 
-<section class="aurelle-newsletter" id="aurelle-newsletter-{{ section.id }}">
-  <div class="aurelle-newsletter__inner">
+<section class="lien-newsletter" id="lien-newsletter-{{ section.id }}">
+  <div class="lien-newsletter__inner">
 
     {%- if section.settings.label != blank -%}
-      <span class="aurelle-newsletter__label">{{ section.settings.label }}</span>
+      <span class="lien-newsletter__label">{{ section.settings.label }}</span>
     {%- endif -%}
 
-    <h2 class="aurelle-newsletter__title">{{ section.settings.heading }}</h2>
+    <h2 class="lien-newsletter__title">{{ section.settings.heading }}</h2>
 
     {%- if section.settings.subtitle != blank -%}
-      <p class="aurelle-newsletter__subtitle">{{ section.settings.subtitle }}</p>
+      <p class="lien-newsletter__subtitle">{{ section.settings.subtitle }}</p>
     {%- endif -%}
 
-    {%- form 'customer', id: 'aurelle-newsletter-form-{{ section.id }}', class: 'aurelle-newsletter__form' -%}
+    {%- form 'customer', id: 'lien-newsletter-form-{{ section.id }}', class: 'lien-newsletter__form' -%}
       <input type="hidden" name="contact[tags]" value="newsletter">
 
       <input
-        class="aurelle-newsletter__input"
+        class="lien-newsletter__input"
         type="email"
         name="contact[email]"
-        id="aurelle-newsletter-email-{{ section.id }}"
+        id="lien-newsletter-email-{{ section.id }}"
         placeholder="{{ section.settings.placeholder | default: 'Your email address' }}"
         required
         autocomplete="email"
         aria-label="{{ section.settings.placeholder | default: 'Your email address' }}"
       >
 
-      <button type="submit" class="aurelle-newsletter__submit">
+      <button type="submit" class="lien-newsletter__submit">
         {{ section.settings.button_text | default: 'Subscribe' }}
       </button>
 
       {%- if form.posted_successfully? -%}
-        <p class="aurelle-newsletter__success is-visible">
-          {{ section.settings.success_message | default: 'Thank you — welcome to the Aurelle family.' }}
+        <p class="lien-newsletter__success is-visible">
+          {{ section.settings.success_message | default: 'Thank you — welcome to the Lien family.' }}
         </p>
       {%- endif -%}
     {%- endform -%}
 
-    <p class="aurelle-newsletter__privacy">
+    <p class="lien-newsletter__privacy">
       {%- if section.settings.privacy_text != blank -%}
         {{ section.settings.privacy_text }}
       {%- else -%}
@@ -246,16 +246,16 @@
     </p>
 
     {%- if section.settings.show_perks -%}
-      <div class="aurelle-newsletter__perks">
-        <span class="aurelle-newsletter__perk">
+      <div class="lien-newsletter__perks">
+        <span class="lien-newsletter__perk">
           <svg viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
           Exclusive offers
         </span>
-        <span class="aurelle-newsletter__perk">
+        <span class="lien-newsletter__perk">
           <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
           Skincare tips
         </span>
-        <span class="aurelle-newsletter__perk">
+        <span class="lien-newsletter__perk">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           Early access to launches
         </span>
@@ -267,9 +267,9 @@
 
 {% schema %}
 {
-  "name": "Aurelle Newsletter",
+  "name": "Lien Newsletter",
   "tag": "section",
-  "class": "aurelle-newsletter-section",
+  "class": "lien-newsletter-section",
   "settings": [
     {
       "type": "text",
@@ -305,7 +305,7 @@
       "type": "text",
       "id": "success_message",
       "label": "Success message",
-      "default": "Thank you — welcome to the Aurelle family."
+      "default": "Thank you — welcome to the Lien family."
     },
     {
       "type": "textarea",
@@ -322,7 +322,7 @@
   ],
   "presets": [
     {
-      "name": "Aurelle Newsletter"
+      "name": "Lien Newsletter"
     }
   ]
 }

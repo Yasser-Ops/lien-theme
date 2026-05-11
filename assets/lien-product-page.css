@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Aurelle — Product Page CSS
-   Overrides Dawn's main-product section to match Aurelle aesthetic.
+   Lien — Product Page CSS
+   Overrides Dawn's main-product section to match Lien aesthetic.
    All rem values account for Dawn's 62.5% html font-size (1rem = 10px).
    ========================================================================== */
 
@@ -10,13 +10,13 @@
    -------------------------------------------------------------------------- */
 
 .template-product {
-  background-color: var(--aurelle-offwhite);
+  background-color: var(--lien-offwhite);
 }
 
 .template-product product-info,
 .template-product .gradient {
-  background-color: var(--aurelle-offwhite) !important;
-  --gradient-background: var(--aurelle-offwhite) !important;
+  background-color: var(--lien-offwhite) !important;
+  --gradient-background: var(--lien-offwhite) !important;
 }
 
 
@@ -43,11 +43,11 @@ product-info {
 
 .product__media-wrapper .product-media-container,
 .product__media-wrapper .product__media {
-  background-color: var(--aurelle-cream) !important;
+  background-color: var(--lien-cream) !important;
 }
 
 .product__media-wrapper .product__thumbnail-item .product__media {
-  background-color: var(--aurelle-cream-dark) !important;
+  background-color: var(--lien-cream-dark) !important;
 }
 
 /* Remove any default borders Dawn adds on media */
@@ -58,7 +58,7 @@ product-info {
 
 /* Thumbnail active state */
 .thumbnail-list__item--active .product__thumbnail {
-  border-color: var(--aurelle-gold) !important;
+  border-color: var(--lien-accent) !important;
 }
 
 
@@ -81,12 +81,12 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .product__text.caption-with-letter-spacing {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
-  font-size: var(--aurelle-text-xs) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-semibold) !important;
+  font-size: var(--lien-text-xs) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.15em !important;
-  color: var(--aurelle-gold) !important;
+  color: var(--lien-accent) !important;
   margin-bottom: 0.8rem !important;
 }
 
@@ -96,12 +96,12 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .product__title h1 {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-extrabold) !important;
-  font-size: var(--aurelle-text-3xl) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-extrabold) !important;
+  font-size: var(--lien-text-3xl) !important;
   letter-spacing: -0.02em !important;
   line-height: 1.05 !important;
-  color: var(--aurelle-text) !important;
+  color: var(--lien-text) !important;
   margin: 0 !important;
 }
 
@@ -112,39 +112,39 @@ product-info {
 
 .price--large .price__regular .price-item--regular,
 .price--large .price__sale .price-item--sale {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-bold) !important;
-  font-size: var(--aurelle-text-2xl) !important;
-  color: var(--aurelle-text) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-bold) !important;
+  font-size: var(--lien-text-2xl) !important;
+  color: var(--lien-text) !important;
 }
 
 .price--large .price__compare .price-item--regular {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-md) !important;
-  color: var(--aurelle-text-muted) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-md) !important;
+  color: var(--lien-text-muted) !important;
   text-decoration: line-through !important;
 }
 
 /* Sale badge */
 .price .badge {
   background-color: rgba(184, 149, 106, 0.12) !important;
-  color: var(--aurelle-gold) !important;
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
-  font-size: var(--aurelle-text-xs) !important;
+  color: var(--lien-accent) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-semibold) !important;
+  font-size: var(--lien-text-xs) !important;
   border-radius: 0 !important;
 }
 
 /* Tax / shipping note */
 .product__tax,
 .product__tax a {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-xs) !important;
-  color: var(--aurelle-text-muted) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-xs) !important;
+  color: var(--lien-text-muted) !important;
 }
 
 .product__tax a:hover {
-  color: var(--aurelle-gold) !important;
+  color: var(--lien-accent) !important;
 }
 
 
@@ -155,43 +155,43 @@ product-info {
 .product-form__input .form__label,
 .variant-radios legend,
 .variant-selects legend {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
-  font-size: var(--aurelle-text-sm) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-semibold) !important;
+  font-size: var(--lien-text-sm) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
-  color: var(--aurelle-text) !important;
+  color: var(--lien-text) !important;
 }
 
 /* Button-style swatches */
 .swatch-input__input + .swatch-input__label,
 .variant-radios .swatch-input__input + label {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-sm) !important;
-  border-color: var(--aurelle-border) !important;
-  color: var(--aurelle-text) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-sm) !important;
+  border-color: var(--lien-border) !important;
+  color: var(--lien-text) !important;
   border-radius: 0 !important;
-  transition: all var(--aurelle-transition-fast) !important;
+  transition: all var(--lien-transition-fast) !important;
 }
 
 .swatch-input__input:checked + .swatch-input__label,
 .variant-radios .swatch-input__input:checked + label {
-  border-color: var(--aurelle-dark) !important;
-  background-color: var(--aurelle-dark) !important;
-  color: var(--aurelle-white) !important;
+  border-color: var(--lien-dark) !important;
+  background-color: var(--lien-dark) !important;
+  color: var(--lien-white) !important;
 }
 
 /* Dropdown select */
 .product-form__input .select__select {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-base) !important;
-  border-color: var(--aurelle-border) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-base) !important;
+  border-color: var(--lien-border) !important;
   border-radius: 0 !important;
-  color: var(--aurelle-text) !important;
+  color: var(--lien-text) !important;
 }
 
 .product-form__input .select__select:focus {
-  border-color: var(--aurelle-gold) !important;
+  border-color: var(--lien-accent) !important;
   box-shadow: none !important;
   outline: none !important;
 }
@@ -202,21 +202,21 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .quantity {
-  border-color: var(--aurelle-border) !important;
+  border-color: var(--lien-border) !important;
   border-radius: 0 !important;
 }
 
 .quantity__button,
 .quantity__input {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
-  font-size: var(--aurelle-text-md) !important;
-  color: var(--aurelle-text) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-semibold) !important;
+  font-size: var(--lien-text-md) !important;
+  color: var(--lien-text) !important;
   background: transparent !important;
 }
 
 .quantity__button:hover {
-  color: var(--aurelle-gold) !important;
+  color: var(--lien-accent) !important;
 }
 
 
@@ -225,31 +225,31 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .product-form__submit {
-  background-color: var(--aurelle-gold) !important;
-  color: var(--aurelle-white) !important;
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
-  font-size: var(--aurelle-text-sm) !important;
+  background-color: var(--lien-accent) !important;
+  color: var(--lien-white) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-semibold) !important;
+  font-size: var(--lien-text-sm) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.12em !important;
   border: none !important;
   border-radius: 0 !important;
   padding: 2rem 4rem !important;
   width: 100% !important;
-  transition: all var(--aurelle-transition-base) !important;
+  transition: all var(--lien-transition-base) !important;
   box-shadow: none !important;
 }
 
 .product-form__submit:hover:not([disabled]) {
-  background-color: var(--aurelle-gold-hover) !important;
+  background-color: var(--lien-accent-hover) !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 20px rgba(184, 149, 106, 0.25) !important;
+  box-shadow: 0 4px 20px rgba(123, 143, 166, 0.25) !important;
 }
 
 .product-form__submit[disabled],
 .product-form__submit.disabled {
-  background-color: var(--aurelle-border) !important;
-  color: var(--aurelle-text-muted) !important;
+  background-color: var(--lien-border) !important;
+  color: var(--lien-text-muted) !important;
   cursor: not-allowed !important;
   transform: none !important;
 }
@@ -257,17 +257,17 @@ product-info {
 /* Dynamic checkout buttons (Buy Now / PayPal etc.) */
 .shopify-payment-button__button {
   border-radius: 0 !important;
-  font-family: var(--aurelle-font-heading) !important;
-  font-size: var(--aurelle-text-sm) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-size: var(--lien-text-sm) !important;
   letter-spacing: 0.06em !important;
 }
 
 .shopify-payment-button__button--unbranded {
-  background-color: var(--aurelle-dark) !important;
+  background-color: var(--lien-dark) !important;
 }
 
 .shopify-payment-button__button--unbranded:hover {
-  background-color: var(--aurelle-dark-hover) !important;
+  background-color: var(--lien-dark-hover) !important;
 }
 
 
@@ -277,27 +277,27 @@ product-info {
 
 .product__description,
 .product__description p {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-md) !important;
-  color: var(--aurelle-text-secondary) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-md) !important;
+  color: var(--lien-text-secondary) !important;
   line-height: 1.75 !important;
 }
 
 .product__description li {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-md) !important;
-  color: var(--aurelle-text-secondary) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-md) !important;
+  color: var(--lien-text-secondary) !important;
   line-height: 1.75 !important;
   margin-bottom: 0.4rem !important;
 }
 
 .product__description a {
-  color: var(--aurelle-gold) !important;
+  color: var(--lien-accent) !important;
 }
 
 .product__description strong {
-  color: var(--aurelle-text) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
+  color: var(--lien-text) !important;
+  font-weight: var(--lien-weight-semibold) !important;
 }
 
 
@@ -306,12 +306,12 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .product__accordion {
-  border-top: 1px solid var(--aurelle-border-light) !important;
+  border-top: 1px solid var(--lien-border-light) !important;
   border-bottom: none !important;
 }
 
 .product__accordion details {
-  border-bottom: 1px solid var(--aurelle-border-light) !important;
+  border-bottom: 1px solid var(--lien-border-light) !important;
 }
 
 .product__accordion summary {
@@ -324,25 +324,25 @@ product-info {
 }
 
 .product__accordion .accordion__title {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-semibold) !important;
-  font-size: var(--aurelle-text-md) !important;
-  color: var(--aurelle-text) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-semibold) !important;
+  font-size: var(--lien-text-md) !important;
+  color: var(--lien-text) !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
 }
 
 /* Icon beside title */
 .product__accordion .summary__title .icon-accordion {
-  color: var(--aurelle-gold) !important;
+  color: var(--lien-accent) !important;
   width: 2rem !important;
   height: 2rem !important;
 }
 
 /* Chevron indicator */
 .product__accordion summary .icon-caret {
-  color: var(--aurelle-text-muted) !important;
-  transition: transform var(--aurelle-transition-fast) !important;
+  color: var(--lien-text-muted) !important;
+  transition: transform var(--lien-transition-fast) !important;
 }
 
 .product__accordion details[open] summary .icon-caret {
@@ -351,20 +351,20 @@ product-info {
 
 /* Content */
 .product__accordion .accordion__content {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-base) !important;
-  color: var(--aurelle-text-secondary) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-base) !important;
+  color: var(--lien-text-secondary) !important;
   line-height: 1.75 !important;
   padding: 0 0 1.8rem 0 !important;
 }
 
 .product__accordion .accordion__content p {
   margin-bottom: 1rem !important;
-  font-size: var(--aurelle-text-base) !important;
+  font-size: var(--lien-text-base) !important;
 }
 
 .product__accordion .accordion__content li {
-  font-size: var(--aurelle-text-base) !important;
+  font-size: var(--lien-text-base) !important;
   margin-bottom: 0.4rem !important;
 }
 
@@ -373,30 +373,30 @@ product-info {
    13. TRUST SIGNALS ROW (inline, below ATC)
    -------------------------------------------------------------------------- */
 
-.aurelle-product-trust {
+.lien-product-trust {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--aurelle-space-lg);
-  padding: var(--aurelle-space-lg) 0;
-  border-top: 1px solid var(--aurelle-border-light);
+  gap: var(--lien-space-lg);
+  padding: var(--lien-space-lg) 0;
+  border-top: 1px solid var(--lien-border-light);
   flex-wrap: wrap;
 }
 
-.aurelle-product-trust__item {
+.lien-product-trust__item {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--aurelle-font-body);
-  font-size: var(--aurelle-text-xs);
-  color: var(--aurelle-text-muted);
+  font-family: var(--lien-font-body);
+  font-size: var(--lien-text-xs);
+  color: var(--lien-text-muted);
   white-space: nowrap;
 }
 
-.aurelle-product-trust__item svg {
+.lien-product-trust__item svg {
   width: 1.4rem;
   height: 1.4rem;
-  stroke: var(--aurelle-gold);
+  stroke: var(--lien-accent);
   fill: none;
   stroke-width: 1.8;
   stroke-linecap: round;
@@ -410,9 +410,9 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .product__inventory {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-xs) !important;
-  color: var(--aurelle-text-muted) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-xs) !important;
+  color: var(--lien-text-muted) !important;
 }
 
 
@@ -421,15 +421,15 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .related-products-section {
-  background-color: var(--aurelle-offwhite) !important;
+  background-color: var(--lien-offwhite) !important;
 }
 
 .related-products h2 {
-  font-family: var(--aurelle-font-heading) !important;
-  font-weight: var(--aurelle-weight-bold) !important;
-  font-size: var(--aurelle-text-2xl) !important;
+  font-family: var(--lien-font-heading) !important;
+  font-weight: var(--lien-weight-bold) !important;
+  font-size: var(--lien-text-2xl) !important;
   letter-spacing: -0.02em !important;
-  color: var(--aurelle-text) !important;
+  color: var(--lien-text) !important;
 }
 
 
@@ -438,13 +438,13 @@ product-info {
    -------------------------------------------------------------------------- */
 
 .template-product .rte {
-  font-family: var(--aurelle-font-body) !important;
-  font-size: var(--aurelle-text-md) !important;
-  color: var(--aurelle-text-secondary) !important;
+  font-family: var(--lien-font-body) !important;
+  font-size: var(--lien-text-md) !important;
+  color: var(--lien-text-secondary) !important;
   line-height: 1.75 !important;
 }
 
 /* Focus ring override — use gold */
 .template-product *:focus-visible {
-  outline-color: var(--aurelle-gold) !important;
+  outline-color: var(--lien-accent) !important;
 }

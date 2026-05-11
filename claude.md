@@ -1,6 +1,6 @@
 ## Project
 
-Aurelle — premium modern beauty DTC brand on Shopify. Single hero skincare product (for now), but architecture must stay general so products can be swapped organically. Store: `test1-239283829347123859139053.myshopify.com`. Theme built as a Dawn fork with heavy visual customization to achieve a luxury editorial aesthetic. Text logo for now.
+Lien — modern romantic accessories brand on Shopify. Hero product: magnetic couple bracelets (black & white cord, heart charm). Architecture stays general so products can expand to other couple/jewelry accessories. Store: TBD. Theme built as a Dawn fork with a cool-toned modern aesthetic — less luxury beauty, more clean editorial romance.
 
 **Deployment:** TBD — likely GitHub auto-sync to unpublished theme. Must publish via Shopify admin to go live.
 
@@ -17,7 +17,7 @@ Requires Node.js 18+, Shopify CLI. No local Liquid rendering — dev server requ
 
 ## Architecture
 
-**Dawn fork** — Dawn provides cart, Liquid, checkout, base OS 2.0 infrastructure. We own the visual layer via `aurelle-*` prefixed files. Dawn's core files stay unmodified where possible.
+**Dawn fork** — Dawn provides cart, Liquid, checkout, base OS 2.0 infrastructure. We own the visual layer via `lien-*` prefixed files. Dawn's core files stay unmodified where possible.
 
 **Shopify OS 2.0:** All sections must be modular, movable, removable, duplicatable, configurable from the Shopify editor. Repetitive content MUST use blocks, not numbered settings (`feature_1`, `feature_2`).
 
@@ -25,52 +25,56 @@ Requires Node.js 18+, Shopify CLI. No local Liquid rendering — dev server requ
 
 | Page | Template | Notes |
 | --- | --- | --- |
-| Homepage | `index.json` | Hero → Trust Bar → Featured Product → How It Works → Why Aurelle → Reviews → CTA Banner |
-| Product | `product.json` | TBD — dynamic product with variants, add-to-cart |
+| Homepage | `index.json` | Hero → Trust Bar → Featured Product → How It Works → Why Lien → Reviews → CTA Banner |
+| Product | `product.json` | Dynamic product with variants, add-to-cart |
 | Collection | TBD | Future expansion |
 
 ### Key Sections (Homepage)
 
-- `aurelle-hero` — Split layout, cinematic imagery left, strong typography + dual CTAs + social proof right. Responsive stacking.
-- `aurelle-trust-bar` — Block-based icon + text pairs (free shipping, guarantee, secure checkout, dermatologist tested). Reorderable.
-- `aurelle-featured-product` — Dynamic Shopify product selector, variant pricing, compare-at price, feature bullets as blocks, add-to-cart, urgency badge.
-- `aurelle-how-it-works` — Numbered step cards as blocks. Icon support. Add/remove/reorder/duplicate.
-- `aurelle-why-aurelle` — Dark premium section. Card-based layout with hover interactions. Cards as blocks.
-- `aurelle-reviews` — Review cards as blocks. Star ratings, verified purchase badges, avatars. Add/delete/reorder.
-- `aurelle-cta-banner` — Oversized typography, luxury spacing, strong CTA button, premium contrast.
+- `lien-hero` — Split layout, cinematic imagery left, strong typography + dual CTAs + social proof right. Responsive stacking.
+- `lien-trust-bar` — Block-based icon + text pairs (free shipping, guarantee, secure checkout, couple-focused trust cues). Reorderable.
+- `lien-featured-product` — Dynamic Shopify product selector, variant pricing, compare-at price, feature bullets as blocks, add-to-cart, urgency badge.
+- `lien-how-it-works` — Numbered step cards as blocks. Icon support. Add/remove/reorder/duplicate.
+- `lien-why-lien` — Dark premium section. Card-based layout with hover interactions. Cards as blocks.
+- `lien-reviews` — Review cards as blocks. Star ratings, verified purchase badges, avatars. Add/delete/reorder.
+- `lien-cta-banner` — Oversized typography, luxury spacing, strong CTA button, premium contrast.
 
 ### Key Snippets
 
-- TBD — extract reusable patterns (buttons, badges, cards, icons) into snippets as sections are built.
+- Extract reusable patterns (buttons, badges, cards, icons) into snippets as sections are built.
 
 ## Design System
 
-**Typography:** Large elegant type, thick sans-serif direction. Two fonts:
-- **Headings:** Outfit (bold, geometric, premium thickness)
+**Typography:** Large elegant type, thick sans-serif. Two fonts:
+- **Headings:** Outfit (bold, geometric, modern)
 - **Body:** Inter (clean, modern readability)
 Loaded via Google Fonts. Generous spacing, strong hierarchy.
 
-**CSS:** `aurelle-base.css` (tokens + utilities), per-section CSS files (`aurelle-hero.css`, etc.). Vanilla CSS, custom properties, `aurelle-` prefix. No framework.
+**CSS:** `lien-base.css` (tokens + utilities), per-section CSS files (`lien-hero.css`, etc.). Vanilla CSS, custom properties, `lien-` prefix. No framework.
 
 **Tokens:**
 
 ```css
 /* Colors */
---aurelle-color-gold: #B8956A;        /* Accents, highlights, luxury cues */
---aurelle-color-cream: #F5F0EB;       /* Soft backgrounds, warmth */
---aurelle-color-dark: #1C1C1C;        /* Typography, CTA grounding */
---aurelle-color-offwhite: #FAFAF8;    /* Page backgrounds, minimalism */
+--lien-accent: #7B8FA6;        /* Cool blue-slate — accents, highlights, CTA */
+--lien-accent-hover: #6B7E95;
+--lien-accent-light: #9AAFC2;
+--lien-cream: #EEF1F5;         /* Cool off-white backgrounds */
+--lien-dark: #1A1C22;          /* Cool near-black — typography, dark sections */
+--lien-offwhite: #F7F9FC;      /* Cool page background */
+--lien-text-secondary: #4A5568;
+--lien-text-muted: #8896A8;
+--lien-border: #DDE3EB;
 
-/* Spacing — TBD, establish rhythm */
---aurelle-section-padding-desktop: 100px;
---aurelle-section-padding-mobile: 60px;
---aurelle-margin-desktop: 60px;
---aurelle-margin-mobile: 20px;
+/* Spacing */
+--lien-section-padding-desktop: 100px;
+--lien-section-padding-mobile: 60px;
+--lien-container-max: 1400px;
 ```
 
-**Responsive:** Mobile-first. Primary breakpoint TBD (likely 768px and 1024px). Mobile must feel premium and spacious, not compressed. Large tap targets, clean stacking, readable type.
+**Responsive:** Mobile-first. Primary breakpoints: 768px and 1024px. Mobile must feel premium and spacious. Large tap targets, clean stacking, readable type.
 
-**Interactions:** Premium micro-interactions only. Subtle hover effects, smooth transitions (150–300ms). No flashy gradients, aggressive motion, or excessive shadows. The site must feel calm and sophisticated.
+**Interactions:** Subtle hover effects, smooth transitions (150–300ms). No flashy gradients, aggressive motion, or excessive shadows. Calm and modern.
 
 ## Coding Standards
 
@@ -104,9 +108,9 @@ Loaded via Google Fonts. Generous spacing, strong hierarchy.
 
 ## Brand Voice
 
-Refined, confident, feminine, calm sophistication. The store should emotionally communicate: "This is a real premium beauty brand."
+Modern, romantic, minimal. The store should emotionally communicate: "This is a real brand for real couples."
 
-**Tone:** Luxurious but minimal. Feminine without being cliché. Elegant without being cold. Editorial and cinematic.
+**Tone:** Clean and confident. Romantic without being cheesy. Editorial and cinematic.
 
 **Never feel:** Overcrowded, flashy, cheap, gimmicky, "AliExpress", over-animated, "dropshippy."
 
@@ -135,4 +139,4 @@ Architecture must support adding without major rewrites:
 
 ## Reference Docs
 
-- `aurelle_shopify_theme_prd.md` — Full PRD with section specs, visual direction, technical philosophy
+- `lien_shopify_theme_prd.md` — Full PRD with section specs, visual direction, technical philosophy
