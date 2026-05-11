@@ -1,0 +1,55 @@
+{%- comment -%}
+  Aurelle Button Snippet
+  Usage: {% render 'aurelle-btn', label: 'Shop Now', url: '/collections/all', style: 'gold', size: 'md' %}
+  
+  Parameters:
+    label    - Button text (required)
+    url      - Link URL (optional, renders <button> if blank)
+    style    - 'gold', 'dark', 'outline', 'outline-gold' (default: 'gold')
+    size     - 'sm', 'md', 'lg' (default: 'md')
+    type     - 'submit' for form buttons (optional)
+    disabled - true/false (optional)
+    id       - HTML id attribute (optional)
+    class    - Additional CSS classes (optional)
+{%- endcomment -%}
+
+{%- liquid
+  assign btn_class = 'aurelle-btn'
+  
+  case style
+    when 'dark'
+      assign btn_class = btn_class | append: ' aurelle-btn--dark'
+    when 'outline'
+      assign btn_class = btn_class | append: ' aurelle-btn--outline'
+    when 'outline-gold'
+      assign btn_class = btn_class | append: ' aurelle-btn--outline-gold'
+    else
+      assign btn_class = btn_class | append: ' aurelle-btn--gold'
+  endcase
+  
+  case size
+    when 'sm'
+      assign btn_class = btn_class | append: ' aurelle-btn--sm'
+    when 'lg'
+      assign btn_class = btn_class | append: ' aurelle-btn--lg'
+  endcase
+  
+  if class != blank
+    assign btn_class = btn_class | append: ' ' | append: class
+  endif
+-%}
+
+{%- if url != blank -%}
+  <a href="{{ url }}" class="{{ btn_class }}"{% if id != blank %} id="{{ id }}"{% endif %}>
+    {{ label }}
+  </a>
+{%- else -%}
+  <button 
+    class="{{ btn_class }}"
+    {% if type != blank %}type="{{ type }}"{% endif %}
+    {% if disabled %}disabled{% endif %}
+    {% if id != blank %}id="{{ id }}"{% endif %}
+  >
+    {{ label }}
+  </button>
+{%- endif -%}

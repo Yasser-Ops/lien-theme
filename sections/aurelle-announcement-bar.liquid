@@ -1,0 +1,308 @@
+{%- style -%}
+  /* ======================================================================
+     Aurelle Announcement Bar
+     Dark top bar with rotating promotional messages
+     ====================================================================== */
+
+  .aurelle-announcement {
+    background-color: var(--aurelle-dark);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .aurelle-announcement__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem var(--aurelle-container-padding-mobile);
+    position: relative;
+    min-height: 3.8rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .aurelle-announcement__inner {
+      padding: 1rem var(--aurelle-container-padding);
+    }
+  }
+
+  /* Slide track */
+  .aurelle-announcement__track {
+    overflow: hidden;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Single message */
+  .aurelle-announcement__message {
+    display: none;
+    font-family: var(--aurelle-font-body);
+    font-size: var(--aurelle-text-xs);
+    font-weight: var(--aurelle-weight-medium);
+    letter-spacing: 0.06em;
+    color: var(--aurelle-offwhite);
+    line-height: 1.4;
+    animation: aurelle-ann-in 400ms ease forwards;
+  }
+
+  .aurelle-announcement__message.is-active {
+    display: block;
+  }
+
+  @keyframes aurelle-ann-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .aurelle-announcement__message a {
+    color: var(--aurelle-gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--aurelle-transition-fast);
+  }
+
+  .aurelle-announcement__message a:hover {
+    color: var(--aurelle-offwhite);
+  }
+
+  /* Gold accent dot between messages */
+  .aurelle-announcement__message .aurelle-ann-accent {
+    color: var(--aurelle-gold);
+    font-weight: var(--aurelle-weight-bold);
+  }
+
+  /* Dismiss button */
+  .aurelle-announcement__close {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(250, 250, 248, 0.4);
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--aurelle-transition-fast);
+  }
+
+  .aurelle-announcement__close:hover {
+    color: var(--aurelle-offwhite);
+  }
+
+  .aurelle-announcement__close svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  /* Dot pagination */
+  .aurelle-announcement__dots {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0.5rem;
+    transform: translateX(-50%);
+  }
+
+  .aurelle-announcement__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(250, 250, 248, 0.25);
+    transition: background-color var(--aurelle-transition-fast);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+
+  .aurelle-announcement__dot.is-active {
+    background-color: var(--aurelle-gold);
+  }
+
+  /* Hide dots when only one message */
+  .aurelle-announcement--single .aurelle-announcement__dots {
+    display: none;
+  }
+
+  /* Extra bottom padding when dots are shown */
+  .aurelle-announcement:not(.aurelle-announcement--single) .aurelle-announcement__inner {
+    padding-bottom: 1.8rem;
+  }
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 -%}
+  <div
+    class="aurelle-announcement{% if section.blocks.size == 1 %} aurelle-announcement--single{% endif %}"
+    id="aurelle-announcement-{{ section.id }}"
+    role="region"
+    aria-label="Announcements"
+  >
+    <div class="aurelle-announcement__inner">
+
+      <div class="aurelle-announcement__track">
+        {%- for block in section.blocks -%}
+          <p
+            class="aurelle-announcement__message{% if forloop.first %} is-active{% endif %}"
+            data-ann-msg
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+            {%- else -%}
+              {{ block.settings.text }}
+            {%- endif -%}
+          </p>
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_close -%}
+        <button class="aurelle-announcement__close" aria-label="Dismiss announcement" data-ann-close>
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 1 -%}
+        <div class="aurelle-announcement__dots" aria-hidden="true">
+          {%- for block in section.blocks -%}
+            <button
+              class="aurelle-announcement__dot{% if forloop.first %} is-active{% endif %}"
+              data-ann-dot="{{ forloop.index0 }}"
+            ></button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    var bar = document.getElementById('aurelle-announcement-{{ section.id }}');
+    if (!bar) return;
+
+    var messages = bar.querySelectorAll('[data-ann-msg]');
+    var dots = bar.querySelectorAll('[data-ann-dot]');
+    var closeBtn = bar.querySelector('[data-ann-close]');
+    var current = 0;
+    var timer = null;
+    var interval = {{ section.settings.rotation_speed | times: 1000 | default: 4000 }};
+
+    function show(index) {
+      messages.forEach(function (m, i) {
+        m.classList.toggle('is-active', i === index);
+      });
+      dots.forEach(function (d, i) {
+        d.classList.toggle('is-active', i === index);
+      });
+      current = index;
+    }
+
+    function next() {
+      show((current + 1) % messages.length);
+    }
+
+    function startTimer() {
+      if (messages.length < 2) return;
+      timer = setInterval(next, interval);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        stopTimer();
+        show(parseInt(dot.dataset.annDot, 10));
+        startTimer();
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        stopTimer();
+        bar.style.display = 'none';
+      });
+    }
+
+    startTimer();
+  })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Aurelle Announcement Bar",
+  "tag": "div",
+  "class": "aurelle-announcement-wrapper",
+  "settings": [
+    {
+      "type": "range",
+      "id": "rotation_speed",
+      "label": "Rotation speed (seconds)",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close",
+      "label": "Show dismiss button",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message",
+          "default": "Free shipping on orders over $50 — use code FREESHIP"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)",
+          "info": "Makes the entire message a clickable link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aurelle Announcement Bar",
+      "blocks": [
+        {
+          "type": "message",
+          "settings": {
+            "text": "✨ Free shipping on all orders over $50"
+          }
+        },
+        {
+          "type": "message",
+          "settings": {
+            "text": "New customer? Get 15% off your first order — use code AURELLE15"
+          }
+        },
+        {
+          "type": "message",
+          "settings": {
+            "text": "30-day money-back guarantee · No questions asked"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

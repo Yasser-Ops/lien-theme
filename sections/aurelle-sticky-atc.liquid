@@ -1,0 +1,299 @@
+{%- style -%}
+  /* ======================================================================
+     Aurelle Sticky Add-to-Cart
+     Fixed bottom bar — visible when main ATC button scrolls out of view
+     ====================================================================== */
+
+  .aurelle-satc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background-color: var(--aurelle-white);
+    border-top: 1px solid var(--aurelle-border-light);
+    box-shadow: 0 -4px 24px rgba(28, 28, 28, 0.08);
+    transform: translateY(100%);
+    transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .aurelle-satc.is-visible {
+    transform: translateY(0);
+  }
+
+  .aurelle-satc__inner {
+    max-width: var(--aurelle-container-max);
+    margin: 0 auto;
+    padding: 1.2rem var(--aurelle-container-padding-mobile);
+    display: flex;
+    align-items: center;
+    gap: var(--aurelle-space-md);
+  }
+
+  @media screen and (min-width: 768px) {
+    .aurelle-satc__inner {
+      padding: 1.4rem var(--aurelle-container-padding);
+    }
+  }
+
+  /* Product thumbnail */
+  .aurelle-satc__image {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: var(--aurelle-cream);
+  }
+
+  .aurelle-satc__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Product info */
+  .aurelle-satc__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .aurelle-satc__title {
+    font-family: var(--aurelle-font-heading);
+    font-weight: var(--aurelle-weight-semibold);
+    font-size: var(--aurelle-text-sm);
+    color: var(--aurelle-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+  }
+
+  .aurelle-satc__price {
+    font-family: var(--aurelle-font-heading);
+    font-weight: var(--aurelle-weight-bold);
+    font-size: var(--aurelle-text-md);
+    color: var(--aurelle-text);
+    line-height: 1.2;
+  }
+
+  .aurelle-satc__price-compare {
+    font-family: var(--aurelle-font-body);
+    font-size: var(--aurelle-text-xs);
+    color: var(--aurelle-text-muted);
+    text-decoration: line-through;
+    margin-left: 0.4rem;
+  }
+
+  /* CTA button */
+  .aurelle-satc__btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2.4rem;
+    background-color: var(--aurelle-gold);
+    color: var(--aurelle-white);
+    font-family: var(--aurelle-font-heading);
+    font-weight: var(--aurelle-weight-semibold);
+    font-size: var(--aurelle-text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--aurelle-transition-fast);
+    white-space: nowrap;
+  }
+
+  .aurelle-satc__btn:hover {
+    background-color: var(--aurelle-gold-hover);
+  }
+
+  .aurelle-satc__btn:disabled {
+    background-color: var(--aurelle-border);
+    color: var(--aurelle-text-muted);
+    cursor: not-allowed;
+  }
+
+  /* On mobile: hide image to save space */
+  @media screen and (max-width: 479px) {
+    .aurelle-satc__image {
+      display: none;
+    }
+
+    .aurelle-satc__btn {
+      padding: 1.2rem 1.8rem;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<div
+  class="aurelle-satc"
+  id="aurelle-satc"
+  aria-hidden="true"
+  data-satc
+>
+  <div class="aurelle-satc__inner">
+
+    {%- if product.featured_image != blank -%}
+      <div class="aurelle-satc__image">
+        {{ product.featured_image | image_url: width: 120 | image_tag:
+          loading: 'lazy',
+          alt: product.title | escape
+        }}
+      </div>
+    {%- endif -%}
+
+    <div class="aurelle-satc__info">
+      <span class="aurelle-satc__title">{{ product.title }}</span>
+      <div>
+        <span class="aurelle-satc__price" id="aurelle-satc-price">
+          {{ current_variant.price | money }}
+        </span>
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <span class="aurelle-satc__price-compare" id="aurelle-satc-compare">
+            {{ current_variant.compare_at_price | money }}
+          </span>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <button
+      class="aurelle-satc__btn"
+      id="aurelle-satc-btn"
+      type="button"
+      data-satc-submit
+      {%- unless current_variant.available -%}disabled{%- endunless -%}
+    >
+      {%- if current_variant.available -%}
+        {{ section.settings.button_text | default: 'Add to Cart' }}
+      {%- else -%}
+        Sold Out
+      {%- endif -%}
+    </button>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var satc = document.getElementById('aurelle-satc');
+  var satcBtn = document.getElementById('aurelle-satc-btn');
+  if (!satc || !satcBtn) return;
+
+  // Watch the main ATC button on the page
+  var mainBtn = document.querySelector('.product-form__submit');
+  if (!mainBtn) return;
+
+  // Show/hide via IntersectionObserver
+  var observer = new IntersectionObserver(function (entries) {
+    var entry = entries[0];
+    if (entry.isIntersecting) {
+      satc.classList.remove('is-visible');
+      satc.setAttribute('aria-hidden', 'true');
+    } else {
+      satc.classList.add('is-visible');
+      satc.setAttribute('aria-hidden', 'false');
+    }
+  }, { threshold: 0 });
+
+  observer.observe(mainBtn);
+
+  // Sync variant price when Shopify variant changes
+  document.addEventListener('variant:change', function (e) {
+    if (!e.detail || !e.detail.variant) return;
+    var variant = e.detail.variant;
+    var priceEl = document.getElementById('aurelle-satc-price');
+    var compareEl = document.getElementById('aurelle-satc-compare');
+
+    if (priceEl) {
+      priceEl.textContent = formatMoney(variant.price);
+    }
+
+    if (compareEl) {
+      if (variant.compare_at_price > variant.price) {
+        compareEl.textContent = formatMoney(variant.compare_at_price);
+        compareEl.style.display = '';
+      } else {
+        compareEl.style.display = 'none';
+      }
+    }
+
+    satcBtn.disabled = !variant.available;
+    satcBtn.textContent = variant.available
+      ? '{{ section.settings.button_text | default: "Add to Cart" | escape }}'
+      : 'Sold Out';
+
+    // Keep hidden variant id in sync
+    satcBtn.dataset.variantId = variant.id;
+  });
+
+  // Click: submit to the real product form
+  satcBtn.addEventListener('click', function () {
+    var variantId = satcBtn.dataset.variantId
+      || document.querySelector('[name="id"]')?.value;
+
+    if (!variantId) return;
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function () {
+      // Trigger Dawn's cart update event so the cart drawer/count refreshes
+      document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+      // Also trigger the native Dawn cart notification
+      var cartNotification = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+      if (cartNotification && cartNotification.renderContents) {
+        cartNotification.renderContents({ items: [] });
+      }
+      // Fallback: reload cart sections Dawn-style
+      fetch('/cart.js')
+        .then(function(r) { return r.json(); })
+        .then(function(cart) {
+          document.querySelectorAll('.cart-count-bubble span[aria-hidden]').forEach(function(el) {
+            el.textContent = cart.item_count;
+          });
+        });
+    })
+    .catch(function (err) { console.error('Aurelle sticky ATC error:', err); });
+  });
+
+  function formatMoney(cents) {
+    var amount = (cents / 100).toFixed(2);
+    return window.Shopify && window.Shopify.currency
+      ? window.Shopify.currency.active + amount
+      : '$' + amount;
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Aurelle Sticky ATC",
+  "tag": "div",
+  "class": "aurelle-sticky-atc-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to Cart"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aurelle Sticky ATC"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,194 @@
+{%- style -%}
+  /* ======================================================================
+     Aurelle Trust Bar
+     Horizontal icon + text trust badges
+     ====================================================================== */
+
+  .aurelle-trust-bar {
+    background-color: var(--aurelle-cream);
+    border-top: 1px solid var(--aurelle-border-light);
+    border-bottom: 1px solid var(--aurelle-border-light);
+  }
+
+  .aurelle-trust-bar__inner {
+    max-width: var(--aurelle-container-max);
+    margin: 0 auto;
+    padding: var(--aurelle-space-xl) var(--aurelle-container-padding-mobile);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--aurelle-space-lg);
+  }
+
+  @media screen and (min-width: 768px) {
+    .aurelle-trust-bar__inner {
+      padding: var(--aurelle-space-xl) var(--aurelle-container-padding);
+      grid-template-columns: repeat({{ section.blocks.size }}, 1fr);
+      gap: var(--aurelle-space-xl);
+    }
+  }
+
+  .aurelle-trust-bar__item {
+    display: flex;
+    align-items: center;
+    gap: var(--aurelle-space-sm);
+    text-align: left;
+  }
+
+  @media screen and (min-width: 768px) {
+    .aurelle-trust-bar__item {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .aurelle-trust-bar__icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--aurelle-gold);
+  }
+
+  .aurelle-trust-bar__icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .aurelle-trust-bar__text {
+    font-family: var(--aurelle-font-heading);
+    font-weight: var(--aurelle-weight-semibold);
+    font-size: var(--aurelle-text-sm);
+    color: var(--aurelle-text);
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+
+  .aurelle-trust-bar__subtext {
+    font-family: var(--aurelle-font-body);
+    font-weight: var(--aurelle-weight-regular);
+    font-size: var(--aurelle-text-xs);
+    color: var(--aurelle-text-muted);
+    margin-top: 2px;
+  }
+{%- endstyle -%}
+
+<section class="aurelle-trust-bar" id="aurelle-trust-bar-{{ section.id }}">
+  <div class="aurelle-trust-bar__inner">
+    {%- for block in section.blocks -%}
+      <div class="aurelle-trust-bar__item" {{ block.shopify_attributes }}>
+        <div class="aurelle-trust-bar__icon">
+          {%- case block.settings.icon -%}
+            {%- when 'shipping' -%}
+              <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            {%- when 'guarantee' -%}
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            {%- when 'secure' -%}
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            {%- when 'natural' -%}
+              <svg viewBox="0 0 24 24"><path d="M12 22c-4-4-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-4 8-8 12z"/><path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            {%- when 'certified' -%}
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            {%- when 'star' -%}
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor" stroke="none"/></svg>
+            {%- else -%}
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          {%- endcase -%}
+        </div>
+        <div>
+          <div class="aurelle-trust-bar__text">{{ block.settings.text }}</div>
+          {%- if block.settings.subtext != blank -%}
+            <div class="aurelle-trust-bar__subtext">{{ block.settings.subtext }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Aurelle Trust Bar",
+  "tag": "section",
+  "class": "aurelle-trust-bar-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shipping", "label": "Shipping truck" },
+            { "value": "guarantee", "label": "Shield / Guarantee" },
+            { "value": "secure", "label": "Lock / Secure" },
+            { "value": "natural", "label": "Natural / Leaf" },
+            { "value": "certified", "label": "Certified / Check" },
+            { "value": "star", "label": "Star" }
+          ],
+          "default": "shipping"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aurelle Trust Bar",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shipping",
+            "text": "Free Shipping",
+            "subtext": "On orders over $50"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-Day Guarantee",
+            "subtext": "Money-back promise"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "secure",
+            "text": "Secure Checkout",
+            "subtext": "SSL encrypted"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "icon": "natural",
+            "text": "Clean Ingredients",
+            "subtext": "Dermatologist tested"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Aurelle — Header & Footer Reskin
+   Overrides Dawn's default header/footer to match Aurelle aesthetic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HEADER
+   -------------------------------------------------------------------------- */
+
+/* Base header wrapper */
+.section-header {
+  background-color: var(--aurelle-offwhite) !important;
+  border-bottom: 1px solid var(--aurelle-border-light) !important;
+}
+
+.header-wrapper {
+  background-color: var(--aurelle-offwhite) !important;
+  color: var(--aurelle-text) !important;
+}
+
+.header-wrapper--border-bottom {
+  border-bottom: 1px solid var(--aurelle-border-light) !important;
+}
+
+/* Logo / Brand name */
+.header__heading-link {
+  text-decoration: none !important;
+  color: var(--aurelle-text) !important;
+}
+
+.header__heading-link .h2,
+.header__heading-link span {
+  font-family: var(--aurelle-font-heading) !important;
+  font-weight: var(--aurelle-weight-bold) !important;
+  font-size: 2.4rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--aurelle-text) !important;
+}
+
+/* Navigation links */
+.header__menu-item,
+.list-menu__item--link {
+  font-family: var(--aurelle-font-body) !important;
+  font-weight: var(--aurelle-weight-medium) !important;
+  font-size: 1.4rem !important;
+  letter-spacing: 0.04em !important;
+  color: var(--aurelle-text-secondary) !important;
+  text-transform: none !important;
+  transition: color var(--aurelle-transition-fast) !important;
+}
+
+.header__menu-item:hover,
+.list-menu__item--link:hover {
+  color: var(--aurelle-gold) !important;
+}
+
+/* Header icons (search, account, cart) */
+.header__icon {
+  color: var(--aurelle-text) !important;
+  transition: color var(--aurelle-transition-fast) !important;
+}
+
+.header__icon:hover {
+  color: var(--aurelle-gold) !important;
+}
+
+/* Cart count bubble */
+.cart-count-bubble {
+  background-color: var(--aurelle-gold) !important;
+  color: var(--aurelle-white) !important;
+  font-family: var(--aurelle-font-heading) !important;
+  font-weight: var(--aurelle-weight-semibold) !important;
+  font-size: 1rem !important;
+}
+
+/* Sticky header */
+.shopify-section-header-sticky {
+  background-color: var(--aurelle-offwhite) !important;
+}
+
+.shopify-section-header-sticky .header-wrapper {
+  background-color: var(--aurelle-offwhite) !important;
+}
+
+/* Mobile menu drawer */
+.menu-drawer {
+  background-color: var(--aurelle-offwhite) !important;
+}
+
+.menu-drawer__menu-item {
+  font-family: var(--aurelle-font-heading) !important;
+  font-weight: var(--aurelle-weight-medium) !important;
+  color: var(--aurelle-text) !important;
+  letter-spacing: 0.02em !important;
+}
+
+.menu-drawer__close-button {
+  color: var(--aurelle-text) !important;
+}
+
+/* Announcement bar */
+.announcement-bar {
+  background-color: var(--aurelle-dark) !important;
+  color: var(--aurelle-offwhite) !important;
+}
+
+.announcement-bar__message {
+  font-family: var(--aurelle-font-body) !important;
+  font-weight: var(--aurelle-weight-medium) !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.05em !important;
+  color: var(--aurelle-offwhite) !important;
+}
+
+.announcement-bar__link {
+  color: var(--aurelle-offwhite) !important;
+}
+
+.announcement-bar__link:hover {
+  color: var(--aurelle-gold-light) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   FOOTER
+   -------------------------------------------------------------------------- */
+
+.footer {
+  background-color: var(--aurelle-dark) !important;
+  color: rgba(250, 250, 248, 0.7) !important;
+  margin-top: 0 !important;
+}
+
+.footer a {
+  color: rgba(250, 250, 248, 0.6) !important;
+  transition: color var(--aurelle-transition-fast) !important;
+}
+
+.footer a:hover {
+  color: var(--aurelle-gold-light) !important;
+}
+
+/* Footer headings */
+.footer-block__heading,
+.footer .footer-block__heading {
+  font-family: var(--aurelle-font-heading) !important;
+  font-weight: var(--aurelle-weight-semibold) !important;
+  font-size: 1.4rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--aurelle-offwhite) !important;
+  margin-bottom: 1.9rem !important;
+}
+
+/* Footer links */
+.footer-block__details-content .list-menu__item--link {
+  font-family: var(--aurelle-font-body) !important;
+  font-weight: var(--aurelle-weight-regular) !important;
+  font-size: 1.4rem !important;
+  color: rgba(250, 250, 248, 0.55) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.footer-block__details-content .list-menu__item--link:hover {
+  color: var(--aurelle-gold-light) !important;
+}
+
+/* Footer newsletter */
+.footer__newsletter .field__input {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--aurelle-offwhite) !important;
+  font-family: var(--aurelle-font-body) !important;
+}
+
+.footer__newsletter .field__input::placeholder {
+  color: rgba(250, 250, 248, 0.4) !important;
+}
+
+.footer__newsletter .field__input:focus {
+  border-color: var(--aurelle-gold) !important;
+}
+
+.footer__newsletter .newsletter-form__button {
+  color: var(--aurelle-gold) !important;
+}
+
+/* Footer bottom / copyright */
+.footer__content-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.footer .copyright__content {
+  font-family: var(--aurelle-font-body) !important;
+  font-size: 1.2rem !important;
+  color: rgba(250, 250, 248, 0.4) !important;
+}
+
+.footer .copyright__content a {
+  color: rgba(250, 250, 248, 0.5) !important;
+}
+
+.footer .copyright__content a:hover {
+  color: var(--aurelle-gold-light) !important;
+}
+
+/* Payment icons */
+.footer .list-payment .icon {
+  opacity: 0.5;
+  transition: opacity var(--aurelle-transition-fast);
+}
+
+.footer .list-payment .icon:hover {
+  opacity: 0.8;
+}
+
+/* Social icons */
+.footer__list-social .icon {
+  color: rgba(250, 250, 248, 0.5) !important;
+  transition: color var(--aurelle-transition-fast) !important;
+}
+
+.footer__list-social .icon:hover,
+.footer__list-social a:hover .icon {
+  color: var(--aurelle-gold-light) !important;
+}
+
+/* Policies */
+.footer .policies a {
+  font-size: 1.2rem !important;
+  color: rgba(250, 250, 248, 0.35) !important;
+}
+
+.footer .policies a:hover {
+  color: var(--aurelle-gold-light) !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   CART NOTIFICATION / DRAWER
+   -------------------------------------------------------------------------- */
+
+.cart-notification {
+  font-family: var(--aurelle-font-body) !important;
+}
+
+.cart-notification-product__name {
+  font-family: var(--aurelle-font-heading) !important;
+  font-weight: var(--aurelle-weight-semibold) !important;
+}
+
+.cart-notification__links .button {
+  font-family: var(--aurelle-font-heading) !important;
+  font-weight: var(--aurelle-weight-semibold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}

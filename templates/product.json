@@ -1,0 +1,241 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "trust_signals": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"aurelle-product-trust\"><span class=\"aurelle-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg>Free shipping over $50</span><span class=\"aurelle-product-trust__item\"><svg viewBox=\"0 0 24 24\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>30-day guarantee</span><span class=\"aurelle-product-trust__item\"><svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>Secure checkout</span></div>"
+          }
+        },
+        "tab_how_to_use": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How to Use",
+            "icon": "none",
+            "content": "<p>Apply a small amount to clean, dry skin morning and evening. Gently massage using upward, circular motions until fully absorbed. For best results, use consistently for a minimum of four weeks.</p><p>Morning: follow with SPF 30+ to protect your skin throughout the day.</p>"
+          }
+        },
+        "tab_ingredients": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Key Ingredients",
+            "icon": "leaf",
+            "content": "<p><strong>Hyaluronic Acid</strong> — Deeply hydrates and plumps skin by attracting moisture from the environment.</p><p><strong>Niacinamide (Vitamin B3)</strong> — Brightens uneven tone, reduces pores, and strengthens the skin barrier.</p><p><strong>Encapsulated Retinol</strong> — Gently resurfaces and smooths fine lines with minimal irritation.</p><p><strong>Green Tea Extract</strong> — Antioxidant-rich protection against environmental stress.</p><p><strong>Peptide Complex</strong> — Supports collagen production for firmer, more elastic skin.</p>"
+          }
+        },
+        "tab_suitable_for": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Suitable For",
+            "icon": "check_mark",
+            "content": "<p>Formulated for all skin types. Especially beneficial for:</p><ul><li>Dry and dehydrated skin</li><li>Dull or uneven skin tone</li><li>Fine lines and early signs of aging</li><li>Sensitive skin seeking gentle active ingredients</li><li>First-time retinol users</li></ul>"
+          }
+        },
+        "tab_shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "delivery_fast",
+            "content": "<p><strong>Free standard shipping</strong> on all orders over $50.</p><p>Orders are processed within 1–2 business days and typically arrive within 5–7 business days.</p><p><strong>30-day money-back guarantee.</strong> If you are not completely satisfied, return your product within 30 days for a full refund — no questions asked.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "trust_signals",
+        "tab_how_to_use",
+        "tab_ingredients",
+        "tab_suitable_for",
+        "tab_shipping"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "aurelle_product_trust": {
+      "type": "aurelle-trust-bar",
+      "blocks": {
+        "trust_1": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "shipping",
+            "text": "Free Shipping",
+            "subtext": "On orders over $50"
+          }
+        },
+        "trust_2": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "guarantee",
+            "text": "30-Day Guarantee",
+            "subtext": "Money-back promise"
+          }
+        },
+        "trust_3": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "secure",
+            "text": "Secure Checkout",
+            "subtext": "SSL encrypted"
+          }
+        },
+        "trust_4": {
+          "type": "trust_item",
+          "settings": {
+            "icon": "natural",
+            "text": "Clean Formula",
+            "subtext": "Dermatologist tested"
+          }
+        }
+      },
+      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4"],
+      "settings": {}
+    },
+    "aurelle_product_reviews": {
+      "type": "aurelle-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah M.",
+            "rating": 5,
+            "review_text": "I've been using this for three weeks and the difference is remarkable. My skin feels softer, looks brighter, and the fine lines around my eyes have visibly diminished.",
+            "verified": true
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "name": "Elena K.",
+            "rating": 5,
+            "review_text": "Finally a product that delivers on its promises. The texture is divine and a little goes a long way. My morning routine has never felt so luxurious.",
+            "verified": true
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "name": "Priya D.",
+            "rating": 5,
+            "review_text": "As someone with sensitive skin, I'm always cautious. This formula is gentle yet effective. No irritation, just beautiful, healthy-looking skin.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3"],
+      "settings": {
+        "label": "Real Results",
+        "heading": "What Our Customers Say",
+        "subtitle": "Join thousands who have transformed their skincare routine."
+      }
+    },
+    "aurelle_product_faq": {
+      "type": "aurelle-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will I see results?",
+            "answer": "<p>Most customers notice a visible improvement in skin texture and radiance within 2–4 weeks of consistent use. For deeper concerns like fine lines, allow 6–8 weeks.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for sensitive skin?",
+            "answer": "<p>Yes. Our formula uses encapsulated retinol and carefully balanced actives chosen to minimise irritation. We recommend a patch test before first use.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a <strong>30-day money-back guarantee</strong>. If you're not satisfied, contact us within 30 days for a full refund — no questions asked.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does one bottle last?",
+            "answer": "<p>One 30ml bottle typically lasts 6–8 weeks with twice-daily use (a pea-sized amount each application).</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"],
+      "settings": {
+        "label": "Questions?",
+        "heading": "Frequently Asked",
+        "subtitle": "",
+        "two_column": false,
+        "bg_cream": true,
+        "cta_text": "",
+        "cta_label": ""
+      }
+    },
+    "aurelle_sticky_atc": {
+      "type": "aurelle-sticky-atc",
+      "settings": {
+        "button_text": "Add to Cart"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "aurelle_product_trust",
+    "aurelle_product_reviews",
+    "aurelle_product_faq",
+    "aurelle_sticky_atc"
+  ]
+}

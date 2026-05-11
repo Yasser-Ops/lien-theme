@@ -1,0 +1,211 @@
+{%- style -%}
+  /* ======================================================================
+     Aurelle CTA Banner
+     Final conversion section — oversized typography
+     ====================================================================== */
+
+  .aurelle-cta {
+    background-color: var(--aurelle-offwhite);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .aurelle-cta--dark {
+    background-color: var(--aurelle-dark);
+  }
+
+  .aurelle-cta--cream {
+    background-color: var(--aurelle-cream);
+  }
+
+  .aurelle-cta__inner {
+    max-width: var(--aurelle-container-max);
+    margin: 0 auto;
+    padding: 80px var(--aurelle-container-padding-mobile);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--aurelle-space-lg);
+  }
+
+  @media screen and (min-width: 768px) {
+    .aurelle-cta__inner {
+      padding: 140px var(--aurelle-container-padding);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .aurelle-cta__inner {
+      padding: 160px var(--aurelle-container-padding);
+    }
+  }
+
+  .aurelle-cta__label {
+    font-family: var(--aurelle-font-heading);
+    font-weight: var(--aurelle-weight-semibold);
+    font-size: var(--aurelle-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--aurelle-gold);
+    display: block;
+  }
+
+  .aurelle-cta--dark .aurelle-cta__label {
+    color: var(--aurelle-gold-light);
+  }
+
+  .aurelle-cta__heading {
+    font-family: var(--aurelle-font-heading);
+    font-weight: var(--aurelle-weight-extrabold);
+    font-size: var(--aurelle-text-4xl);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--aurelle-text);
+    margin: 0;
+    max-width: 800px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .aurelle-cta__heading {
+      font-size: var(--aurelle-text-5xl);
+    }
+  }
+
+  .aurelle-cta--dark .aurelle-cta__heading {
+    color: var(--aurelle-offwhite);
+  }
+
+  .aurelle-cta__subtitle {
+    font-family: var(--aurelle-font-body);
+    font-size: var(--aurelle-text-md);
+    color: var(--aurelle-text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0;
+  }
+
+  .aurelle-cta--dark .aurelle-cta__subtitle {
+    color: rgba(250, 250, 248, 0.6);
+  }
+
+  .aurelle-cta__actions {
+    margin-top: var(--aurelle-space-md);
+  }
+
+  /* Decorative background element */
+  .aurelle-cta__deco {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184, 149, 106, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .aurelle-cta__deco--left {
+    left: -200px;
+    top: -100px;
+  }
+
+  .aurelle-cta__deco--right {
+    right: -200px;
+    bottom: -100px;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign bg_class = ''
+  if section.settings.color_scheme == 'dark'
+    assign bg_class = 'aurelle-cta--dark'
+  elsif section.settings.color_scheme == 'cream'
+    assign bg_class = 'aurelle-cta--cream'
+  endif
+
+  assign btn_class = 'aurelle-btn aurelle-btn--lg'
+  if section.settings.color_scheme == 'dark'
+    assign btn_class = btn_class | append: ' aurelle-btn--gold'
+  else
+    assign btn_class = btn_class | append: ' aurelle-btn--dark'
+  endif
+-%}
+
+<section class="aurelle-cta {{ bg_class }}" id="aurelle-cta-{{ section.id }}">
+  <div class="aurelle-cta__deco aurelle-cta__deco--left"></div>
+  <div class="aurelle-cta__deco aurelle-cta__deco--right"></div>
+
+  <div class="aurelle-cta__inner">
+    {%- if section.settings.label != blank -%}
+      <span class="aurelle-cta__label">{{ section.settings.label }}</span>
+    {%- endif -%}
+
+    <h2 class="aurelle-cta__heading">{{ section.settings.heading }}</h2>
+
+    {%- if section.settings.subtitle != blank -%}
+      <p class="aurelle-cta__subtitle">{{ section.settings.subtitle }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="aurelle-cta__actions">
+        <a href="{{ section.settings.button_link }}" class="{{ btn_class }}">
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Aurelle CTA Banner",
+  "tag": "section",
+  "class": "aurelle-cta-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Limited Time"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Skin Deserves the Best"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Experience the difference of clean, effective skincare. Start your journey today."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" },
+        { "value": "cream", "label": "Cream" }
+      ],
+      "default": "light"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aurelle CTA Banner"
+    }
+  ]
+}
+{% endschema %}
