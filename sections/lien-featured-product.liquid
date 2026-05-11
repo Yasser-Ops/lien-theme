@@ -289,35 +289,24 @@
         {%- endif -%}
       </div>
 
-      {%- comment -%} Add to Cart {%- endcomment -%}
-      {%- if product != blank -%}
-        {%- assign current_variant = product.selected_or_first_available_variant -%}
-        <div class="lien-product__form">
-          <product-form data-section-id="{{ section.id }}">
-            {%- form 'product', product, id: 'lien-product-form', novalidate: 'novalidate' -%}
-              <input type="hidden" name="id" value="{{ current_variant.id }}">
-              <button
-                type="submit"
-                name="add"
-                class="lien-btn lien-btn--dark lien-product__add-btn"
-                {%- unless current_variant.available -%}disabled{%- endunless -%}
-              >
-                {%- if current_variant.available -%}
-                  {{ section.settings.button_text | default: 'Add to Cart' }}
-                {%- else -%}
-                  Sold Out
-                {%- endif -%}
-              </button>
-            {%- endform -%}
-          </product-form>
-        </div>
-      {%- else -%}
-        <div class="lien-product__form">
-          <button class="lien-btn lien-btn--dark lien-product__add-btn" disabled>
-            Select a Product
-          </button>
-        </div>
-      {%- endif -%}
+      {%- comment -%} Product Link {%- endcomment -%}
+{%- if product != blank -%}
+  <div class="lien-product__form">
+    <a
+      href="{{ product.url }}"
+      class="lien-btn lien-btn--dark lien-product__add-btn"
+    >
+      {{ section.settings.button_text | default: 'Get the Set' }}
+    </a>
+  </div>
+{%- else -%}
+  <div class="lien-product__form">
+    <button class="lien-btn lien-btn--dark lien-product__add-btn" disabled>
+      Select a Product
+    </button>
+  </div>
+{%- endif -%}
+
     </div>
   </div>
 </section>
