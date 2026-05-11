@@ -1,6 +1,365 @@
+{% doc %}
+  @prompt
+    Create a button in the product bundle section that directly adds a specific product variant (variant ID: 49180762996978) to the cart when clicked, without navigating to the product page. The button should be labeled "Get 1 Set" and use Shopify's AJAX Cart API to add the item. Style it to match the existing theme buttons.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ajax-cart-button-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-ajax-cart-button__wrapper-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-ajax-cart-button__btn-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.button_border_thickness }}px solid {{ block.settings.button_color }};
+    border-radius: {{ block.settings.button_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-ajax-cart-button__btn-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-ajax-cart-button__btn-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-ajax-cart-button__text-{{ ai_gen_id }} {
+    display: inline-block;
+    transition: opacity 0.2s ease;
+  }
+
+  .ai-ajax-cart-button__btn-{{ ai_gen_id }}.loading .ai-ajax-cart-button__text-{{ ai_gen_id }} {
+    opacity: 0;
+  }
+
+  .ai-ajax-cart-button__spinner-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid {{ block.settings.button_text_color }};
+    border-top-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .ai-ajax-cart-button__btn-{{ ai_gen_id }}.loading .ai-ajax-cart-button__spinner-{{ ai_gen_id }} {
+    opacity: 1;
+    animation: ai-ajax-cart-button-spin-{{ ai_gen_id }} 0.6s linear infinite;
+  }
+
+  @keyframes ai-ajax-cart-button-spin-{{ ai_gen_id }} {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .ai-ajax-cart-button__message-{{ ai_gen_id }} {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-radius: {{ block.settings.button_radius }}px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-ajax-cart-button__message-{{ ai_gen_id }}.visible {
+    opacity: 1;
+  }
+
+  .ai-ajax-cart-button__message-{{ ai_gen_id }}.success {
+    background-color: {{ block.settings.success_bg_color }};
+    color: {{ block.settings.success_text_color }};
+  }
+
+  .ai-ajax-cart-button__message-{{ ai_gen_id }}.error {
+    background-color: {{ block.settings.error_bg_color }};
+    color: {{ block.settings.error_text_color }};
+  }
+{% endstyle %}
+
+<ajax-cart-button-{{ ai_gen_id }}
+  class="ai-ajax-cart-button-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-ajax-cart-button__wrapper-{{ ai_gen_id }}">
+    <button
+      type="button"
+      class="ai-ajax-cart-button__btn-{{ ai_gen_id }}"
+      data-variant-id="{{ block.settings.variant_id }}"
+      data-quantity="{{ block.settings.quantity }}"
+    >
+      <span class="ai-ajax-cart-button__text-{{ ai_gen_id }}">{{ block.settings.button_text }}</span>
+      <span class="ai-ajax-cart-button__spinner-{{ ai_gen_id }}"></span>
+    </button>
+    <div class="ai-ajax-cart-button__message-{{ ai_gen_id }}"></div>
+  </div>
+</ajax-cart-button-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AjaxCartButton{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.button = this.querySelector('.ai-ajax-cart-button__btn-{{ ai_gen_id }}');
+        this.messageEl = this.querySelector('.ai-ajax-cart-button__message-{{ ai_gen_id }}');
+        this.variantId = this.button.dataset.variantId;
+        this.quantity = parseInt(this.button.dataset.quantity) || 1;
+      }
+
+      connectedCallback() {
+        this.button.addEventListener('click', this.handleAddToCart.bind(this));
+      }
+
+      async handleAddToCart(event) {
+        event.preventDefault();
+
+        if (this.button.disabled) return;
+
+        this.setLoading(true);
+        this.hideMessage();
+
+        try {
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              id: this.variantId,
+              quantity: this.quantity
+            })
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            this.showMessage('{{ block.settings.success_message }}', 'success');
+            this.dispatchCartUpdate();
+          } else {
+            this.showMessage(data.description || '{{ block.settings.error_message }}', 'error');
+          }
+        } catch (error) {
+          this.showMessage('{{ block.settings.error_message }}', 'error');
+        } finally {
+          this.setLoading(false);
+        }
+      }
+
+      setLoading(isLoading) {
+        if (isLoading) {
+          this.button.classList.add('loading');
+          this.button.disabled = true;
+        } else {
+          this.button.classList.remove('loading');
+          this.button.disabled = false;
+        }
+      }
+
+      showMessage(message, type) {
+        this.messageEl.textContent = message;
+        this.messageEl.className = 'ai-ajax-cart-button__message-{{ ai_gen_id }} visible ' + type;
+
+        setTimeout(() => {
+          this.hideMessage();
+        }, 3000);
+      }
+
+      hideMessage() {
+        this.messageEl.classList.remove('visible');
+      }
+
+      dispatchCartUpdate() {
+        document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
+          bubbles: true
+        }));
+
+        fetch('/cart.js')
+          .then(response => response.json())
+          .then(cart => {
+            document.documentElement.dispatchEvent(new CustomEvent('cart:updated', {
+              bubbles: true,
+              detail: { cart }
+            }));
+          });
+      }
+    }
+
+    customElements.define('ajax-cart-button-{{ ai_gen_id }}', AjaxCartButton{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "AJAX add to cart button",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product settings"
+    },
+    {
+      "type": "text",
+      "id": "variant_id",
+      "label": "Variant ID",
+      "default": "49180762996978"
+    },
+    {
+      "type": "range",
+      "id": "quantity",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Quantity",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Get 1 Set"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Background color",
+      "default": "#1C1C1C"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#FAFAF8"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Hover background color",
+      "default": "#B8956A"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "button_border_thickness",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "Border thickness",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Added to cart successfully!"
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Error message",
+      "default": "Unable to add to cart. Please try again."
+    },
+    {
+      "type": "color",
+      "id": "success_bg_color",
+      "label": "Success background color",
+      "default": "#B8956A"
+    },
+    {
+      "type": "color",
+      "id": "success_text_color",
+      "label": "Success text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "error_bg_color",
+      "label": "Error background color",
+      "default": "#D82C0D"
+    },
+    {
+      "type": "color",
+      "id": "error_text_color",
+      "label": "Error text color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AJAX add to cart button"
+    }
+  ]
+}
 {% endschema %}
