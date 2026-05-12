@@ -469,13 +469,9 @@
         "heading": "Made for the Two of You",
         "subtitle": "One set. Two bracelets. A bond you can wear every day.",
         "button_label": "Shop the Set",
-        "button_link": "",
+        "button_link": "shopify://products/bracelet",
         "color_scheme": "dark"
       }
-    },
-    "1778524372431fac3f": {
-      "type": "_blocks",
-      "settings": {}
     }
   },
   "order": [
@@ -490,7 +486,6 @@
     "177857550632ed6830",
     "lien_faq",
     "lien_newsletter",
-    "lien_cta",
-    "1778524372431fac3f"
+    "lien_cta"
   ]
 }
