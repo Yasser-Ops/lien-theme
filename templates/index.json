@@ -343,17 +343,11 @@
     "177857550632ed6830": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_featured_carousel_AFrDUa": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        },
         "judge_me_reviews_cards_carousel_xk3mjM": {
           "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "show_sample_reviews": true,
-            "reviews_selection": "all",
+            "show_sample_reviews": false,
+            "reviews_selection": "product_reviews",
             "products": [
               "bracelet"
             ],
@@ -384,53 +378,10 @@
         }
       },
       "block_order": [
-        "judge_me_reviews_featured_carousel_AFrDUa",
         "judge_me_reviews_cards_carousel_xk3mjM"
       ],
       "settings": {
         "include_margins": true
-      }
-    },
-    "lien_reviews": {
-      "type": "lien-reviews",
-      "blocks": {
-        "review_1": {
-          "type": "review",
-          "settings": {
-            "name": "Camille & Nico",
-            "rating": 5,
-            "review_text": "We ordered these for our anniversary and I cried when we opened the box. The quality is so much better than I expected. We wear them every single day now.",
-            "verified": true
-          }
-        },
-        "review_2": {
-          "type": "review",
-          "settings": {
-            "name": "Jade R.",
-            "rating": 5,
-            "review_text": "Long distance relationship and these bracelets make it feel like he's right here. The magnetic snap is so satisfying. 10/10 would buy again for every couple I know.",
-            "verified": true
-          }
-        },
-        "review_3": {
-          "type": "review",
-          "settings": {
-            "name": "Marcus T.",
-            "rating": 5,
-            "review_text": "Bought this as a gift and she absolutely loved it. The packaging alone is worth it. We matched them up the moment she opened the box. Such a simple but powerful idea.",
-            "verified": true
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
-      "settings": {
-        "label": "Real Couples",
-        "heading": "What Couples Say",
-        "subtitle": "Join 50,000+ couples who wear their bond every day."
       }
     },
     "lien_faq": {
@@ -537,7 +488,6 @@
     "lien_offers",
     "lien_comparison",
     "177857550632ed6830",
-    "lien_reviews",
     "lien_faq",
     "lien_newsletter",
     "lien_cta",
