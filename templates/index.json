@@ -340,6 +340,55 @@
         "cta_link": ""
       }
     },
+    "177857550632ed6830": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_4ycH8j": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        },
+        "judge_me_reviews_cards_carousel_UP3aRF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "star_rating": "4_to_5_star",
+            "show_review_media": true,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 20,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": true,
+            "arrows_position": "sides",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#000000",
+            "text_color": "#000000",
+            "card_color": "#f9f9f9",
+            "stars_color": "#7b8ea5",
+            "arrows_color": "#000000",
+            "transition_speed": 5,
+            "header_text": "What Couples Say",
+            "show_average_rating": false
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_4ycH8j",
+        "judge_me_reviews_cards_carousel_UP3aRF"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "lien_reviews": {
       "type": "lien-reviews",
       "blocks": {
@@ -475,19 +524,8 @@
       "type": "_blocks",
       "settings": {}
     },
-    "177857550632ed6830": {
+    "1778575617d80bd9e7": {
       "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_4ycH8j": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_4ycH8j"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -502,11 +540,12 @@
     "lien_quantity_breaks_nT7KhT",
     "lien_offers",
     "lien_comparison",
+    "177857550632ed6830",
     "lien_reviews",
     "lien_faq",
     "lien_newsletter",
     "lien_cta",
     "1778524372431fac3f",
-    "177857550632ed6830"
+    "1778575617d80bd9e7"
   ]
 }
