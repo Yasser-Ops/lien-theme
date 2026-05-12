@@ -267,6 +267,26 @@
       "settings": {
         "button_text": "Get the Set"
       }
+    },
+    "177857519587c65e74": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_79w343": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_79w343"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -275,6 +295,7 @@
     "lien_quantity_breaks",
     "lien_product_reviews",
     "lien_product_faq",
-    "lien_sticky_atc"
+    "lien_sticky_atc",
+    "177857519587c65e74"
   ]
 }
