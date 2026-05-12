@@ -354,7 +354,9 @@
           "settings": {
             "show_sample_reviews": true,
             "reviews_selection": "all",
-            "products": [],
+            "products": [
+              "bracelet"
+            ],
             "star_rating": "all",
             "show_review_media": true,
             "display_order": "media_first",
@@ -372,7 +374,7 @@
             "corner_styling": "soft",
             "header_text_color": "#000000",
             "text_color": "#000000",
-            "card_color": "#F9F9F9",
+            "card_color": "#f9f9f9",
             "stars_color": "",
             "arrows_color": "#000000",
             "transition_speed": 5,
@@ -523,12 +525,6 @@
     "1778524372431fac3f": {
       "type": "_blocks",
       "settings": {}
-    },
-    "1778575617d80bd9e7": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -545,7 +541,6 @@
     "lien_faq",
     "lien_newsletter",
     "lien_cta",
-    "1778524372431fac3f",
-    "1778575617d80bd9e7"
+    "1778524372431fac3f"
   ]
 }
