@@ -474,6 +474,23 @@
     "1778524372431fac3f": {
       "type": "_blocks",
       "settings": {}
+    },
+    "177857550632ed6830": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_4ycH8j": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_4ycH8j"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -489,6 +506,7 @@
     "lien_faq",
     "lien_newsletter",
     "lien_cta",
-    "1778524372431fac3f"
+    "1778524372431fac3f",
+    "177857550632ed6830"
   ]
 }
