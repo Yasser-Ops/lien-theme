@@ -171,6 +171,26 @@
         "code_3": "BUNDLE3"
       }
     },
+    "177857519587c65e74": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_79w343": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_79w343"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "lien_product_reviews": {
       "type": "lien-reviews",
       "blocks": {
@@ -207,6 +227,7 @@
         "review_2",
         "review_3"
       ],
+      "disabled": true,
       "settings": {
         "label": "Real Couples",
         "heading": "What Couples Say",
@@ -267,35 +288,15 @@
       "settings": {
         "button_text": "Get the Set"
       }
-    },
-    "177857519587c65e74": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_79w343": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_79w343"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
     "lien_product_trust",
     "lien_quantity_breaks",
+    "177857519587c65e74",
     "lien_product_reviews",
     "lien_product_faq",
-    "lien_sticky_atc",
-    "177857519587c65e74"
+    "lien_sticky_atc"
   ]
 }
