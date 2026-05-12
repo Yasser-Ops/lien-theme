@@ -449,19 +449,6 @@
         "cta_link": "/pages/contact"
       }
     },
-    "lien_newsletter": {
-      "type": "lien-newsletter",
-      "settings": {
-        "label": "Join the Community",
-        "heading": "For Couples Who Wear Their Story",
-        "subtitle": "Subscribe for exclusive offers, new drops, and couple content. No spam — ever.",
-        "placeholder": "Your email address",
-        "button_text": "Subscribe",
-        "success_message": "Thank you — welcome to the Lien family.",
-        "privacy_text": "We respect your privacy. Unsubscribe at any time.",
-        "show_perks": true
-      }
-    },
     "lien_cta": {
       "type": "lien-cta-banner",
       "settings": {
@@ -485,7 +472,6 @@
     "lien_comparison",
     "177857550632ed6830",
     "lien_faq",
-    "lien_newsletter",
     "lien_cta"
   ]
 }

@@ -11,10 +11,36 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "lien_newsletter_NhTFyc": {
+      "type": "lien-newsletter",
+      "name": "Lien Newsletter",
+      "settings": {
+        "label": "Join the Community",
+        "heading": "Your Best Skin Starts Here",
+        "subtitle": "Subscribe for exclusive offers, skincare tips, and early access to new launches. No spam — ever.",
+        "placeholder": "Your email address",
+        "button_text": "Subscribe",
+        "success_message": "Thank you — welcome to the Lien family.",
+        "privacy_text": "We respect your privacy. Unsubscribe at any time.",
+        "show_perks": true
+      }
+    },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "text_nKqwiJ": {
+          "type": "text",
+          "settings": {
+            "heading": "JOIN THE COMMUNITY",
+            "subtext": "<h1><br/>Your Best Skin Starts Here</h1><p>Subscribe for exclusive offers, skincare tips, and early access to new launches. No spam — ever.</p><h1></h1>"
+          }
+        }
+      },
+      "block_order": [
+        "text_nKqwiJ"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-28d3a8ce-5c38-4f13-bd77-ade3fb8d5dbe",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
@@ -30,6 +56,7 @@
     }
   },
   "order": [
+    "lien_newsletter_NhTFyc",
     "footer"
   ]
 }
