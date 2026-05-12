@@ -21,7 +21,7 @@
         "button_label_2": "Our Story",
         "button_link_2": "",
         "show_social_proof": true,
-        "social_proof_text": "Loved by 50,000+ couples worldwide"
+        "social_proof_text": "Loved by 3000+ couples in Lebanon"
       }
     },
     "lien_trust_bar": {
@@ -208,39 +208,25 @@
           "settings": {
             "offer_label": "New Couple",
             "badge": "15% Off",
-            "featured": false,
+            "featured": true,
             "title": "First Order Gift",
             "description": "Get 15% off your very first set. Enter the code at checkout and start wearing your bond.",
             "code": "LIEN15",
             "expiry": "Valid for new customers only",
             "button_label": "Shop Now",
-            "button_link": ""
+            "button_link": "shopify://products/bracelet"
           }
         },
-        "offer_2": {
+        "offer_BXXbCi": {
           "type": "offer",
           "settings": {
-            "offer_label": "Limited Time",
-            "badge": "Save 25%",
+            "offer_label": "New Customer",
+            "badge": "",
             "featured": true,
-            "title": "Bundle Deal",
-            "description": "Save 25% when you buy 2 or more sets. The easiest way to share the bond with everyone you love.",
-            "code": "BOND25",
+            "title": "Welcome Gift",
+            "description": "Get 15% off your first order when you use the code below at checkout.",
+            "code": "LIEN15",
             "expiry": "Offer ends Sunday at midnight",
-            "button_label": "Shop Bundles",
-            "button_link": ""
-          }
-        },
-        "offer_3": {
-          "type": "offer",
-          "settings": {
-            "offer_label": "Free Gift",
-            "badge": "Gift with Purchase",
-            "featured": false,
-            "title": "Free Gift Wrap",
-            "description": "Every order over $50 gets a handwritten gift card included. No code needed — automatic at checkout.",
-            "code": "",
-            "expiry": "While stocks last",
             "button_label": "Shop Now",
             "button_link": ""
           }
@@ -248,8 +234,7 @@
       },
       "block_order": [
         "offer_1",
-        "offer_2",
-        "offer_3"
+        "offer_BXXbCi"
       ],
       "settings": {
         "label": "Exclusive Deals",
@@ -337,7 +322,7 @@
         "col_others": "Typical Brands",
         "cta_subtext": "Ready to wear your bond?",
         "cta_label": "Shop the Set",
-        "cta_link": ""
+        "cta_link": "shopify://products/bracelet"
       }
     },
     "177857550632ed6830": {
