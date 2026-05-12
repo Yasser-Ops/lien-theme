@@ -54,15 +54,19 @@
   .lien-qb__tiers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--lien-space-md);
+    gap: 6px;
     margin-bottom: var(--lien-space-2xl);
+  }
+
+  @media screen and (min-width: 480px) {
+    .lien-qb__tiers { gap: var(--lien-space-md); }
   }
 
   .lien-qb__tier {
     position: relative;
     background-color: var(--lien-white);
     border: 2px solid var(--lien-border);
-    padding: var(--lien-space-xl) var(--lien-space-md) var(--lien-space-lg);
+    padding: var(--lien-space-lg) var(--lien-space-xs) var(--lien-space-md);
     cursor: pointer;
     transition: border-color 200ms ease, background-color 200ms ease;
     text-align: center;
@@ -112,9 +116,13 @@
   .lien-qb__tier-price {
     font-family: var(--lien-font-heading);
     font-weight: var(--lien-weight-bold);
-    font-size: var(--lien-text-2xl);
+    font-size: var(--lien-text-lg);
     color: var(--lien-dark);
     line-height: 1;
+  }
+
+  @media screen and (min-width: 480px) {
+    .lien-qb__tier-price { font-size: var(--lien-text-2xl); }
   }
 
   .lien-qb__tier-original {
