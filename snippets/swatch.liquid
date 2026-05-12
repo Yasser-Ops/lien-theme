@@ -22,6 +22,48 @@
   endif
 -%}
 
+{%- if swatch_value == blank and value_name != blank -%}
+  {%- assign _vn = value_name | downcase | strip -%}
+  {%- if _vn contains '/' -%}
+    {%- assign _parts = _vn | split: '/' -%}
+    {%- assign _c1 = _parts[0] | strip -%}
+    {%- assign _c2 = _parts[1] | strip -%}
+    {%- assign _h1 = '#aaaaaa' -%}
+    {%- if _c1 == 'black' -%}{%- assign _h1 = '#1a1c22' -%}
+    {%- elsif _c1 == 'pink' -%}{%- assign _h1 = '#e8a4b8' -%}
+    {%- elsif _c1 == 'blue' -%}{%- assign _h1 = '#7b9ec4' -%}
+    {%- elsif _c1 == 'grey' or _c1 == 'gray' -%}{%- assign _h1 = '#9ca3af' -%}
+    {%- elsif _c1 == 'green' -%}{%- assign _h1 = '#81b29a' -%}
+    {%- elsif _c1 == 'yellow' -%}{%- assign _h1 = '#f9e07f' -%}
+    {%- elsif _c1 == 'white' -%}{%- assign _h1 = '#f0eeec' -%}
+    {%- elsif _c1 == 'beige' -%}{%- assign _h1 = '#d4c4a8' -%}
+    {%- endif -%}
+    {%- assign _h2 = '#aaaaaa' -%}
+    {%- if _c2 == 'black' -%}{%- assign _h2 = '#1a1c22' -%}
+    {%- elsif _c2 == 'pink' -%}{%- assign _h2 = '#e8a4b8' -%}
+    {%- elsif _c2 == 'blue' -%}{%- assign _h2 = '#7b9ec4' -%}
+    {%- elsif _c2 == 'grey' or _c2 == 'gray' -%}{%- assign _h2 = '#9ca3af' -%}
+    {%- elsif _c2 == 'green' -%}{%- assign _h2 = '#81b29a' -%}
+    {%- elsif _c2 == 'yellow' -%}{%- assign _h2 = '#f9e07f' -%}
+    {%- elsif _c2 == 'white' -%}{%- assign _h2 = '#f0eeec' -%}
+    {%- elsif _c2 == 'beige' -%}{%- assign _h2 = '#d4c4a8' -%}
+    {%- endif -%}
+    {%- assign swatch_value = 'conic-gradient(from 135deg, ' | append: _h1 | append: ' 50%, ' | append: _h2 | append: ' 50%)' -%}
+  {%- else -%}
+    {%- assign _h = '#aaaaaa' -%}
+    {%- if _vn == 'black' -%}{%- assign _h = '#1a1c22' -%}
+    {%- elsif _vn == 'pink' -%}{%- assign _h = '#e8a4b8' -%}
+    {%- elsif _vn == 'blue' -%}{%- assign _h = '#7b9ec4' -%}
+    {%- elsif _vn == 'grey' or _vn == 'gray' -%}{%- assign _h = '#9ca3af' -%}
+    {%- elsif _vn == 'green' -%}{%- assign _h = '#81b29a' -%}
+    {%- elsif _vn == 'yellow' -%}{%- assign _h = '#f9e07f' -%}
+    {%- elsif _vn == 'white' -%}{%- assign _h = '#f0eeec' -%}
+    {%- elsif _vn == 'beige' -%}{%- assign _h = '#d4c4a8' -%}
+    {%- endif -%}
+    {%- assign swatch_value = _h -%}
+  {%- endif -%}
+{%- endif -%}
+
 <span
   {% if swatch_value %}
     class="swatch{% if shape == 'square' %} swatch--square{% endif %}"

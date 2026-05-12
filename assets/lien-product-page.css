@@ -163,7 +163,7 @@ product-info {
   color: var(--lien-text) !important;
 }
 
-/* Button-style swatches */
+/* Button-style variant pickers (text/pill) */
 .swatch-input__input + .swatch-input__label,
 .variant-radios .swatch-input__input + label {
   font-family: var(--lien-font-body) !important;
@@ -179,6 +179,29 @@ product-info {
   border-color: var(--lien-dark) !important;
   background-color: var(--lien-dark) !important;
   color: var(--lien-white) !important;
+}
+
+/* Color swatches: undo button-style rules, show circular selection ring */
+.product-form__input--swatch .swatch-input__input + .swatch-input__label {
+  border-radius: 50% !important;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  outline-offset: 3px !important;
+}
+
+.product-form__input--swatch .swatch-input__input:checked + .swatch-input__label {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: inherit !important;
+  outline: 2px solid var(--lien-dark) !important;
+  outline-offset: 3px !important;
+}
+
+.product-form__input--swatch .swatch-input__input:active + .swatch-input__label {
+  background-color: transparent !important;
+  outline: 2px solid rgba(26, 28, 34, 0.4) !important;
+  outline-offset: 3px !important;
 }
 
 /* Dropdown select */
