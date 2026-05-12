@@ -276,7 +276,7 @@
         "label": "Questions?",
         "heading": "Frequently Asked",
         "subtitle": "",
-        "two_column": false,
+        "two_column": true,
         "bg_cream": true,
         "cta_text": "",
         "cta_label": "",
