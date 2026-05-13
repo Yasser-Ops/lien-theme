@@ -188,16 +188,63 @@
     },
     "lien_quantity_breaks_nT7KhT": {
       "type": "lien-quantity-breaks",
+      "blocks": {
+        "tier_zwemVN": {
+          "type": "tier",
+          "settings": {
+            "image": "shopify://shop_images/11.avif",
+            "badge": "",
+            "featured": false,
+            "name": "1 Set",
+            "description": "",
+            "items": "",
+            "qty": 1,
+            "discount": 0,
+            "discount_code": ""
+          }
+        },
+        "tier_BVh9dg": {
+          "type": "tier",
+          "settings": {
+            "image": "shopify://shop_images/6.avif",
+            "badge": "Most Popular",
+            "featured": true,
+            "name": "2 Sets",
+            "description": "",
+            "items": "",
+            "qty": 2,
+            "discount": 10,
+            "discount_code": ""
+          }
+        },
+        "tier_YzGgmG": {
+          "type": "tier",
+          "settings": {
+            "image": "shopify://shop_images/10.avif",
+            "badge": "",
+            "featured": false,
+            "name": "3 Sets",
+            "description": "",
+            "items": "",
+            "qty": 3,
+            "discount": 15,
+            "discount_code": ""
+          }
+        }
+      },
+      "block_order": [
+        "tier_zwemVN",
+        "tier_BVh9dg",
+        "tier_YzGgmG"
+      ],
       "name": "Quantity Breaks",
       "settings": {
         "product": "bracelet",
         "label": "Save More",
         "heading": "Buy More, Save More",
         "subtitle": "Stock up on sets - for you, your partner, or as gifts.",
-        "discount_2": 10,
-        "discount_3": 15,
-        "code_2": "BUNDLE2",
-        "code_3": "BUNDLE3"
+        "slot_label": "Set",
+        "hint": "Discount applied automatically at checkout"
       }
     },
     "lien_offers": {
