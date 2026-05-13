@@ -112,6 +112,18 @@
     right: -200px;
     bottom: -100px;
   }
+
+  .lien-cta__urgency {
+    font-family: var(--lien-font-body);
+    font-size: var(--lien-text-sm);
+    color: var(--lien-text-muted);
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .lien-cta--dark .lien-cta__urgency {
+    color: rgba(250, 250, 248, 0.45);
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -152,6 +164,10 @@
         </a>
       </div>
     {%- endif -%}
+
+    {%- if section.settings.urgency_text != blank -%}
+      <p class="lien-cta__urgency">{{ section.settings.urgency_text }}</p>
+    {%- endif -%}
   </div>
 </section>
 
@@ -189,6 +205,13 @@
       "type": "url",
       "id": "button_link",
       "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "urgency_text",
+      "label": "Urgency line below button",
+      "default": "Ships in 1–3 days. Gift box included.",
+      "info": "Leave blank to hide"
     },
     {
       "type": "select",

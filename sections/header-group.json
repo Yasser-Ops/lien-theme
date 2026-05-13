@@ -12,27 +12,27 @@
   "type": "header",
   "sections": {
     "announcement-bar": {
-      "type": "announcement-bar",
+      "type": "lien-announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
+        "msg1": {
+          "type": "message",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "✨ Free Shipping on All Orders",
+            "link": ""
+          }
+        },
+        "msg2": {
+          "type": "message",
+          "settings": {
+            "text": "30-Day Money-Back Guarantee · No Questions Asked",
             "link": ""
           }
         }
       },
-      "block_order": [
-        "announcement-bar-0"
-      ],
+      "block_order": ["msg1", "msg2"],
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "rotation_speed": 4,
+        "show_close": true
       }
     },
     "header": {

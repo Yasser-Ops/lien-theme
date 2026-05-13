@@ -250,7 +250,7 @@
 
       <p class="lien-product__description">
         {%- if product != blank and product.description != blank -%}
-          {{ product.description | strip_html | truncate: 200 }}
+          {{ product.description | strip_html }}
         {%- else -%}
           {{ section.settings.description | default: 'A carefully crafted formula designed to nourish and transform your skin.' }}
         {%- endif -%}
@@ -294,7 +294,7 @@
   <div class="lien-product__form">
     <a
       href="{{ product.url }}"
-      class="lien-btn lien-btn--dark lien-product__add-btn"
+      class="lien-btn lien-btn--accent lien-product__add-btn"
     >
       {{ section.settings.button_text | default: 'Get the Set' }}
     </a>

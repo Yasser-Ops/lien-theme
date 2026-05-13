@@ -13,18 +13,8 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {
-        "text_nKqwiJ": {
-          "type": "text",
-          "settings": {
-            "heading": "JOIN THE COMMUNITY",
-            "subtext": "<h1><br/>Your Best Skin Starts Here</h1><p>Subscribe for exclusive offers, skincare tips, and early access to new launches. No spam — ever.</p><h1></h1>"
-          }
-        }
-      },
-      "block_order": [
-        "text_nKqwiJ"
-      ],
+      "blocks": {},
+      "block_order": [],
       "settings": {
         "newsletter_enable": true,
         "newsletter_label": "Join the Community",

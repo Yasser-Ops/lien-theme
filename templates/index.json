@@ -21,7 +21,7 @@
         "button_label_2": "Our Story",
         "button_link_2": "",
         "show_social_proof": true,
-        "social_proof_text": "Loved by 3000+ couples in Lebanon"
+        "social_proof_text": "Loved by 3,000+ customers worldwide"
       }
     },
     "lien_trust_bar": {
@@ -56,7 +56,7 @@
           "settings": {
             "icon": "star",
             "text": "100% Satisfaction Guaranteed",
-            "subtext": "Authentic Products — Quality assured"
+            "subtext": "Ships in a Gift Box — Ready to Give"
           }
         }
       },
@@ -118,7 +118,7 @@
           "type": "step",
           "settings": {
             "title": "Order the Set",
-            "description": "Choose your style — black, white, or both. Ships as a complete pair in a premium gift box."
+            "description": "Choose your style — pick the pair that fits your bond. Ships as a complete set in a premium gift box."
           }
         },
         "step_2": {
@@ -245,33 +245,6 @@
         "subtitle": "Stock up on sets - for you, your partner, or as gifts.",
         "slot_label": "Set",
         "hint": "Discount applied automatically at checkout"
-      }
-    },
-    "lien_offers": {
-      "type": "lien-offers",
-      "blocks": {
-        "offer_1": {
-          "type": "offer",
-          "settings": {
-            "offer_label": "New Couple",
-            "badge": "10% Off",
-            "featured": true,
-            "title": "First Order Gift",
-            "description": "Get 10% off your very first set. Enter the code at checkout and start wearing your bond.",
-            "code": "LIEN15",
-            "expiry": "Valid for new customers only",
-            "button_label": "Shop Now",
-            "button_link": "shopify://products/bracelet"
-          }
-        }
-      },
-      "block_order": [
-        "offer_1"
-      ],
-      "settings": {
-        "label": "Exclusive Deals",
-        "heading": "Current Offers",
-        "subtitle": "Limited-time offers to help you start your Lien story at exceptional value."
       }
     },
     "lien_comparison": {
@@ -463,7 +436,8 @@
         "subtitle": "One set. Two bracelets. A bond you can wear every day.",
         "button_label": "Shop the Set",
         "button_link": "shopify://products/bracelet",
-        "color_scheme": "cream"
+        "color_scheme": "dark",
+        "urgency_text": "Ships in 1–3 days. Arrives in a premium gift box."
       }
     }
   },
@@ -474,7 +448,6 @@
     "lien_how_it_works",
     "lien_why",
     "lien_quantity_breaks_nT7KhT",
-    "lien_offers",
     "lien_comparison",
     "177857550632ed6830",
     "lien_faq",
