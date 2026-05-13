@@ -673,107 +673,129 @@
   ],
   "blocks": [
     {
-      "type": "tier",
-      "name": "Bundle Tier",
+      "type": "bundle",
+      "name": "Bundle",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image",
-          "info": "Optional. Shown inside the tier card."
+          "label": "Bundle image"
         },
         {
           "type": "text",
           "id": "badge",
           "label": "Badge",
-          "info": "e.g. Most Popular — leave blank to hide."
+          "info": "e.g. Most Popular — leave blank to hide"
         },
         {
           "type": "checkbox",
           "id": "featured",
           "label": "Featured",
           "default": false,
-          "info": "Slightly elevates the card to draw attention."
+          "info": "Adds gold border and gold button"
         },
         {
           "type": "text",
           "id": "name",
-          "label": "Tier name",
+          "label": "Bundle name",
           "default": "1 Set"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Short description",
-          "info": "Shown on tablet and up."
+          "label": "Short description"
         },
         {
           "type": "textarea",
           "id": "items",
           "label": "Included items (comma-separated)",
-          "info": "e.g. 2 bracelets, Premium gift box. Shown on tablet and up."
+          "info": "e.g. 2 × Magnetic Couple Bracelet Set, Premium gift box"
         },
         {
           "type": "number",
-          "id": "qty",
-          "label": "Quantity (sets)",
+          "id": "bundle_qty",
+          "label": "Bundle quantity",
           "default": 1,
-          "info": "How many units are in this bundle. Controls how many variant-picker rows appear."
-        },
-        {
-          "type": "range",
-          "id": "discount",
-          "label": "Discount (%)",
-          "min": 0,
-          "max": 50,
-          "step": 1,
-          "default": 0,
-          "info": "Set to 0 for no discount. Applied to the combined variant price(s)."
+          "info": "Passed as ?bundle=N in the URL so Pumper can auto-select the right offer"
         },
         {
           "type": "text",
-          "id": "discount_code",
-          "label": "Discount code",
-          "info": "Must match a real code in Shopify Discounts. Passed to checkout automatically."
+          "id": "price",
+          "label": "Display price",
+          "default": "$20",
+          "info": "Match this to what you configured in Pumper"
+        },
+        {
+          "type": "text",
+          "id": "original_price",
+          "label": "Original price (crossed out)",
+          "info": "Leave blank to hide"
+        },
+        {
+          "type": "text",
+          "id": "savings_label",
+          "label": "Savings label",
+          "info": "e.g. Save $5 — leave blank to hide"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Get this Bundle"
+        },
+        {
+          "type": "url",
+          "id": "custom_link",
+          "label": "Custom link",
+          "info": "Overrides the auto-generated product link. Use only if no product is selected above."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Quantity Breaks",
+      "name": "Lien Bundles",
       "blocks": [
         {
-          "type": "tier",
+          "type": "bundle",
           "settings": {
             "name": "1 Set",
-            "qty": 1,
-            "discount": 0
+            "description": "One complete pair for the two of you. The perfect start to your Lien story.",
+            "items": "2 bracelets, Premium gift box",
+            "bundle_qty": 1,
+            "price": "$20",
+            "button_label": "Get 1 Set",
+            "featured": false
           }
         },
         {
-          "type": "tier",
+          "type": "bundle",
           "settings": {
             "badge": "Most Popular",
-            "featured": true,
             "name": "2 Sets",
-            "description": "Keep one, gift one.",
+            "description": "Keep one, gift one. Perfect for couples and best friends.",
             "items": "4 bracelets, 2 premium gift boxes",
-            "qty": 2,
-            "discount": 10,
-            "discount_code": "BUNDLE2"
+            "bundle_qty": 2,
+            "price": "$35",
+            "original_price": "$40",
+            "savings_label": "Save $5",
+            "button_label": "Get 2 Sets",
+            "featured": true
           }
         },
         {
-          "type": "tier",
+          "type": "bundle",
           "settings": {
             "badge": "Best Value",
             "name": "3 Sets",
-            "description": "Share the love.",
+            "description": "Share the love. Biggest saving per set.",
             "items": "6 bracelets, 3 premium gift boxes",
-            "qty": 3,
-            "discount": 15,
-            "discount_code": "BUNDLE3"
+            "bundle_qty": 3,
+            "price": "$48",
+            "original_price": "$60",
+            "savings_label": "Save $12",
+            "button_label": "Get 3 Sets",
+            "featured": false
           }
         }
       ]
