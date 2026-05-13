@@ -263,25 +263,10 @@
             "button_label": "Shop Now",
             "button_link": "shopify://products/bracelet"
           }
-        },
-        "offer_BXXbCi": {
-          "type": "offer",
-          "settings": {
-            "offer_label": "New Customer",
-            "badge": "",
-            "featured": true,
-            "title": "Welcome Gift",
-            "description": "Get 15% off your first order when you use the code below at checkout.",
-            "code": "LIEN15",
-            "expiry": "Offer ends Sunday at midnight",
-            "button_label": "Shop Now",
-            "button_link": ""
-          }
         }
       },
       "block_order": [
-        "offer_1",
-        "offer_BXXbCi"
+        "offer_1"
       ],
       "settings": {
         "label": "Exclusive Deals",
