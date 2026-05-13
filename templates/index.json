@@ -189,62 +189,53 @@
     "lien_quantity_breaks_nT7KhT": {
       "type": "lien-quantity-breaks",
       "blocks": {
-        "bundle_iJQzNj": {
-          "type": "bundle",
+        "tier_KNHU6x": {
+          "type": "tier",
           "settings": {
-            "image": "shopify://shop_images/3.avif",
-            "badge": "",
+            "image": "shopify://shop_images/10.avif",
+            "badge": "Basic",
             "featured": false,
             "name": "1 Set",
             "description": "One complete pair for the two of you. The perfect start to your Lien story.",
             "items": "2 bracelets, Premium gift box",
-            "bundle_qty": 1,
-            "price": "$20",
-            "original_price": "",
-            "savings_label": "",
-            "button_label": "Get 1 Set",
-            "custom_link": ""
+            "qty": 1,
+            "discount": 0,
+            "discount_code": ""
           }
         },
-        "bundle_KH8itA": {
-          "type": "bundle",
+        "tier_GgGLxi": {
+          "type": "tier",
           "settings": {
             "image": "shopify://shop_images/9.avif",
             "badge": "Most Popular",
             "featured": true,
             "name": "2 Sets",
-            "description": "Keep one, gift one. Perfect for couples and best friends.",
+            "description": "Keep one, gift one.",
             "items": "4 bracelets, 2 premium gift boxes",
-            "bundle_qty": 2,
-            "price": "$35",
-            "original_price": "$40",
-            "savings_label": "Save $5",
-            "button_label": "Get 2 Sets",
-            "custom_link": ""
+            "qty": 2,
+            "discount": 10,
+            "discount_code": "BUNDLE2"
           }
         },
-        "bundle_efCMyy": {
-          "type": "bundle",
+        "tier_4LYRkc": {
+          "type": "tier",
           "settings": {
-            "image": "shopify://shop_images/11.avif",
+            "image": "shopify://shop_images/7.avif",
             "badge": "Best Value",
             "featured": false,
             "name": "3 Sets",
-            "description": "Share the love. Biggest saving per set.",
+            "description": "Share the love.",
             "items": "6 bracelets, 3 premium gift boxes",
-            "bundle_qty": 3,
-            "price": "$48",
-            "original_price": "$60",
-            "savings_label": "Save $12",
-            "button_label": "Get 3 Sets",
-            "custom_link": ""
+            "qty": 3,
+            "discount": 15,
+            "discount_code": "BUNDLE3"
           }
         }
       },
       "block_order": [
-        "bundle_iJQzNj",
-        "bundle_KH8itA",
-        "bundle_efCMyy"
+        "tier_KNHU6x",
+        "tier_GgGLxi",
+        "tier_4LYRkc"
       ],
       "name": "Quantity Breaks",
       "settings": {
