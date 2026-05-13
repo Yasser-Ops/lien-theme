@@ -55,8 +55,8 @@
           "type": "trust_item",
           "settings": {
             "icon": "star",
-            "text": "Gift-Ready Packaging",
-            "subtext": "Arrives in a premium box"
+            "text": "100% Satisfaction Guaranteed",
+            "subtext": "Authentic Products — Quality assured"
           }
         }
       },
@@ -254,10 +254,10 @@
           "type": "offer",
           "settings": {
             "offer_label": "New Couple",
-            "badge": "15% Off",
+            "badge": "10% Off",
             "featured": true,
             "title": "First Order Gift",
-            "description": "Get 15% off your very first set. Enter the code at checkout and start wearing your bond.",
+            "description": "Get 10% off your very first set. Enter the code at checkout and start wearing your bond.",
             "code": "LIEN15",
             "expiry": "Valid for new customers only",
             "button_label": "Shop Now",
@@ -281,16 +281,6 @@
           "type": "row",
           "settings": {
             "feature": "Comes as a Matched Pair",
-            "lien_check": true,
-            "lien_value": "",
-            "others_partial": false,
-            "others_value": ""
-          }
-        },
-        "cmp_2": {
-          "type": "row",
-          "settings": {
-            "feature": "Premium Gift Box Included",
             "lien_check": true,
             "lien_value": "",
             "others_partial": false,
@@ -340,7 +330,6 @@
       },
       "block_order": [
         "cmp_1",
-        "cmp_2",
         "cmp_3",
         "cmp_4",
         "cmp_5",
@@ -408,7 +397,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What's included in the set?",
-            "answer": "<p>Each Lien set includes 2 bracelets — one black cord and one white cord, both with a matching magnetic heart charm. They arrive in a premium gift box, ready to give or keep.</p>"
+            "answer": "<p>Each Lien set includes 2 bracelets — one black cord and one white cord, both with a matching magnetic heart charm. </p>"
           }
         },
         "faq_2": {
@@ -443,7 +432,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long does shipping take?",
-            "answer": "<p>Orders are processed within 1–2 business days. Standard shipping takes 5–10 days worldwide. Expedited options are available at checkout.</p>"
+            "answer": "<p>Orders are processed within 1–2 business days. Standard shipping takes 5–10 days.</p>"
           }
         }
       },
