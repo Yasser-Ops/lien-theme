@@ -127,12 +127,15 @@ product-info {
 
 /* Sale badge */
 .price .badge {
-  background-color: rgba(123, 143, 166, 0.12) !important;
-  color: var(--lien-accent) !important;
+  background-color: var(--lien-accent) !important;
+  color: #ffffff !important;
   font-family: var(--lien-font-heading) !important;
   font-weight: var(--lien-weight-semibold) !important;
   font-size: var(--lien-text-xs) !important;
-  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 4px !important;
+  padding: 3px 10px !important;
 }
 
 /* Tax / shipping note */
@@ -204,6 +207,27 @@ product-info {
   outline-offset: 3px !important;
 }
 
+/* Color dot indicators on variant pills */
+.swatch-input__label::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.swatch-input__label[title="Blush Pink"]::before    { background-color: #E8B4B8; }
+.swatch-input__label[title="Ocean Blue"]::before    { background-color: #7BA7BC; }
+.swatch-input__label[title="Midnight Blue"]::before { background-color: #2C3E6B; }
+.swatch-input__label[title="Twilight"]::before      { background-color: #9B7FA6; }
+.swatch-input__label[title="Sage"]::before          { background-color: #87A878; }
+.swatch-input__label[title="Smoke"]::before         { background-color: #8C8C8C; }
+.swatch-input__label[title="Rose Noir"]::before     { background-color: #8B3A52; }
+
 /* Dropdown select */
 .product-form__input .select__select {
   font-family: var(--lien-font-body) !important;
@@ -240,6 +264,11 @@ product-info {
 
 .quantity__button:hover {
   color: var(--lien-accent) !important;
+}
+
+/* Hide quantity selector — bundle section handles multi-qty purchasing */
+.product-form__quantity {
+  display: none !important;
 }
 
 
@@ -286,11 +315,15 @@ product-info {
 }
 
 .shopify-payment-button__button--unbranded {
-  background-color: var(--lien-dark) !important;
+  background-color: transparent !important;
+  border: 1.5px solid var(--lien-dark) !important;
+  color: var(--lien-dark) !important;
+  box-shadow: none !important;
 }
 
 .shopify-payment-button__button--unbranded:hover {
-  background-color: var(--lien-dark-hover) !important;
+  background-color: var(--lien-dark) !important;
+  color: #ffffff !important;
 }
 
 

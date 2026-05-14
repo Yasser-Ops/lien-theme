@@ -43,11 +43,14 @@
   .lien-faq__title {
     font-family: var(--lien-font-heading);
     font-weight: var(--lien-weight-bold);
-    font-size: var(--lien-text-3xl);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--lien-text);
     margin: 0 0 var(--lien-space-md) 0;
+    word-break: break-word;
+    overflow: visible;
+    white-space: normal;
   }
 
   .lien-faq__subtitle {

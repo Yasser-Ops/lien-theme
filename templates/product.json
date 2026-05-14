@@ -48,7 +48,7 @@
         "bundle_nudge": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<a href=\"#lien-qb-lien_quantity_breaks\" class=\"lien-bundle-nudge\" onclick=\"event.preventDefault();var t=document.querySelector('[data-lien-qb]');if(t)t.scrollIntoView({behavior:'smooth'});\"><span class=\"lien-bundle-nudge__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 12V22H4V12\"/><path d=\"M22 7H2v5h20V7z\"/><path d=\"M12 22V7\"/><path d=\"M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z\"/><path d=\"M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z\"/></svg></span><span class=\"lien-bundle-nudge__text\"><strong>Save up to 15%</strong> — Buy 2 or 3 sets and pay less per pair</span><span class=\"lien-bundle-nudge__arrow\">→</span></a><style>.lien-bundle-nudge{display:flex;align-items:center;gap:1.2rem;padding:1.4rem 1.6rem;background-color:var(--lien-cream);border-left:3px solid var(--lien-accent);text-decoration:none;transition:all 0.2s ease;margin-top:0.8rem}.lien-bundle-nudge:hover{background-color:var(--lien-cream-dark)}.lien-bundle-nudge__icon{flex-shrink:0;width:2rem;height:2rem;color:var(--lien-accent)}.lien-bundle-nudge__icon svg{width:100%;height:100%}.lien-bundle-nudge__text{font-family:var(--lien-font-body);font-size:var(--lien-text-sm);color:var(--lien-text-secondary);line-height:1.4;flex-grow:1}.lien-bundle-nudge__text strong{font-family:var(--lien-font-heading);font-weight:var(--lien-weight-semibold);color:var(--lien-text)}.lien-bundle-nudge__arrow{font-family:var(--lien-font-heading);font-weight:var(--lien-weight-semibold);color:var(--lien-accent);font-size:var(--lien-text-md);flex-shrink:0}</style>"
+            "custom_liquid": "<a href=\"/#shopify-section-template--22325084225778__lien_quantity_breaks_nT7KhT\" class=\"lien-bundle-nudge\"><span class=\"lien-bundle-nudge__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 12V22H4V12\"/><path d=\"M22 7H2v5h20V7z\"/><path d=\"M12 22V7\"/><path d=\"M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z\"/><path d=\"M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z\"/></svg></span><span class=\"lien-bundle-nudge__text\"><strong>Save up to 15%</strong> — Buy 2 or 3 sets and pay less per pair</span><span class=\"lien-bundle-nudge__arrow\">→</span></a><style>.lien-bundle-nudge{display:flex;align-items:center;gap:1.2rem;padding:1.4rem 1.6rem;background-color:var(--lien-cream);border-left:3px solid var(--lien-accent);text-decoration:none;transition:all 0.2s ease;margin-top:0.8rem}.lien-bundle-nudge:hover{background-color:var(--lien-cream-dark)}.lien-bundle-nudge__icon{flex-shrink:0;width:2rem;height:2rem;color:var(--lien-accent)}.lien-bundle-nudge__icon svg{width:100%;height:100%}.lien-bundle-nudge__text{font-family:var(--lien-font-body);font-size:var(--lien-text-sm);color:var(--lien-text-secondary);line-height:1.4;flex-grow:1}.lien-bundle-nudge__text strong{font-family:var(--lien-font-heading);font-weight:var(--lien-weight-semibold);color:var(--lien-text)}.lien-bundle-nudge__arrow{font-family:var(--lien-font-heading);font-weight:var(--lien-weight-semibold);color:var(--lien-accent);font-size:var(--lien-text-md);flex-shrink:0}</style>"
           }
         },
         "trust_signals": {
@@ -62,7 +62,7 @@
           "settings": {
             "heading": "What's in the Set",
             "icon": "gift_card",
-            "content": "<p>Each Lien set includes <strong>2 bracelets</strong> — one for you, one for your partner:</p><ul><li>2 × braided rope cord bracelets (your chosen color)</li><li>2 × matching silver charm (heart or lock &amp; key)</li><li>Adjustable sliding knot — fits all wrist sizes</li><li>1 × premium gift box, ready to give</li></ul><p>Available colors: Black, Blue, Gray, Pink.<br>Available styles: Heart Charm, Lock &amp; Key.</p>",
+            "content": "<p>Each Lien set includes <strong>2 bracelets</strong> — one for you, one for your partner:</p><ul><li>2 × braided rope cord bracelets (your chosen color)</li><li>2 × matching magnetic heart charm — snaps together</li><li>Adjustable sliding knot — fits all wrist sizes</li><li>1 × premium gift box, ready to give</li></ul>",
             "page": ""
           }
         },
@@ -240,8 +240,8 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "What colors and styles are available?",
-            "answer": "<p>The bracelets come in 4 colors: <strong>Black, Blue, Gray, and Pink</strong>. Each color is available in two charm styles: <strong>Heart Charm</strong> and <strong>Lock &amp; Key</strong>. Select your preference using the options above.</p>"
+            "question": "What colors are available?",
+            "answer": "<p>The Lien Magnetic Couple Bracelet Set comes in 7 colors: <strong>Blush Pink, Ocean Blue, Midnight Blue, Twilight, Sage, Smoke, and Rose Noir</strong>. Select your color using the options above — each set comes with a matching magnetic heart charm.</p>"
           }
         },
         "faq_2": {
@@ -274,7 +274,7 @@
       ],
       "settings": {
         "label": "Questions?",
-        "heading": "Frequently Asked",
+        "heading": "Frequently Asked Questions",
         "subtitle": "",
         "two_column": true,
         "bg_cream": true,

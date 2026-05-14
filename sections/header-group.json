@@ -17,14 +17,14 @@
         "msg1": {
           "type": "message",
           "settings": {
-            "text": "✨ Free Shipping on All Orders",
+            "text": "✨ Free Shipping on All Orders · Gift Box Included with Every Set",
             "link": ""
           }
         },
         "msg2": {
           "type": "message",
           "settings": {
-            "text": "30-Day Money-Back Guarantee · No Questions Asked",
+            "text": "⏰ Limited Stock — Order Today, Ships in 1–3 Days",
             "link": ""
           }
         }

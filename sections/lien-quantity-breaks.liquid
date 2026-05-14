@@ -589,7 +589,7 @@
     }
   }
 
-  /* ── Add to cart → redirect to checkout ── */
+  /* ── Add to cart → go to cart ── */
   btn.addEventListener('click', function () {
     if (state.slots.some(function (s) { return s === null; })) return;
 
@@ -609,8 +609,8 @@
     })
     .then(function () {
       window.location.href = state.code
-        ? '/checkout?discount=' + encodeURIComponent(state.code)
-        : '/checkout';
+        ? '/cart?discount=' + encodeURIComponent(state.code)
+        : '/cart';
     })
     .catch(function (err) {
       console.error('[Lien QB]', err);
