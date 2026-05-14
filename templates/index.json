@@ -330,7 +330,7 @@
             "products": [
               "bracelet"
             ],
-            "star_rating": "all",
+            "star_rating": "4_to_5_star",
             "show_review_media": true,
             "display_order": "media_first",
             "no_image_fallback": "review_text_only",
@@ -352,7 +352,8 @@
             "arrows_color": "#000000",
             "transition_speed": 2,
             "header_text": "Customers are saying",
-            "show_average_rating": true
+            "show_average_rating": true,
+            "rating_display": "default"
           }
         }
       },
@@ -436,8 +437,8 @@
         "subtitle": "One set. Two bracelets. A bond you can wear every day.",
         "button_label": "Shop the Set",
         "button_link": "shopify://products/bracelet",
-        "color_scheme": "dark",
-        "urgency_text": "Ships in 1–3 days. Arrives in a premium gift box."
+        "urgency_text": "Ships in 1–3 days. Arrives in a premium gift box.",
+        "color_scheme": "dark"
       }
     }
   },
