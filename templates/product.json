@@ -75,6 +75,12 @@
             "page": ""
           }
         },
+        "jdgm_enhancer": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<script>(function(){function enhance(rev){var rating=rev.querySelector('.jdgm-rev__rating');var header=rev.querySelector('.jdgm-rev__header');var author=rev.querySelector('.jdgm-rev__author');if(rating&&header&&!rev.dataset.lienDone){rev.insertBefore(rating,header);rev.dataset.lienDone='1';}if(author&&!author.dataset.initial){var t=(author.textContent||'').trim();author.dataset.initial=t?t.charAt(0).toUpperCase():'';}}function run(){document.querySelectorAll('.jdgm-rev:not([data-lien-done])').forEach(enhance);}new MutationObserver(run).observe(document.body,{childList:true,subtree:true});run();})();<\/script>"
+          }
+        },
         "tab_shipping": {
           "type": "collapsible_tab",
           "settings": {
@@ -96,7 +102,8 @@
         "trust_signals",
         "tab_whats_in_set",
         "tab_fit_care",
-        "tab_shipping"
+        "tab_shipping",
+        "jdgm_enhancer"
       ],
       "settings": {
         "enable_sticky_info": true,
